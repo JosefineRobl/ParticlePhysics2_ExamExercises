@@ -1,0 +1,412 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Kvanteelektrodynamik med elektroner}
+
+Betragt Lagrangedensiteten for elektroner, hvilken kaldes Dirac Lagrangedensiteten,
+\begin{align} \label{eq:Opg4_DiracLagrangian}
+    \L &= \psibar (i\slashed{\partial} - m) \psi \: ,
+\end{align}
+hvor $\slashed{\partial} = \gamma^\mu\partial_\mu$ og $\gamma_\mu$ er Diracmatricerne af dimension $4 \times 4$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{1)}}
+
+Betragt transformationen $\psi \rightarrow \bexp{-ie\theta(x)}\psi$, hvor $e$ er elektronens ladning og $\theta(x)$ er en skalarfunktion, som afhænger af rum og tid (betegnet samlet ved koordinatet $x = (\vv{x},\, t)$). Benyt minimal substitution for et felt med ladning $q = -e$,
+\begin{align} \label{eq:Opg4_Q1_MinimalSubstitution}
+    \partial^\mu \rightarrow D^\mu = \partial^\mu - ieA^\mu  \: ,
+\end{align}
+i Diracs Lagrangedensitet og vis at denne nu er gaugeinvariant. Hvad er den nødvendige transformation for $A^\mu$?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{2)}}
+
+I matematik betegner $\U(1)$ (den $1 \times 1$ unitære matrixgruppe) gruppen af de komplekse tal på enhedscirklen (modulo $1$). Forklar hvorfor det giver mening at betegne gauge transformationen i \textbf{1)} og den tilhørende teori, kvanteelektrodynamikken (QED), som en $\U(1)$-gaugeteori.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{3)}}
+
+Vis at Lagrangedensiteten for vekselvirkningen (eng: interaction Lagrangian density), hvilken vi opnår ved brug af gaugeinvariansprincippet (eng: principle of gauge invariance), er på strømvektorfeltsformen
+\begin{align} \label{eq:Opg4_Q3_interactionLagrangian}
+    \L_I &= e \psibar \gamma_\mu \psi A^\mu = - J_\mu A^\mu \: .
+\end{align}
+
+Vis ydermere at $J_\mu(x) = - e \psibar(x) \gamma_u \psi(x)$ er en bevaret strøm i den forstand at $\partial^\mu J_\mu(x) = 0$. Hvordan transformerer Lagrangedensiteten for vekselvirkningen under en gaugetransformation? Tillader denne transformation teorien at forblive gaugeinvarient?
+
+(Hint: Betragt virkningen (eng: action) genereret af Lagrangedensiteten for vekselvirkningen.)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{4)}}
+
+Diracfeltet kan ekspanderes i normal modes ifølge
+\begin{align}
+    \psi_\alpha (x) &= \sigma_\lambda \int \frac{\dd^2\vv{p}}{(2\pi)^3} \invsqrt{2\omega_{\vv{p}}} \left( b_{\vv{p},\lambda} u(\vv{p},\lambda)_\alpha \bexp{-ipx} + d_{\vv{p},\lambda}\dagger v(\vv{p},\lambda)_\alpha \bexp{ipx} \right) \: ,
+\end{align}
+hvor $\lambda$ er heliciteten og $px = p_\mu x^\mu$. $b$ og $d$ er operatorer som kreerer hhv. fermioniske partikler og antipartikler med en given impuls $\vv{p}$ og helicitet $\lambda$. Vis at
+\begin{align}
+    -e \psibar \gamma_\mu \psi &= \sum_{\vv{p},\vv{p}',\lambda,\lambda'} \sum_{n=1}^4 j_\mu^{(n)}(p,\lambda,p',\lambda',x)
+        = \sum_{n=1}^4 j_\mu^{(n)}(x) \: ,
+\end{align}
+og find de fire led $j_\mu^{(n)}$ eksplicit.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{5)}}
+
+Udled de følgende matrixelementer ved brug af strømmen fra \textbf{4)}:
+\begin{subequations}
+\begin{align}
+    \mel**{\mathrm{e}^-,\, \vv{p}',\, \lambda'}{j_\mu^{(1)}}{\mathrm{e}^-,\, \vv{p},\, \lambda}
+        &= -e\bar{u}(\vv{p}',\lambda') \gamma_\mu u(\vv{p},\lambda) \pexp{i[p' - p]x} \: , \\
+    \mel**{\mathrm{e}^+,\, \vv{p}',\, \lambda'}{j_\mu^{(2)}}{\mathrm{e}^+,\, \vv{p},\, \lambda}
+        &= e\bar{v}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda') \pexp{i[p' - p]x} \: , \\
+    \mel**{0}{j_\mu^{(3)}}{\mathrm{e}^-,\, \vv{p},\, \lambda;\, \mathrm{e}^+,\, \vv{p}',\, \lambda'}
+        &= -e\bar{v}(\vv{p}',\lambda') \gamma_\mu u(\vv{p},\lambda) \pexp{-i[p' + p]x} \: , \\
+    \mel**{\mathrm{e}^-,\, \vv{p}',\, \lambda';\, \mathrm{e}^+,\, \vv{p},\, \lambda}{j_\mu^{(4)}}{0}
+        &= -e\bar{u}(\vv{p}',\lambda') \gamma_\mu v(\vv{p},\lambda) \pexp{i[p' + p]x} \: .
+\end{align}
+\end{subequations}
+
+Giv en fysisk fortolkning af de fire udtryk (det kan være en idé at tegne hver af udtrykkene som en del af et Feynmandiagram).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{6)}}
+
+Matrixelementerne i \textbf{5)} kaldes overgangsstrømme (eng: transition currents), $J_\mu^{fi}(x)$. Vis eksplicit at de er bevarede strømme ved at benytte gradientoperatoren $\partial^\mu$ på hver af dem.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{7)}}
+
+Argumentér for at når vi beregner fysiske processer i QED med vekselvirkningen fra \cref{eq:Opg4_Q3_interactionLagrangian}, så vil vi altid få led på formen $J_\mu^{fi}(0)\epsilon^\mu(\sigma)$, hvor $\epsilon^\mu(\sigma)$ er en fotons polarisationstilstand indiceret ved $\sigma$. Argumentér yderligere for at når vi kvadrerer amplituden for en given proces, så får vi udtryk på formen
+\begin{align}
+    \abs{J_\mu^{fi}(0)\epsilon^\mu(\sigma)}^2 &= \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) J_\mu^{fi}(0)^* J_\nu^{fi}(0) \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{8)}}
+
+Ofte bliver vi nødt til at summere over uobserverede fotonpolarisationstilstande; vi summerer altså over $\sigma$,
+\begin{align}
+    \left[ \sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) \right] J_\mu^{fi}(0)^* J_\nu^{fi}(0) \: .
+\end{align}
+
+Antag at impulsoverførslen (eng: momentum transfer) for strømmen $J_\mu^{fi}$ er langs $\zhat$-retningen, altså $q = (q_0,\, 0,\, 0,\, q_0)$. Vis at vi for en reel foton har
+\begin{align}
+    \sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) &= \delta_1^\mu \delta_1^\nu + \delta_2^\mu \delta_2^\nu \: ,
+\end{align}
+hvor vi har benyttet den relativistiske konvention om at $\mu = 0$ betegner tidsretningen og $\mu = 1,2,3$ betegner de rummelige retninger hhv. $\xhat$-, $\yhat$- og $\zhat$-retningen.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{9)}}
+
+Vis at for en reel foton gør det sig gældende, at
+\begin{align} \label{eq:Opg4_Q9_Result}
+    \left[ \sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) \right] \epsilon^\nu(\sigma) J_\mu^{fi}(0)^* J_\nu^{fi}(0) &= - g^{\mu\nu} J_\mu^{fi}(0)^* J_\nu^{fi}(0) \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{10)}}
+
+Under hvilke omstændigheder medfører \cref{eq:Opg4_Q9_Result} følgende udtryk
+\begin{align}
+    \sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) &= -g^{\mu\nu} \: ?
+\end{align}
+Hvilke yderligere led kunne opstå for en reel foton, hvor $q^2 = 0$? Hvilke yderligere led kunne opstå for en virtuel foton, hvor $q^2 \ne 0$?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{11)}}
+
+Betragt spredningen af elektroner på myoner, $\mathrm{e}^- + \mu^- \rightarrow \mathrm{e}^- + \mu^-$. Tegn Feynmandiagrammet til anden orden for denne proces.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{12)}}
+
+Vis at S-matricen til anden orden for elektron-myon-spredningsprocessen kan skrives som
+\begin{align}
+    S_{fi}^{(2)} &= (-i)^2 \int \dd^4 x_1 \dd^4 x_2 J_\mu^{\mathrm{e}^-}(x_1) J_\nu^{\mu^-}(x_2) \mel**{0}{T\left[A^\mu(x_1)A^\nu(x_2)\right]}{0} \: .
+\end{align}
+Opskriv eksplicit elektron- og myonstrømmen (eng: electron and muon current) ved brug af overgangsstrømmene fra \textbf{5)}. Sørg for at mærke alle dele nødvendige for at specificere start- og sluttilstandene korrekt.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{13)}}
+
+Ved at benytte Klein-Gordon-propagatoren som analogi, argumentér for at vi kan benytte den følgende form for fotonpropagatoren
+\begin{align}
+    G^{\mu\nu}(q) &= \int \dd^4 x \pexp{iqx} \mel**{0}{T\left[A^\mu(x)A^\nu(0)\right]}{0}
+        = \frac{-ig^{\mu\nu}}{q^2}
+\end{align}
+i udtrykket for $S_{fi}^{(2)}$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{14)}}
+
+Definer som sædvanligt $S_{fi}^{(2)} = - i \M_{fi} (2\pi)^4 \delta^4(p_f - p_i)$. Vis at
+\begin{align}
+    - i \M_{fi} &= \left( -i J_\mu^{\mathrm{e}^-}(0) \right) \frac{-ig^{\mu\nu}}{q^2} \left( -i J_\nu^{\mu^-}(0) \right) \: .
+\end{align}
+Udtryk impulsoverførslen $q$ som funktion af start- og sluttilstandsimpulsen.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{15)}}
+
+Når vi kvadrerer amplituden, summerer over sluttilstande og tager gennemsnittet af starttilstandene får vi
+\begin{align}
+    \inv{4} \sum_{\mathrm{spins}} \abs{\M_{fi}}^2 &= \frac{8e^4}{q^4} \left( \left[ p_1 p_2 \right] \left[ p_3 p_4 \right] + \left[ p_1 p_4 \right] \left[ p_2 p_3 \right] \right)
+\end{align}
+i grænsen hvor alle impulser er meget større end masserne af både elektronen og myonen. Her er skalarproduktet af firvektorerne betegnet som $pq = p_\mu q^\mu = p^\mu q_\mu$. Vis at i denne grænse kan vi skrive
+\begin{align}
+    \inv{4} \sum_{\mathrm{spins}} \abs{\M_{fi}}^2 &= \frac{8e^4}{q^4} \left( \left[ p_1 p_2 \right]^2 + \left[ p_1 p_4 \right]^2 \right) \: .
+\end{align}
+
+Vi betegner nu vinklen mellem den indkomne og den udadgående elektron i massemidtpunktssystemet (eng: center-of-mass frame) $\theta$. Vis at
+\begin{align}
+    \inv{4} \sum_{\mathrm{spins}} \abs{\M_{fi}}^2 &= \frac{2e^4}{\sin^4\left(\frac{\theta}{2}\right)} \left[ 1 + \cos^4\pfrac{\theta}{2} \right] \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{16)}}
+
+Vis at tværnittet (eng: cross section) i massemidtpunktssystemet er givet ved
+\begin{align}
+    \left(\dif{\sigma}{\Omega}\right)_\mathrm{CM} &= \frac{\alpha^2}{2E_\mathrm{CM}^2} \frac{1 + \cos^4\pfrac{\theta}{2}}{\sin^4\pfrac{\theta}{2}} \: ,
+\end{align}
+hvor $E_\mathrm{CM}$ er den totale energi i massemidtpunktssystemet og $\alpha$ er finstrukturkonstanten. Slå ''Tværsnit for Rutherfordspredning'' op et sted (f.eks. i lærebog eller online). Sammenlign dette resultat med udtrykket for Rutherfordspredningen. Vis at udtrykkene har samme funktionsopførsel (eng: functional behavior) i grænsen $\theta \rightarrow 0$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{17)}}
+
+Brug alle informationerne, som du har fået fra foregående delopgaver, til at nedskrive Feynmanreglerne for QED for treniveau-Feynmandiagrammer (\emph{uden} loops), altså skal du finde ud af hvilke faktorer, som er forbundet med start- og sluttilstande for partikler og antipartikler, hvilke faktorer, som er forbundet med vertices, og hvilke faktorer, som er forbundet med propagatorer.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Besvarelse}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[1) Gaugeinvariant Lagrangedensitet for elektroner]{\textbf{1)}}
+
+Vi betragter Diracs Lagrangedensitet fra \cref{eq:Opg4_DiracLagrangian}, hvor princippet for minimal substitution med $q = -e$ er blevet benyttet idet Lagrangedensiteten ellers ikke ville være invariant under transformationen $\psi \rightarrow \bexp{-ie\theta(x)}\psi$ for $x = (\Vec{x},\, t)$ værende en firvektor (der vil være et ekstra led fra differentialoperatoren):
+\begin{align} \label{eq:Opg4_A1_LagrangeDensityWithMinimalSubstitution}
+    \L &= \psibar (i \slashed{\partial} - m)\psi
+        \rightarrow \psibar (i \slashed{D} - m)\psi
+        = \psibar \big( i \gamma_\mu [\partial^\mu - ieA^\mu] - m \big)\psi \: ,
+\end{align}
+hvor $D^\mu$ er den gaugekovariante differentialoperator, $\slashed{\partial} = \gamma_\mu \partial^\mu$ og $\psibar = \gamma^0 \psi\dagger$ er den Diracadjungerede (Dirac adjunct).
+Idet minimal substitutionen indføres, indføres også et nyt felt, $A^\mu$, hvilket også transformerer under førnævnte transformation, $A^\mu \rightarrow A'^\mu$.
+
+Opgaven kan nu løses på en af følgende måder: Antag at transformationen af $A^\mu$ er kendt og vis at denne gør Lagrangedensiteten invariant, eller antag at Lagrangedensiteten er invariant og find transformationen af $A^\mu$. Her vælges den sidste af de to metoder.
+
+Vi betragter transformationen
+\begin{align} \label{eq:Opg4_A1_U1TransformationOfPsi}
+    \psi &\rightarrow \psi' = \U \psi = \pexp{-ie\theta[x]}\psi
+\end{align}
+for $x = (\Vec{x},\, t)$ værende en firvektor. Det konjugerede felt transformerer dermed som\footnote{Hermitisk konjugering af et produkt af operatorer er produktet af hver operator Hermitisk konjugeret og i omvendt orden, altså $(XY)\dagger = Y\dagger X\dagger$.}
+\begin{align}
+    \psibar &\rightarrow \overline{\psi'}
+        = \gamma^0 (\psi')\dagger
+        = \gamma^0 (\U \psi)\dagger
+        = \gamma^0\psi\dagger \U\dagger
+        = \psibar\pexp{ie\theta[x]} \: .
+\end{align}
+Benyttes disse transformationer fås Lagrangedensitetens transformation til (hvor $\theta(x)$ betegnes $\theta$ for overskuelighed)
+\begin{align}
+\begin{split}
+    \L \rightarrow \L' &= \overline{\psi'} \big(i \gamma_\mu [\partial^\mu - ieA'^\mu] - m \big) \psi' \\
+        &= \psibar \pexp{ie\theta} \big(i \gamma_\mu [\partial^\mu - ieA'^\mu] - m \big) \pexp{-ie\theta} \psi \\
+        &= \psibar \pexp{ie\theta} \bigg(i \gamma_\mu \Big[ \big\{ -ie\pexp{-ie\theta}\left(\partial^\mu \theta\right) + \pexp{-ie\theta}\partial^\mu \big\} \\
+            &\qquad\qquad\qquad\qquad\quad - ieA'^\mu \pexp{-ie\theta} \Big] - \pexp{-ie\theta} m \bigg) \psi \\
+        &= \psibar \id \big(\gamma_\mu e\left( \partial^\mu \theta \right) + i \gamma_\mu \partial^\mu - m \big) \psi + \psibar \pexp{ie\theta} \gamma_\mu eA'^\mu \pexp{-ie\theta} \psi
+\end{split}
+\end{align}
+
+Lagrangedensiteten er invariant hvis $\L' = \L$, hvorfor
+\begin{align}
+\begin{split}
+    0 &= \L' - \L \\
+        &= \psibar \big(\gamma_\mu e\left( \partial^\mu \theta \right) + i \gamma_\mu \partial^\mu - m \big) \psi + \psibar \pexp{ie\theta} \gamma_\mu eA'^\mu \pexp{-ie\theta} \psi \\
+            &\qquad - \psibar \big( i \gamma_\mu [\partial^\mu - ieA^\mu] - m \big)\psi \\
+        &= \psibar e \gamma_\mu \big[\left( \partial^\mu \theta \right) - A^\mu + \pexp{ie\theta} A'^\mu \pexp{-ie\theta} \big] \psi \: .
+\end{split}
+\end{align}
+Dette medfører, at
+\begin{align}
+    A^\mu - \left( \partial^\mu \theta \right) &= \pexp{ie\theta} A'^\mu \pexp{-ie\theta} \: ,
+\end{align}
+idet $\psi$ er en arbitrær bølgefunktion og ladningen $e$ kan være forskellig fra $0$.
+Vi kan dermed opskrive $A'^\mu$ som
+\begin{align}
+\begin{split} \label{eq:Opg4_A1_transformationOfA^muCalculation}
+    A'^\mu &= \id A'^\mu \id \\
+        &= \pexp{-ie\theta}\pexp{ie\theta} A'^\mu \pexp{-ie\theta}\pexp{ie\theta} \\
+        &= \pexp{-ie\theta} \big[ A^\mu - \left( \partial^\mu \theta \right) \big] \pexp{ie\theta} \\
+        &= \pexp{-ie\theta} \pexp{ie\theta} \big[ A^\mu - \left( \partial^\mu \theta \right) \big] \\
+        &= \id \big[ A^\mu - \left( \partial^\mu \theta \right) \big] \\
+        &= A^\mu - \left( \partial^\mu \theta \right) \: .
+\end{split}
+\end{align}
+For at Lagrangedensiteten er invariant under transformationen $\psi \rightarrow \pexp{-ie\theta[x]} \psi$ skal transformationen af $A^\mu$ altså være (\cref{eq:Opg4_A1_transformationOfA^muCalculation})
+\begin{align} \label{eq:Opg4_A1_transformationOfA^mu}
+    A^\mu &\rightarrow A'^\mu = A^\mu - \left[ \partial^\mu \theta(x) \right] \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[2) QED som $\U(1)$-gaugeteori]{\textbf{2)}}
+
+Transformationen 
+\begin{align}
+    \psi &\rightarrow \psi' = \U \psi = \pexp{-ie\theta[x]}\psi
+\end{align}
+for $x = (\Vec{x},\, t)$ værende en firvektor, er en $\U(1)$-gaugeteori, da transformationen har modulo $1$
+\begin{align}
+    \abs{\U} &= \U\U^* = \pexp{-ie\theta[x]} \pexp{ie\theta[x]} = \id \: .
+\end{align}
+Idet transformationen er en $U$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[3) Lagrangedensiteten for vekselvirkningen]{\textbf{3)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[4) Beregn $-e\psibar\gamma_\mu\psi$ og find $j_\mu^{(n)}$]{\textbf{4)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[5) Udled matrixelementer fra $j_\mu^{(n)}$]{\textbf{5)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[6) Bevarede overgangsstrømme $J_\mu^{fi}$]{\textbf{6)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[7) Beregning på fysiske processer i QED giver led på formen $J_\mu^{fi}(0)\epsilon^\mu(\sigma)$]{\textbf{7)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[8) Sum af polarisationstilstande for en reel foton]{\textbf{8)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[9) Polarisationstilstande og den metriske tensor for en reel foton]{\textbf{9)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[10) Polarisationstilstande og den metriske tensor for reelle og virtuelle fotoner]{\textbf{10)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[11) Feynmandiagram for spredning af elektroner på myoner]{\textbf{11)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[12) S-matricen til anden orden for elektron-myon-spredningen]{\textbf{12)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[13) Fotonpropagator ved analogi med Klein-Gordon-proagatoren]{\textbf{13)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[14) Matrixelementet $\M_{fi}$ i $S_{fi}^{(2)}$]{\textbf{14)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[15) Flere beregninger på $\M_{fi}$]{\textbf{15)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[16) Tværsnit for elektron-myon-spredningen i CM-systemet og Rutherfordspredningstværsnit]{\textbf{16)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[17) Feynmanregler for QED]{\textbf{17)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

@@ -1,0 +1,32 @@
+\usepackage{physics}
+\usepackage{slashed} % For Feynmann slash notation
+
+% SI-units
+\usepackage[number-unit-product = \text{ }, inter-unit-product =\cdot, expproduct = \cdot]{siunitx} % SI-units
+    \sisetup{range-units = brackets, range-phrase = --} % Intervaller med enheder som (<x_min> - <xmax>)<enhed>
+    \DeclareSIUnit\year{yr}	% Definer enheden år, skrevet "yr", som \year
+
+% Bra-ket
+\usepackage{braket} % Bedre bra-ket notation end i physics-pakken
+    \renewcommand{\braket}{\Braket} % Omdefinere kommando til at have små bogstaver
+
+% Kvantemekanik
+\newcommand{\ps}[1]{\psi_{#1}} % psi_<kvantetal> som \ps{<kvantetal>}
+\newcommand{\Op}[1]{\hat #1} % Operator
+\newcommand{\vop}[1]{\v{\op{#1}}} % Vektoroperator
+\newcommand{\expect}[2]{\Braket{#1|#2|#1}} % Forventningsværdi af Q i tilstand a som \expect{a}{Q}
+\newcommand{\hilbert}{\ensuremath{\mathcal{H}}}	% Hilbertrums H
+\newcommand{\traceOwn}[1]{\text{Tr}\left(#1\right)} % Trace
+\newcommand{\ptr}[2]{\text{Tr}_{#1}\left(#2\right)} % Partial trace
+\newcommand{\trans}[1]{\mathscr{T}_{#1}} % Translationsoperator med subskript
+\newcommand{\dc}{\overset{\mathrm{DC}}\longleftrightarrow} % Direkte korrespondance som \dc
+\newcommand{\rep}{\overset{\cdot}=} % Matrixrepræsentationslighedstegn (= med prik over)
+
+% Relativitetsteori
+\newcommand{\co}[2]{{#1}_{#2}} % Covariant notation
+\newcommand{\con}[2]{{#1}^{#2}} % Contravariant notation
+\newcommand{\pco}[1]{\co{\partial}{#1}} % Covariant partialdiff
+\newcommand{\pcon}[1]{\con{\partial}{#1}} % Contravariant partialdiff
+
+% For pænt at skrive isotoper
+\usepackage{isotope} % \isotope[A][Z]{Atombogstav(er)}

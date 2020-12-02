@@ -1,0 +1,17 @@
+\usepackage{cleveref} % Pæne referencer, der kan modificeres
+\crefname{equation}{ligning}{ligningerne}
+\Crefname{equation}{Ligning}{Ligningerne}
+\crefname{figure}{figur}{figurerne}
+\Crefname{figure}{Figur}{Figurerne}
+\crefname{chapter}{kapitel}{kapitlerne}
+\Crefname{chapter}{Kapitel}{Kapitlerne}
+\crefname{section}{afsnit}{afsnittene}
+\Crefname{section}{Afsnit}{Afsnittene}
+\crefname{subsection}{afsnit}{afsnittene}
+\Crefname{subsection}{Afsnit}{Afsnittene}
+\crefname{subsubsection}{afsnit}{afsnittene}
+\Crefname{subsubsection}{Afsnit}{Afsnittene}
+
+% Referencer med parenteser omkring som \ref{ref1,ref2,...,refN}
+\creflabelformat{equation}{#2(#1)#3}
+\crefrangelabelformat{equation}{#3(#1)#4 to #5(#2)#6}

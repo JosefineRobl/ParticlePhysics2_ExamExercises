@@ -1,0 +1,16 @@
+\linespread{1.1}
+\newcommand{\tablesize}[2]{
+\setlength{\tabcolsep}{{#1} em}\def\arraystretch {#2}} % \tablesize{x}{y} gør tabellen x gange bredere og y gange højere
+\newcommand{\alignspace}[1]{\setlength{\jot}{#1}} % \alignspace{n} gør environmentet align n gange højere
+\newenvironment{nalign}{
+        \begin{equation}
+        \begin{aligned}
+    }{
+        \end{aligned}
+        \end{equation}
+        \ignorespacesafterend
+    } % \nalign giver midterstillet ligningsnummerering
+\newenvironment{mtable}[1]{
+        \begin{center}
+        $\begin{array}{#1}}{\end{array}$\end{center}
+    } % Matematiktabel, \mtable gør hver celle til et math environment

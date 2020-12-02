@@ -1,0 +1,181 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Helicitetsoperatoren}
+
+I denne opgave skal vi kigge nærmere på heliciteten som en operator: Først kigger på helicitet med hensyn til spinorer (eng: spinors), og derefter kigger på heliciteten med hensyn til de kvantiserede felter. Gamma matricerne i Dirac-Pauli repræsentationen er
+\begin{align}
+    \gamma^0 &= \TwoRowMat{\id & 0}{0 & -\id} \: , \quad
+    \gamma^i = \TwoRowMat{0 & \sigma_i}{-\sigma_i & 0} \: , \quad \text{og} \quad
+    \gamma_5 = i \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \TwoRowMat{0 & \id}{\id & 0} \: ,
+\end{align}
+hvor $\sigma_i$ er den i'te Paulimatrix. Løsningerne til Diracligningen er på formen
+\begin{align} \label{eq:Opg3_BeginningText_SolutionsToDiracEquation}
+    u_s(p) &= \sqrt{E+m}\TwoRowMat{\chi_s}{\frac{\vgv{\sigma}\cdot\vgv{p}\chi_s}{E+m}} \: , \quad \text{og} \quad
+    v_s(p) = \sqrt{E+m}\TwoRowMat{\frac{\vgv{\sigma}\cdot\vgv{p}\chi_{-s}}{E+m}}{\chi_{-s}} \: ,
+\end{align}
+for hhv. positive og negative energier. Her er $\chi_s$ 2-spinorer med kvantiseringsakse lang retningen af impulsen $\vv{p}$ med projektion $s = \pm 1$. Bemærk her ændringen $\chi_s \rightarrow \chi_{-s}$ for løsningerne med negativ energi, $v_s(p)$.
+
+Helicitetsoperatoren kan defineres ved brug af spinoperatorerne, hvilke er passende generaliserede til fir-spinorer. Vi definerer
+\begin{align}
+    \vgv{\Sigma} &= \TwoRowMat{\vgv{\sigma} & 0}{0 & \vgv{\sigma}} \: ,
+\end{align}
+og helicitetsoperatoren kan derudfra skrives som $h = \vgv{\Sigma}\cdot\vv{p}/\abs{\vv{p}}$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{1)}}
+
+Først betragter vi problemet med at definere en passende firvektor for spin, $s^\mu$. Siden den i bund og grund er en rummelig vektor vil vi normalisere den således, at $s^\mu s_\mu = -1$. Som normalt med sådan en (spin)polarisationsvektor er et særlig praktisk valg, at den er ortogonal til firimpulsen, altså $s^\mu p_\mu = 0$. Argumentér for at i partiklens hvilesystem (under antagelse af at partiklen har masse $m \ne 0$) kan vi vælge $s^\mu = (0,\, \shat)$, hvor $\shat$ er en arbitrær treenhedsvektor.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{2)}}
+
+Argumentér for at siden vi er interesserede i helicitet så vil et godt valg for $\shat$ være $\shat = \vv{p}/\abs{\vv{p}}$. Vis at hvis vi booster fra hvilesystemet til et system, hvor partiklen har impuls $\vv{p}$, da bliver spinfirvektoren
+\begin{align}
+    s^\mu &= \left( \frac{\abs{\vv{p}}}{m},\, \frac{E}{m} \frac{\vv{p}}{\abs{\vv{p}}} \right) \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{3)}}
+
+Vis at $\vgv{\Sigma} = \gamma^5\gamma^0\vv{\gamma}$ og bevis den nyttige relation
+\begin{align}
+    \gamma^5\slashed{s} = \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \frac{\slashed{p}}{m} \: ,
+\end{align}
+hvor $\slashed{A} = \gamma_\mu A^\mu$ for en firvektor $A^\mu$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{4)}}
+
+Vis at $u_s(p)$ og $v_s(p)$ er egentilstande for $\gamma^5\slashed{s}$, altså at
+\begin{subequations}
+\begin{align}
+    \gamma^5\slashed{s} u_s(p) &= s u_s(p) \: , \quad \text{og} \quad \\
+    \gamma^5\slashed{s} v_s(p) &= s v_s(p) \: .
+\end{align}
+\end{subequations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{5)}}
+
+Benyt de foregående delopgaver til at vise at $u_s(p)$ og $v_s(p)$ også er helicitetsegentilstande, altså at
+\begin{subequations}
+\begin{align}
+    h u_s(p) &= s u_s(p) \: , \quad \text{og} \quad \\
+    h v_s(p) &= - s v_s(p) \: .
+\end{align}
+\end{subequations}
+Bemærk fortegnsændringen for løsningerne med negativ energi; dette bliver relevant om et øjeblik.
+
+(Hint: De generelle relationer $(\slashed{p} - m) u_s(p) = 0$ og $(\slashed{p} + m) v_s(p) = 0$ er meget nyttige her.)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{6)}}
+
+Vi er nu klar til at betragte de kvantiserede fermionfelter,
+\begin{align}
+    \psi(x) &= \sum_\lambda \int \frac{\dd^3\vv{p}}{(2\pi)^3} \invsqrt{2\omega_{\vv{p}}} \left( \bexp{-ipx} u(p,\, \lambda) b_{\vv{p}, \lambda} + \bexp{ipx} v(p,\, \lambda) d_{\vv{p},\lambda}\dagger \right) \: .
+\end{align}
+
+Når vi forsøger at finde helicitetsoperatoren i anden kvantisering støder vi et problem. Vi vil gerne tage projektionen af spin på udbredelsesretningen. Intuitivt er dette på formen $\vgv{\Sigma}\cdot\vv{p}/\abs{\vv{p}}$. Uheldigvis kan dette ikke gøres ved at betragte $\hatvec{\Sigma} \cdot \hatvec{P}$, og vi skal i stedet være mere forsigtige. Lad os derfor betragte spinoperatoren i anden kvantisering projiceret langs en retning givet ved enhedsvektoren $\nhat$; vi skal altså betragte det følgende udtryk
+\begin{align} \label{eq:Opg3_Q6_expression}
+    \int \dd^3\vv{x} \psi\dagger(x) \vgv{\Sigma} \cdot \nhat \psi(x) \: .
+\end{align}
+
+Vis at man med hensyn til tælleoperatorerne (eng: number operators) for partikler og antipartikler finder at \cref{eq:Opg3_Q6_expression} bliver
+\begin{equation}
+\begin{alignedat}{2}
+    \int \dd^3\vv{x} & \psi\dagger(x) \vgv{\Sigma} \cdot \nhat \psi(x) && \\
+        &= \sum_{s,s'} \int \frac{\dd^3\vv{p}}{(2\pi)^3} \inv{2\omega_{\vv{p}}} \Big[
+            && u_s(p)\dagger \vgv{\Sigma} \cdot \nhat u_{s'}(p) b_{\vv{p},s}\dagger b_{\vv{p},s'} \\
+            & && + u_s(p)\dagger \vgv{\Sigma} \cdot \nhat v_{s'}(-p) \pexp{i2E_{\vv{p}}t} b_{\vv{p},s}\dagger d_{-\vv{p},s'}\dagger \\
+            & && + v_s(p)\dagger \vgv{\Sigma} \cdot \nhat u_{s'}(-p) \pexp{-i2E_{\vv{p}}t} d_{\vv{p},s} b_{-\vv{p},s'} \\
+            & &&+ v_s(p)\dagger \vgv{\Sigma} \cdot \nhat v_{s'}(p) d_{\vv{p},s} d_{\vv{p},s'}\dagger
+        \Big] \: .
+\end{alignedat}
+\end{equation}
+
+Lad nu $\nhat = \vv{p}/\abs{\vv{p}}$ og vis at helicitetsoperatoren i anden kvantisering er givet ved
+\begin{align} \label{eq:Opg3_Q6_helicityOperator}
+    \hat{h} &= \sum_s \int \frac{\dd^3\vv{p}}{(2\pi)^3} \left( s b_{\vv{p},s}\dagger b_{\vv{p},s} + s d_{\vv{p},s}\dagger d_{\vv{p},s} \right) \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{7)}}
+
+Argumentér for at havde vi brugt $\chi_s$ i stedet for $\chi_{-s}$ i $v_s(p)$ i \cref{eq:Opg3_BeginningText_SolutionsToDiracEquation}, da ville helicitetsoperatoren i \cref{eq:Opg3_Q6_helicityOperator} være inkonsistent, idet heliciteten ville have det forkerte fortegn når operatoren benyttes på tilstanden med negative energier, $v_s(p)$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Besvarelse}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[1) $s^\mu = (0,\, \shat)$ i partiklens hvilesystem]{\textbf{1)}}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[2) $\shat = \vv{p}/\abs{\vv{p}}$ i partiklens hvilesystem og beregning af $s^\mu$ efter boost]{\textbf{2)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[3) $\vgv{\Sigma} = \gamma^5 \gamma^0 \vgv{\gamma}$ og beregning af $\gamma^5 \slashed{s}$]{\textbf{3)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[4) $u_s(p)$ og $v_s(p)$ egentilstande for $\gamma^5\slashed{s}$]{\textbf{4)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph[5) $u_s(p)$ og $v_s(p)$ helicitetsegentilstande]{\textbf{5)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[6) $\int \dd^3\vv{x} \psi\dagger(x) \vgv{\Sigma}\cdot\nhat \psi(x)$ og helicitetsoperator]{\textbf{6)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[7) Betydningen af $\chi_{-s} \rightarrow \chi_s$ for helicitet af $v_s(p)$]{\textbf{7)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

@@ -1,0 +1,556 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{''Matrix''-feltet}
+
+Betragt en mængde af felter $\phi_{ij}$, hvor $i,j = 1,\ldots,N$, og antag at $\phi_{ij} = \phi_{ji}$. Antag yderligere at felterne er reelle, altså at $\phi_{ij} \in \R,\,\: \forall i,j=1,\ldots,N$. Lagrangedensiteten for dette system er
+\begin{align} \label{eq:Opg2_Lagrangian}
+    \L &= \inv{2} \partial_\mu \phi_{ij} \partial^\mu \phi_{ji} - \inv{2} m^2 \phi_{ij} \phi_{ji} \: ,
+\end{align}
+hvor vi har implicitte summer over felterne således at
+\begin{align} \label{eq:Opg2_ImplicitSums}
+    \phi_{ij} \phi_{jk} &= \sum_{j=1}^N \phi_{ij}\phi_{jk} \quad \text{og} \quad
+    \phi_{ij} \phi_{ji} = \sum_{i=1}^N \sum_{j=1}^N \phi_{ij}\phi_{ji} \: .
+\end{align}
+
+Bemærk hvordan $\phi_{ij} \phi_{ji}$ svarer til at betragte feltet som værende en matrix, multiplicere matricen med sig selv og sidst tage trace af den resulterende matrix.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{1)}}
+
+Hvor mange frihedsgrader har feltet $\phi_{ij}$?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{2)}}
+
+Vis at bevægelsesligningerne er
+\begin{align} \label{eq:Opg2_Q2_EquationOfMotion}
+    0 &= \left(\partial_\mu \partial^\mu + m^2\right)\phi_{ij} \: , \quad \forall i,j=1,\ldots,N \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{3)}}
+
+Vis at løsningerne er planbølger på formen $\phi_{ij} = M_{ij}\exp(\pm ipx)$, hvor $px = p^\mu x_\mu = p_\mu x^\mu$ med $p^\mu = (E,\, \vv{p})$ og $M_{ij}$ er uafhængig af $x^\mu$. Find udtrykket for E.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{4)}}
+
+Definer det konjugerede felt, $\pi_{ij}$, som den naturlige generalisering af enkeltkomponent skalarfelter
+\begin{align} \label{eq:Opg2_Q4_ConjugatedMomentaField}
+    \pi_{ij} &= \pdif{\L}{(\partial_0 \phi_{ij})} \: .
+\end{align}
+Vis at $\pi_{ij} = \partial^0 \phi_{ij}$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{5)}}
+
+Vis at Hamiltonfunktionen er
+\begin{align} \label{eq:Opg2_Q5_Hamiltonian}
+    H &= \int \dd^3\vv{x} \left[ \inv{2} \pi_{ij} \pi_{ji} + \inv{2} \Grad{\phi_{ij}} \cdot \Grad{\phi_{ji}} + \inv{2} m^2 \phi_{ij} \phi_{ji} \right] \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{6)}}
+
+Argumentér for at en fornuftig feltudvidelse (eng: field expansion) for det kvantemekaniske ''matrix''-felt er
+\begin{align} \label{eq:Opg2_Q6_ResultingField}
+    \phi_{ij} &= \int \frac{\dd^3\vv{p}}{(2\pi)^3} \invsqrt{2\omega_{\vv{p}}} \left(a_{\vv{p}ij} \bexp{-ipx} + a_{\vv{p}ij}\dagger \bexp{ipx} \right) \: ,
+\end{align}
+hvor $\omega_{\vv{p}} = \sqrt{\vv{p}^2 + m^2}$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{7)}}
+
+Vi introducerer nu et indre produkt, kaldet Klein-Gordon-indreproduktet, mellem to bølgefunktioner på en lidt besynderlig måde. Lad $f$ og $g$ være funktioner af tid og rum og definer
+\begin{align}
+\begin{split} \label{eq:Opg2_Q7_KGInnerProduct}
+    (f,g) &= i \int \dd^3\vv{x} f^*(\vv{x},\, t) \overset{\leftrightarrow}{\partial_0} g(\vv{x},\, t) \\
+        &= i \int \dd^3\vv{x} \left[ f^*(\vv{x},\, t) \pdif{g(\vv{x},\, t)}{t} - \pdif{f^*(\vv{x},\, t)}{t} g(\vv{x},\, t) \right] \: ,
+\end{split}
+\end{align}
+hvor $\overset{\leftrightarrow}{\partial_0}$ short-hand notation for operatoren, som tidsdifferentierer til først til højre og så til venstre med en minus imellem. Bemærk at dette indre produkt ikke er positivt bestemt (eng: positive definite) og derfor ikke er et matematisk indre produkt, hvis man skal være stringent. Men det er en dejlig og nyttig konstruktion, hvilket vi nu skal vise.
+
+Betragt en planbølge på formen $u_{\vv{p}}(x) = \pexp{-ipx}/\sqrt{2\omega_{\vv{p}}}$, hvor $x$ og $p$ er firvektorer som sædvanligt. Vis de følgende relationer
+\begin{subequations} \label{eq:Opg2_Q7_KGInnerProductsWithU}
+\begin{align}
+    (u_{\vv{p}}, u_{\vv{p}'}) &= (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \: , \\
+    (u_{\vv{p}}^*, u_{\vv{p}'}^*) &= - (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \: , \\
+    (u_{\vv{p}}^*, u_{\vv{p}'}) &= 0 \: , \quad \text{og} \\
+    (u_{\vv{p}}, u_{\vv{p}'}^*) &= 0 \: .
+\end{align}
+\end{subequations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{8)}}
+
+Benyt nu det indre produkt med feltet fra \cref{eq:Opg2_Q6_ResultingField} og vis at
+\begin{subequations} \label{eq:Opg2_Q8_StepOperatorsUsingKGInnerProduct}
+\begin{align}
+    a_{\vv{p}ij} &= (u_{\vv{p}},\phi_{ij}) \: , \quad \text{og} \\
+    a_{\vv{p}ij}\dagger &= -(u_{\vv{p}}^*,\phi_{ij}) \: .
+\end{align}
+\end{subequations}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{9)}}
+
+Kommutatorrelationerne for matrix-felterne er givet ved
+\begin{align}
+    \commutator{\phi_{ij}(\vv{x},\, t)}{\pi_{kl}(\vv{x}',\, t)} &= i\delta^3(\vv{x} - \vv{x}')\delta_{ik}\delta{jl} \: ,
+\end{align}
+mens alle andre kombinationer af $\phi_{ij}$ og $\pi_{kl}$ forsvinder. Vis at dette betyder, at kreations- og annihilationsoperatorerne, $a_{\vv{p}ij}\dagger$ og $a_{\vv{p}ij}$, har bosniske kommutationsrelationer.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{10)}}
+
+Vis at Hamiltonfunktionen for det kvantiserede felt kan skrives som
+\begin{align}
+    H &= \sum_{i,j=1}^N \int \frac{\dd^3\vv{p}}{(2\pi)^3} \left[ \omega_{\vv{p}} a_{\vv{p}ij}\dagger a_{\vv{p}ij} \right] \: .
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{11)}}
+
+Vis at feltoperatoren overholder Heisenbergs bevægelsesligning
+\begin{align}
+    i\pdif{\phi_{ij}}{t} &= \commutator{\phi_{ij}}{H} \: .
+\end{align}
+
+Argumentér for at dette betyder, at feltoperatorerne fra \cref{eq:Opg2_Q6_ResultingField} er de rigtige feltoperatorer at benytte i vekselvirkningsbilledet (eng: interaction picture).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{12)}}
+
+Vi vil nu kigge på symmetrier for vores matrix-felter. Betragt gruppen af ortogonale $N \times N$ matricer, hvilken kaldes $O(N)$ og defineres som mængden
+\begin{align}
+    O(N) &= \left\{ R \:\vert\: R^\intercal R = \id \right\} \: ,
+\end{align}
+hvor $R$ er en reel $N \times N$ matrix og $R^\intercal$ betegner den transponerede matrix af $R$.
+
+Vælg $R \in O(N)$ og lad komponenterne betegnes $R_{ij}$. Vis at Lagrangedensiteten i \cref{eq:Opg2_Lagrangian} er invariant under transformationen
+\begin{align}
+    \phi_{ij}' &= R_{ik}R_{jl}\phi_{kl} \: .
+\end{align}
+Dette kaldes $O(N)^2$ symmetri.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{13)}}
+
+Find et vekselvirkningsled (eng: interaction term) som kan lægges til Lagrangedensiteten således, at denne stadig har $O(N)^2$ symmetri. Find hernæst et vekselvirkningsled, som eksplicit \emph{bryder} $O(N)^2$ symmetrien for Lagrangedensiteten.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{14)}}
+
+Betragt et element $R$ i $O(N)$ meget tæt på identitetsmatricen,  således at man kan skrive elementet $R = \id + A$, hvor $A$ er en $N \times N$ matrix med elementer $\abs{A_{ij}} < 1$. Vis at $R \in O(N)$ medfører at $A^\intercal = -A$, altså at $A$ er antisymmetrisk. Mængden af sådanne matricer $A$ kaldes \emph{generatoren} af $O(N)$. Hvor mange lineært uafhængige matrice findes med denne egenskab for dimensionen $N$? Dette kaldes dimensionen af $O(N)$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{15)}}
+
+Find den bevarede Noetherstrøm (eng: Noether current) som associeres med $O(N)^2$ symmetrien.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{\textbf{16)}}
+
+Hvad ville ændre sig, hvis feltet $\phi_{ij}$ var komplekst i stedet for reelt? Beskriv blot de overordnede forskellige; du skal \emph{ikke} beregne hele opgaven igen med et komplekst felt.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Besvarelse}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[1) Frihedsgrader for feltet $\phi_{ij}$]{\textbf{1)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[2) Bevægelsesligningerne for $\psi_{ij}$]{\textbf{2)}}
+
+Vi betragter først Lagrangedensiteten \cref{eq:Opg2_Lagrangian} og konstaterer, at idet $\phi_{ij} = \phi_{ji}$ samt at vi kan benytte metrikken til at ændre kovariante firvektorer til kontravariante og omvendt, så kan Lagrangedensiteten skrives som
+\begin{align}
+    \L &= \inv{2} \partial_\mu \phi_{ij} \partial^\mu \phi_{ji} - \inv{2} m^2 \phi_{ij} \phi_{ji}
+        = \inv{2} g^{\mu\nu} \partial_\mu \phi_{ij} \partial_\nu \phi_{ij} - \inv{2} m^2 \phi_{ij} \phi_{ij} \: .
+\end{align}
+
+For at finde bevægelsesligningerne benytter vi Euler-Lagrangeligningen
+\begin{align} \label{eq:Opg2_A2_EulerLagrangeEquation}
+    0 &= \partial_\mu \pdif{\L}{(\partial_\mu \phi_{ij})} - \pdif{\L}{\phi_{ij}}
+\end{align}
+for $i,j = 1,\ldots,N$, hvormed vi altså får $i \cdot j$ bevægelsesligninger.
+
+Først beregner vi den afledede mht. feltet selv
+\begin{align} \label{eq:Opg2_A2_EulerLagrangeEquation_PartPotential}
+\begin{split}
+    \pdif{\L}{\phi_{ij}} &= \pdif{}{\phi_{ij}} \left( \inv{2} g^{\rho\nu} \partial_\rho \phi_{ij} \partial_\nu \phi_{ij} - \inv{2} m^2 \phi_{ij} \phi_{ij} \right) \\
+        &= \pdif{}{\phi_{ij}} \left( - \inv{2} m^2 \phi_{ij}^2 \right) \\
+        &= - \inv{2} m^2 2 \phi_{ij} \\
+        &= - m^2 \phi_{ij} \: ,
+\end{split}
+\end{align}
+og hernæst den afledede af Lagrangedensiteten mht. det afledede feltet
+\begin{align} \label{eq:Opg2_A2_EulerLagrangeEquation_PartKinetic}
+\begin{split}
+    \pdif{\L}{(\partial_\mu \phi_{ij})} &= \pdif{}{(\partial_\mu \phi_{ij})} \left( \inv{2} g^{\rho\nu} \partial_\rho \phi_{ij} \partial_\nu \phi_{ij} - \inv{2} m^2 \phi_{ij} \phi_{ij} \right) \\
+        &= \pdif{}{(\partial_\mu \phi_{ij})} \left( \inv{2} g^{\rho\nu} \partial_\rho \phi_{ij} \partial_\nu \phi_{ij} \right) \\
+        &= \inv{2} g^{\rho\nu} \left( \pdif{}{(\partial_\mu \phi_{ij})} \big( \partial_\rho \phi_{ij} \big) \partial_\nu \phi_{ij} + \partial_\rho \phi_{ij} \pdif{}{(\partial_\mu \phi_{ij})} \big( \partial_\nu \phi_{ij} \big) \right) \\
+        &= \inv{2} g^{\rho\nu} \left( \partial_\nu \phi_{ij} + \partial_\rho \phi_{ij} \right) \\
+        &= \inv{2} \left( \partial^\rho \phi_{ij} + \partial^\nu \phi_{ij} \right) \\
+        &= \inv{2} \left( \partial^{\cancelto{\nu}{\rho}} \phi_{ij} + \partial^\nu \phi_{ij} \right) \\
+        &= \partial^\nu \phi_{ij} \: .
+\end{split}
+\end{align}
+
+Indsætter vi nu de beregnede afledede, \cref{eq:Opg2_A2_EulerLagrangeEquation_PartPotential,eq:Opg2_A2_EulerLagrangeEquation_PartKinetic}, i Euler-Lagrangeligningen, \cref{eq:Opg2_A2_EulerLagrangeEquation}, fås bevægelsesligningen for feltet $\phi_{ij}$ til
+\begin{align}
+\begin{split}
+    0 &= \partial_\mu \big( \partial^\mu \phi_{ij} \big) - \big( -m^2 \phi_{ij} \big) \\
+        &= \big( \partial_\mu \partial^\mu + m^2 \big) \phi_{ij} \: .
+\end{split}
+\end{align}
+
+Altså er bevægelsesligningerne
+\begin{align}
+    0 &= \left(\partial_\mu \partial^\mu + m^2\right)\phi_{ij} \: , \quad \forall i,j=1,\ldots,N \: .
+\end{align}
+som givet af \cref{eq:Opg2_Q2_EquationOfMotion}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[3) Løsningerne for felterne er planbølger]{\textbf{3)}}
+
+For at vise, at løsningerne til \cref{eq:Opg2_Q2_EquationOfMotion} er planbølger på formen $\phi_{ij} = M_{ij}\exp(\pm ipx)$, hvor $px = p^\mu x_\mu = p_\mu x^\mu$ med $p^\mu = (p^0,\, p^a) = (E,\, \vv{p})$ og $M_{ij}$ er uafhængig af $x^\mu$, indsættes disse planbølger i bevægelsesligningen \cref{eq:Opg2_Q2_EquationOfMotion}
+\begin{align}
+\begin{split}
+    \left(\partial_\mu \partial^\mu + m^2\right)\phi_{ij} &= \left(\partial_\mu \partial^\mu + m^2\right) M_{ij}\pexp{\pm ipx} \\
+        &= M_{ij} \left(\partial_\mu \partial^\mu + m^2\right) \pexp{\pm ipx} \\
+        &= M_{ij} \Big(\partial_\mu \big[ \pm i \pexp{\pm ipx} p^\mu \big] + \pexp{\pm ipx} m^2\Big) \\
+        &= M_{ij} \Big(\pm i \big[ \partial_\mu \pexp{\pm ipx} \big] p^\mu + \pexp{\pm ipx} m^2\big) \\
+        &= M_{ij} \Big([\pm i]^2 \pexp{\pm ipx} p_\mu p^\mu + \pexp{\pm ipx} m^2\Big) \\
+        &= M_{ij} \pexp{\pm ipx} \Big(- p_\mu p^\mu + m^2\Big) \\
+        &= \phi_{ij} \Big(- p_0 p^0 - p_a p^a + m^2\Big) \\
+        &= \phi_{ij} \Big(- EE - \big[-\vv{p}\big] \cdot \vv{p} + m^2\Big) \\
+        &= \phi_{ij} \Big(- E^2 + \vv{p}^2 + m^2\Big) \\
+        &= \phi_{ij} \Big(- E^2 + E^2 \Big) \\
+        &= 0 \: ,
+\end{split}
+\end{align}
+hvor den relativistiske energi er $E = \sqrt{\vv{p}^2 + m^2}$. Altså er planbølger på formen $\phi_{ij} = M_{ij}\exp(\pm ipx)$ løsninger til bevægelseligningen fra \cref{eq:Opg2_Q2_EquationOfMotion}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[4) Konjugeret felt er $\pi_{ij}  = \partial^0 \psi_{ij}$]{\textbf{4)}}
+
+Vi er blevet givet, at det konjugerede felt er
+\begin{align} \label{eq:Opg2_A4_ConjugatedMomentaField_RepeatedInAnswer}
+    \pi_{ij} &= \pdif{\L}{(\partial_0 \phi_{ij})} \: ,
+\end{align}
+samt at $\phi_{ij} = \phi_{ji}$. Vi indsætter derfor blot Lagrangedensiteten fra \cref{eq:Opg2_Lagrangian} i ligningen for det konjugerede felt (\cref{eq:Opg2_Q4_ConjugatedMomentaField,eq:Opg2_A4_ConjugatedMomentaField_RepeatedInAnswer}) (step a), benytter at indekserne på feltet $\phi_{ij}$ kan byttes rundt uden omkostning (step b), samt benytter produktreglen til at differentiere produktfunktionen (step c).
+\begin{align}
+\begin{split}
+    \pi_{ij} &= \pdif{\L}{(\partial_0 \phi_{ij})} \\
+        &\xleq{(a)} \pdif{}{(\partial_0 \phi_{ij})} \left( \inv{2} \partial_\mu \phi_{ij} \partial^\mu \phi_{ji} - \inv{2} m^2 \phi_{ij} \phi_{ji} \right) \\
+        &= \pdif{}{(\partial_0 \phi_{ij})} \left( \inv{2} \partial_\mu \phi_{ij} \partial^\mu \phi_{ji} \right) \\
+        &\xleq{(b)} \pdif{}{(\partial_0 \phi_{ij})} \left( \inv{2} \partial_\mu \phi_{ij} \partial^\mu \phi_{ij} \right) \\
+        &= \pdif{}{(\partial_0 \phi_{ij})} \left( \inv{2} \partial_0 \phi_{ij} \partial^0 \phi_{ij} \right) \\
+        &= \pdif{}{(\partial_0 \phi_{ij})} \left( \inv{2} g^{00} \partial_0 \phi_{ij} \partial_0 \phi_{ij} \right) \\
+        &= \inv{2} g^{00} \pdif{}{(\partial_0 \phi_{ij})} \left( \partial_0 \phi_{ij} \partial_0 \phi_{ij} \right) \\
+        &\xleq{(c)} \inv{2} g^{00} \left( \pdif{}{(\partial_0 \phi_{ij})} \left[\partial_0 \phi_{ij}\right] \partial_0 \phi_{ij} + \partial_0 \phi_{ij} \pdif{}{(\partial_0 \phi_{ij})} \left[\partial_0 \phi_{ij}\right] \right) \\
+        &= \inv{2} g^{00} \left( \partial_0 \phi_{ij} + \partial_0 \phi_{ij} \right) \\
+        &= g^{00} \partial_0 \phi_{ij} \\
+        &= \partial^0 \phi_{ij} \: .
+\end{split}
+\end{align}
+Det er dermed vist, at det konjugerede felt er den kontravariante tidsafledede af feltet, $\pi_{ij} = \partial^0 \phi_{ij}$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[5) Hamiltonfunktion med felter]{\textbf{5)}}
+
+Hamiltonfunktionen er givet som
+\begin{align} \label{eq:Opg2_A5_HamiltonianDefinition}
+    H &= \int \dd^3\vv{x} \H \: ,
+\end{align}
+hvor $\H$ er Hamiltondensiteten defineret som
+\begin{align} \label{eq:Opg2_A5_HamiltonianDensityDefinition}
+    \H &= \sum_{ij} \pi_{ij} \left( \partial_0 \phi_{ij} \right) - \L \: .
+\end{align}
+
+I kurset benyttes metrikken $g_{\mu\nu} = \mathrm{diag}(1,\, -\id)$, altså at de rummelige koordinater i de kovariante firvektorer får et negativt fortegn, mens tidskoordinatet forbliver det samme. For differentialoperatorer er det dog den kontravariante firvektors rummelige koordinater, som får det negative fortegn, da
+\begin{align}
+    \partial^\mu &= \pdif{}{x_\mu} = \left( \partial_0,\, -\Grad{} \right) \: .
+\end{align}
+Af denne grund kan vi også skrive $\pi_{ij}$ som
+\begin{align}
+    \pi_{ij} &= \partial^0 \phi_{ij}
+        = g^{00} \partial_0 \phi_{ij}
+        = 1 \partial_0 \phi_{ij}
+        \partial_0 \phi_{ij} \: .
+\end{align}
+Samtidig har vi, at $\phi_{ij} = \phi_{ji}$, hvorfor
+\begin{align}
+    \pi_{ij} &= \partial^0 \phi_{ij}
+        = \partial^0 \phi_{ji}
+        = \pi_{ji} \: .
+\end{align}
+Sammensættes dette kan vi skrive $\pi_{ji} = \partial_0 \phi_{ji}$.
+
+Nu beregnes Hamiltondensiteten ved \cref{eq:Opg2_A5_HamiltonianDensityDefinition}, hvor der ligesom for $\phi_{ij} \phi_{ji}$ (\cref{eq:Opg2_ImplicitSums}) er en implicit sum for $\pi_{ij} \pi_{ji}$, og det romerske bogstav $a$ er brugt for implicit summering over de rummelige koordinater fra firvektoren.
+\begin{align}
+\begin{split}
+    \H &= \sum_{ij} \pi_{ij} \left( \partial_0 \phi_{ij} \right) - \L \\
+        &= \pi_{ij} \pi_{ji} - \inv{2} \partial_\mu \phi_{ij} \partial^\mu \phi_{ji} + \inv{2} m^2 \phi_{ij} \phi_{ji} \\
+        &= \pi_{ij} \pi_{ji} - \inv{2} \partial_0 \phi_{ij} \partial^0 \phi_{ji} - \inv{2} \partial_a \phi_{ij} \partial^a \phi_{ji} + \inv{2} m^2 \phi_{ij} \phi_{ji} \\
+        &= \pi_{ij} \pi_{ji} - \inv{2} \pi_{ij} \pi_{ji} - \inv{2} \Grad{\phi_{ij}} \cdot \left(-\Grad{\phi_{ji}}\right) + \inv{2} m^2 \phi_{ij} \phi_{ji} \\
+        &= \inv{2} \pi_{ij} \pi_{ji} + \inv{2} \Grad{\phi_{ij}} \cdot \Grad{\phi_{ji}} + \inv{2} m^2 \phi_{ij} \phi_{ji} \: .
+\end{split}
+\end{align}
+
+Indsættes denne Hamiltondensitet i \cref{eq:Opg2_A5_HamiltonianDefinition} fås Hamiltonfunktionen
+\begin{align}
+    H &= \int \dd^3\vv{x} \left[ \inv{2} \pi_{ij} \pi_{ji} + \inv{2} \Grad{\phi_{ij}} \cdot \Grad{\phi_{ji}} + \inv{2} m^2 \phi_{ij} \phi_{ji} \right] \: ,
+\end{align}
+hvilken var den, som skulle vises (\cref{eq:Opg2_Q5_Hamiltonian}).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[6) Feltudvidelse for ''matrix''-feltet]{\textbf{6)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[7) Vis relationer med Klein-Gordon-indreproduktet]{\textbf{7)}}
+
+Vi betragter funktionen
+\begin{align}
+    u_{\vv{p}}(x) &= \frac{\pexp{-ipx}}{\sqrt{2\omega_{\vv{p}}}} \: ,
+\end{align}
+hvor $x$ og $p$ er firvektorer, $x^\mu = (t,\, \vv{x})$ og $p^\mu = (\omega_{\vv{p}},\, \vv{p})$, og $px = p_\mu x^\mu = p^\mu x_\mu$.
+
+Vi skal nu regne de indre produkter i \cref{eq:Opg2_Q7_KGInnerProductsWithU}, til hvilket vi benytter os af definitionen af Klein-Gordonindreproduktet i \cref{eq:Opg2_Q7_KGInnerProduct}.
+
+For ikke at gentage beregningerne for mange gange betegnes
+\begin{align}
+    u_{\vv{p}} = u_{\vv{p}}^- \quad \text{og} \quad u_{\vv{p}}^* = u_{\vv{p}}^+
+\end{align}
+i det følgende. Derved får vi også, at
+\begin{align}
+    (u_{\vv{p}}^+)^* = (u_{\vv{p}}^*)^* = u_{\vv{p}} = u_{\vv{p}}^- \: .
+\end{align}
+
+Først beregnes $(u_{\vv{p}},u_{\vv{p}'})$ og $(u_{\vv{p}}^*,u_{\vv{p}'}^*)$:
+\begin{align}
+\begin{split}
+    (u_{\vv{p}}^\pm,u_{\vv{p}}^\pm) &= i \int \dd^3\vv{x} \left[ u_{\vv{p}}^\mp \pdif{u_{\vv{p}'}^\pm}{t} - \pdif{u_{\vv{p}}^\mp}{t} u_{\vv{p}'}^\pm \right] \\
+        &= i \int \dd^3\vv{x} \left[ \frac{\pexp{\mp ipx}}{\sqrt{2\omega_{\vv{p}}}} \pdif{}{t} \left( \frac{\pexp{\pm ip'x}}{\sqrt{2\omega_{\vv{p}'}}} \right) - \pdif{}{t} \left( \frac{\pexp{\mp ipx}}{\sqrt{2\omega_{\vv{p}}}} \right) \frac{\pexp{\pm ip'x}}{\sqrt{2\omega_{\vv{p}'}}} \right] \\
+        &= i \int \dd^3\vv{x} \inv{2\sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \Big[ \pexp{\mp ipx} \big\{\pm i \omega_{\vv{p}'} \pexp{\pm ip'x} \big\} \\
+            &\qquad\qquad\qquad\qquad\qquad - \big\{ \mp i \omega_{\vv{p}} \pexp{\mp ipx} \big\} \pexp{\pm ip'x} \Big] \\
+        &= i \int \dd^3\vv{x} \inv{2\sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \Big[ \pexp{\mp ipx} \big\{\pm i \omega_{\vv{p}'} \pexp{\pm ip'x} \big\} \\
+            &\qquad\qquad\qquad\qquad\qquad + \big\{ \pm i \omega_{\vv{p}} \pexp{\mp ipx} \big\} \pexp{\pm ip'x} \Big] \\
+        &= \pm i^2 \int \dd^3\vv{x} \inv{2} \left[ \sqf{\omega_{\vv{p}'}}{\omega_{\vv{p}}} + \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}'}} \right] \pexp{\mp ipx} \pexp{\pm ip'x} \\
+        &= \mp \int \dd^3\vv{x} \inv{2} \left[ \sqf{\omega_{\vv{p}'}}{\omega_{\vv{p}}} + \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}'}} \right] \pexp{\mp i[p - p']x} \\
+        &= \mp \inv{2} \left[ \sqf{\omega_{\vv{p}'}}{\omega_{\vv{p}}} + \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}'}} \right] (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \pexp{\mp i[\omega_{\vv{p}} - \omega_{\vv{p}'}]t} \\
+        &= \mp \inv{2} \left[ \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}}} + \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}}} \right] (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \pexp{\mp i[\omega_{\vv{p}} - \omega_{\vv{p}}]t} \\
+        &= \mp \inv{2} \left[ 1 + 1 \right] (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \pexp{0} \\
+        &= \mp (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \: ,
+\end{split}
+\end{align}
+altså
+\begin{subequations}
+\begin{align}
+    (u_{\vv{p}},u_{\vv{p}}) &= (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \quad \text{og} \\
+    (u_{\vv{p}}^*,u_{\vv{p}}^*) &= - (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \: ,
+\end{align}
+\end{subequations}
+idet at deltafunktioner fremkommer ved $\int \dd k \pexp{iky} = 2\pi\delta(y)$, at $\delta(y-y') = \delta(y'-y)$ og at $f(y') \delta(y - y') = f(y) \delta(y - y')$.
+
+Dernæst beregnes $(u_{\vv{p}}^*,u_{\vv{p}'})$ og $(u_{\vv{p}},u_{\vv{p}'}^*)$:
+\begin{align}
+\begin{split}
+    (u_{\vv{p}}^\pm,u_{\vv{p}}^\mp) &= i \int \dd^3\vv{x} \left[ u_{\vv{p}}^\mp \pdif{u_{\vv{p}'}^\mp}{t} - \pdif{u_{\vv{p}}^\mp}{t} u_{\vv{p}'}^\mp \right] \\
+        &= i \int \dd^3\vv{x} \inv{2\sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \Big[ \pexp{\mp ipx} \big\{\mp i \omega_{\vv{p}'} \pexp{\mp ip'x} \big\} \\
+            &\qquad\qquad\qquad\qquad\qquad - \big\{ \mp i \omega_{\vv{p}} \pexp{\mp ipx} \big\} \pexp{\mp ip'x} \Big] \\
+        &= \mp i^2 \int \dd^3\vv{x} \inv{2\sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \Big[ \pexp{\mp ipx} \big\{\omega_{\vv{p}'} \pexp{\mp ip'x} \big\} \\
+            &\qquad\qquad\qquad\qquad\qquad - \big\{ \omega_{\vv{p}} \pexp{\mp ipx} \big\} \pexp{\mp ip'x} \Big] \\
+        &= \mp \int \dd^3\vv{x} \inv{2} \left[ \sqf{\omega_{\vv{p}'}}{\omega_{\vv{p}}} - \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}'}} \right] \pexp{\mp i[p + p']x} \\
+        &= \mp \inv{2} \left[ \sqf{\omega_{\vv{p}'}}{\omega_{\vv{p}}} - \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}'}} \right] (2\pi)^3 \delta^3(\vv{p} + \vv{p}') \pexp{\mp i[\omega_{\vv{p}} + \omega_{\vv{p}'}]t} \\
+        &= \mp \inv{2} \left[ \sqf{\omega_{-\vv{p}}}{\omega_{\vv{p}}} - \sqf{\omega_{\vv{p}}}{\omega_{-\vv{p}}} \right] (2\pi)^3 \delta^3(\vv{p} + \vv{p}') \pexp{\mp i[\omega_{\vv{p}} + \omega_{-\vv{p}}]t} \\
+        &= \mp \inv{2} \left[ \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}}} - \sqf{\omega_{\vv{p}}}{\omega_{\vv{p}}} \right] (2\pi)^3 \delta^3(\vv{p} + \vv{p}') \pexp{\mp i[\omega_{\vv{p}} + \omega_{\vv{p}}]t} \\
+        &= 0 \: ,
+\end{split}
+\end{align}
+idet
+\begin{align}
+    \omega_{\vv{p}} &= \sqrt{\vv{p}^2 + m^2}
+        \quad \Rightarrow \quad
+    \omega_{-\vv{p}} = \sqrt{\left(-\vv{p}\right)^2 + m^2} = \sqrt{\vv{p}^2 + m^2} = \omega_{\vv{p}} \: ,
+\end{align}
+altså får vi at
+\begin{align}
+    (u_{\vv{p}}^*,u_{\vv{p}}) &= (u_{\vv{p}},u_{\vv{p}}^*) = 0 \: .
+\end{align}
+
+Dermed har vi vist de fire indre produkter i \cref{eq:Opg2_Q7_KGInnerProductsWithU}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[8) Relationer for kreations- og annihilationsoperatorerne med Klein-Gordon-indreproduktet]{\textbf{8)}}
+
+Definerer vi, som i besvarelsen til \textbf{7)}, $u_{\vv{p}} = u_{\vv{p}}^-$ og $u_{\vv{p}}^* = u_{\vv{p}}^+$ for short-hand notation og husker, at $u_{\vv{p}}^\pm = \pexp{\pm ipx}/\sqrt{2\omega_{\vv{p}}}$, hvorfor
+\begin{align}
+\begin{split}
+    \phi_{ij} &= \int \frac{\dd^3\vv{p}}{(2\pi)^3} \invsqrt{2\omega_{\vv{p}}} \left(a_{\vv{p}ij} \bexp{-ipx} + a_{\vv{p}ij}\dagger \bexp{ipx} \right) \\
+        &= \int \frac{\dd^3\vv{p}}{(2\pi)^3} \left(a_{\vv{p}ij} u_{\vv{p}}^- + a_{\vv{p}ij}\dagger u_{\vv{p}}^+ \right) \: ,
+\end{split}
+\end{align}
+så får vi, at
+\begin{align} \label{eq:Opg2_A8_CalculationOfStepOperators}
+\begin{split}
+    \big(u_{\vv{p}}^\pm,\phi_{ij}(\vv{p}')\big)
+        &= i \int \dd^3\vv{x} \left[ u_{\vv{p}}^\mp \pdif{\phi_{ij}(\vv{p}')}{t} - \pdif{u_{\vv{p}}^\mp}{t} \phi_{ij}(\vv{p}') \right] \\
+        &= i \int \dd^3\vv{x} \bigg[ u_{\vv{p}}^\mp \pdif{}{t}\left( \int \frac{\dd^3\vv{p}'}{(2\pi)^3} \left\{a_{\vv{p}'ij} u_{\vv{p}'}^- + a_{\vv{p}'ij}\dagger u_{\vv{p}'}^+ \right\} \right) \\
+            &\qquad\qquad\quad - \pdif{u_{\vv{p}}^\mp}{t} \left( \int \frac{\dd^3\vv{p}'}{(2\pi)^3} \left\{a_{\vv{p}'ij} u_{\vv{p}'}^- + a_{\vv{p}'ij}\dagger u_{\vv{p}'}^+ \right\} \right) \bigg] \\
+        &= i \int \frac{\dd^3\vv{x} \, \dd^3\vv{p}'}{(2\pi)^3} \Bigg[ u_{\vv{p}}^\mp \pdif{}{t}\left( a_{\vv{p}'ij} u_{\vv{p}'}^- + a_{\vv{p}'ij}\dagger u_{\vv{p}'}^+ \right) \\
+            &\qquad\qquad\qquad\quad - \pdif{u_{\vv{p}}^\mp}{t} \left( a_{\vv{p}'ij} u_{\vv{p}'}^- + a_{\vv{p}'ij}\dagger u_{\vv{p}'}^+ \right) \Bigg] \\
+        &= i \int \frac{\dd^3\vv{x} \, \dd^3\vv{p}'}{(2\pi)^3} \Bigg[ u_{\vv{p}}^\mp \left( a_{\vv{p}'ij} \pdif{u_{\vv{p}'}^-}{t} + a_{\vv{p}'ij}\dagger \pdif{u_{\vv{p}'}^+}{t} \right) \\
+            &\qquad\qquad\qquad\quad - \pdif{u_{\vv{p}}^\mp}{t} \left( a_{\vv{p}'ij} u_{\vv{p}'}^- - a_{\vv{p}'ij}\dagger u_{\vv{p}'}^+ \right) \Bigg] \\
+        &= i \int \frac{\dd^3\vv{x} \, \dd^3\vv{p}'}{(2\pi)^3} \Bigg[ a_{\vv{p}'ij} \left( u_{\vv{p}}^\mp \pdif{u_{\vv{p}'}^-}{t} - \pdif{u_{\vv{p}}^\mp}{t} u_{\vv{p}'}^- \right) \\
+            &\qquad\qquad\qquad\quad + a_{\vv{p}'ij}\dagger \left( u_{\vv{p}}^\mp \pdif{u_{\vv{p}'}^+}{t} - \pdif{u_{\vv{p}}^\mp}{t} u_{\vv{p}'}^+ \right) \Bigg] \\
+        &= \int \frac{\dd^3\vv{p}'}{(2\pi)^3} \bigg[ a_{\vv{p}'ij} ( u_{\vv{p}}^\pm , u_{\vv{p}'}^- ) + a_{\vv{p}'ij}\dagger ( u_{\vv{p}}^\pm , u_{\vv{p}'}^+ ) \bigg] \: ,
+\end{split}
+\end{align}
+hvor Leibniz integrationsregel\footnote{
+    Leibniz integrationsregl er \cite{wiki:leibnizIntegrationRule}
+    \begin{align*}
+        \dif{}{x}\left( \int_{a(x)}^{b(x)} \dd y \, f(x,y) \right) &= f\big(x, b(x)\big) \dif{b(x)}{x} - f\big(x, a(x)\big) \dif{a(x)}{x} + \int_{a(x)}^{b(x)} \dd y \, \pdif{f(x,y)}{x} \: .
+    \end{align*}
+    Når $a(x)$ og $b(x)$ er konstanter i stedet for funktioner ($a$, $b$), så bliver Leibniz integrationsregl
+    \begin{align*}
+        \dif{}{x}\left( \int_a^b \dd y \, f(x,y) \right) &= \int_a^b \dd y \, \pdif{f(x,y)}{x} \: .
+    \end{align*}
+}
+er blevet benyttet for at bytte integralet og den partielle differentialoperator, og der ingen ekstra faktor kommer, da grænserne er konstanter.
+
+Fra \cref{eq:Opg2_A8_CalculationOfStepOperators} får vi altså, at
+\begin{subequations}
+\begin{align}
+    \begin{split}
+        (u_{\vv{p}},\phi_{ij}) &= \int \frac{\dd^3\vv{p}'}{(2\pi)^3} \Big[ a_{\vv{p}'ij} ( u_{\vv{p}} , u_{\vv{p}'} ) + a_{\vv{p}'ij}\dagger ( u_{\vv{p}} , u_{\vv{p}'}^* ) \Big] \\
+            &= \int \frac{\dd^3\vv{p}'}{(2\pi)^3} \Big[ a_{\vv{p}'ij} (2\pi)^3\delta^3(\vv{p} - \vv{p}') + 0 \Big] \\
+            &= a_{\vv{p}ij}\dagger \: ,
+    \end{split}
+    \\
+    \begin{split}
+        (u_{\vv{p}}^*,\phi_{ij}) &= \int \frac{\dd^3\vv{p}'}{(2\pi)^3} \Big[ a_{\vv{p}'ij} ( u_{\vv{p}}^* , u_{\vv{p}'} ) + a_{\vv{p}'ij}\dagger ( u_{\vv{p}}^* , u_{\vv{p}'}^* ) \Big] \\
+            &= \int \frac{\dd^3\vv{p}'}{(2\pi)^3} \Big[ 0 + a_{\vv{p}'ij}\dagger  \big\{ -(2\pi)^3\delta^3(\vv{p} - \vv{p}') \big\} \Big] \\
+            &= -a_{\vv{p}ij}\dagger \: ,
+    \end{split}
+\end{align}
+\end{subequations}
+hvilke er \cref{eq:Opg2_Q8_StepOperatorsUsingKGInnerProduct}, som vi skulle vise.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[9) Bosonisk kommutationsrelation for kreations- og annihilations-operatorerne]{\textbf{9)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[10) Hamiltonfunktion med kreations- og annihilationsoperatorer]{\textbf{10)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[11) Feltoperator overholder Heisenbergs bevægelsesligning]{\textbf{11)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[12) Lagrangedensitet invariant under $O(N)^2$ transformation]{\textbf{12)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[13) Vekselvirkning med og uden $O(N)^2$ symmetri]{\textbf{13)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[14) Generatoren af $O(N)$]{\textbf{14)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[15) Noetherstrøm associeret med $O(N)^2$ symmetri]{\textbf{15)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph[16) Ændringer hvis $\phi_{ij}$ komplekst i stedet for reelt]{\textbf{16)}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

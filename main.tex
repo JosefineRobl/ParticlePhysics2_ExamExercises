@@ -1,0 +1,27 @@
+\input{preamble.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\input{forside.tex}
+
+\tocloftpagestyle{fancy} % Sætter pagestyle til "fancy" for TOC (interferes not with tocloft-package, which the normal \pagestyle{facny} does)
+\tableofcontents
+
+\newpage
+
+\subfile{opgaver/opgave1}\newpage
+\subfile{opgaver/opgave2}\newpage
+\subfile{opgaver/opgave3}\newpage
+\subfile{opgaver/opgave4}\newpage
+\subfile{opgaver/opgave5}\newpage
+\subfile{opgaver/opgave6}\newpage
+
+
+\bibliography{bibliografi.bib}
+\bibliographystyle{ieeetr}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

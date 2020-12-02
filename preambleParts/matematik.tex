@@ -1,0 +1,103 @@
+\usepackage{amsmath,amssymb,bm,mathtools}
+\usepackage{mathrsfs} % Fancy skrevet bogstaver
+% \usepackage{gensymb} % Laver visse symboler (eks. gradetegn) i math- og text-mode.
+\usepackage{nicefrac} % Nice fractions
+
+% Differentiering
+\newcommand{\dif}[3][]{\frac{\dd^{#1}{#2}}{{\dd{#3}}^{#1}}} % Hård differentiering
+    % Differentieres f mht. x n gange skrive \dif[n]{f}{x}. For n=1 lades parentesen være tom, [].
+\newcommand{\pdif}[3][]{\frac{\partial^{#1}{#2}}{\partial {#3}^{#1}}} % Partiel differentiering
+    % Differentieres f mht. x n gange skrive \(p)dif[n]{f}{x}, hvor p giver bløde afledede. For n=1 lades parentesen være tom, [].
+\newcommand{\dt}[1]{\dot{#1}} % Afledt mht. t (dot-notation)
+\newcommand{\ddt}[1]{\ddot{#1}} % Dobbelt afledt mht. t (dobbel-dot)
+\newcommand{\dr}{\d r} % dr til f.eks. integraler som \dr
+\newcommand{\dx}{\d x} % dx til f.eks. integraler som \dx
+
+% Lighedstegn med ovenstående betingelser som \xleq{<betingelse>}
+\usepackage{extarrows} % Giver mulighed for at skrive over et lighedstegn
+\newcommand{\xleq}{\xlongequal}
+
+% Grænseværdier
+\newcommand{\Lim}[2]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{{#1} \rightarrow {#2}}\;$}}} % Limit med limits under "lim"
+\newcommand{\Liminf}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{{#1} \rightarrow \infty}\;$}}} % Limit gående mod uendelig
+\newcommand{\Limnul}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{{#1} \rightarrow 0}\;$}}} % Limit gående mod 0
+
+% Til Euler-Lagrange ligningen
+\newcommand{\el}[1]{\dif{t}{}\left(\pdif{\dt{#1}}{L}\right)}
+
+% Uendelige integraler
+\newcommand{\intInf}{\int_{-\infty}^{\infty}} % int_{-inf}^{inf}
+\newcommand{\intNul}{\int_0^{\infty}} % int_{0}^{inf}
+
+% Vektorer
+\newcommand{\TwoRowMat}[2]{\begin{bmatrix} #1 \\ #2 \end{bmatrix}} % Matrix med 2 rækker
+\newcommand{\ThreeRowMat}[3]{\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}} % Matrix med 3 rækker
+\newcommand{\FourRowMat}[4]{\begin{bmatrix} #1 \\ #2 \\ #3 \\ #4 \end{bmatrix}} % Matrix med 4 rækker
+\let\vaccent=\v % Omdøb \v{} til \vaccent{} så \v{} er en fri kommando
+\renewcommand{\v}[1]{\mathbf{#1}} % Vektor med fed
+\newcommand{\vv}[1]{\vec{\mathbf{#1}}} % Vektor med fed og pil
+\newcommand{\gv}[1]{{\boldsymbol{#1}}} % Vektor med græske bogstaver (fed)
+\newcommand{\vgv}[1]{\Vec{\gv{#1}}} % Vektor med græske bogstaver (fed og pil)
+\newcommand{\hatvec}[1]{\hat{\mathbf{#1}}} % Hatvektor
+\newcommand{\ihat}{\mathbf{\hat{\imath}}} % Enhedsvektor i
+\newcommand{\jhat}{\mathbf{\hat{\jmath}}} % Enhedsvektor j
+\newcommand{\khat}{\mathbf{\hat{k}}} % Enhedsvektor k
+\newcommand{\rhat}{\mathbf{\hat{r}}} % Enhedsvektor r
+\newcommand{\phihat}{\mathbf{\hat{\phi}}} % Enhedsvektor phi
+\newcommand{\thetahat}{\mathbf{\hat{\theta}}} % Enhedsvektor theta
+\newcommand{\xhat}{\mathbf{\hat{x}}} % Enhedsvektor x
+\newcommand{\yhat}{\mathbf{\hat{y}}} % Enhedsvektor y
+\newcommand{\zhat}{\mathbf{\hat{z}}} % Enhedsvektor z
+\newcommand{\nhat}{\mathbf{\hat{n}}} % Enhedsvektor n
+\newcommand{\shat}{\mathbf{\hat{s}}} % Enhedsvektor s
+\newcommand{\Grad}[1]{\vgv{\nabla} #1} % Gradient
+\let\divsymb=\div % Omdøb \div til \divsymb, så \div{} er en fri kommando
+\renewcommand{\div}[1]{\vgv{\nabla} \cdot \v{#1}} % Divergens
+\newcommand{\Curl}[1]{\vgv{\nabla} \times \v{#1}} % Curl
+    % Vil man tage div eller curl af græske bogstaver, skal man lade argumentet være f.eks. \gv{\mu} for µ-vektor
+
+% Pæne græske bogstaver
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+% Matematiske mængder
+\newcommand{\N}{\ensuremath{\mathbb{N}}} % Naturlige tal
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}} % Hele tal
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}} % Rationelle tal
+\newcommand{\R}{\ensuremath{\mathbb{R}}} % Reelle tal
+\newcommand{\C}{\ensuremath{\mathbb{C}}} % Komplekse tal
+\newcommand{\F}{\ensuremath{\mathbb{F}}} % Legeme tal
+\newcommand{\A}{\ensuremath{\mathbb{A}}} % Algebraiske tal
+
+% Belejlige definitioner
+\newcommand{\e}[1]{\cdot 10^{#1}} % *10^n ved \e{n}	
+\newcommand{\inv}[1]{\dfrac{1}{#1}} % 1/x ved \inv{x}
+\newcommand{\invsqrt}[1]{\dfrac{1}{\sqrt{#1}}} % 1/sqrt{x} ved \invsqrt{x}
+\newcommand{\invsqrtTo}{\invsqrt{2}} % 1/sqrt{2}
+\newcommand{\sqrtTo}{\sqrt{2}} % sqrt{2}
+\newcommand{\sqrtTre}{\sqrt{3}} % sqrt{3}
+\newcommand{\sqf}[2]{\sqrt{\frac{#1}{#2}}} % \sqrt{\frac{a}{b}} som \sqf{a}{b}
+\newcommand{\sqfBot}{\invsqrt} % \frac{1}{\sqrt{a}} som \sqfBot{a}
+% \newcommand{\half}{\frac{1}{2}} % \frac{1}{2}
+
+% Redefinering af funktioner, så de tillader størrelsestilpassende parenteser
+% \newcommand{\pexp}[1]{\exp\left( #1 \right)} % Eksponentialfunktion
+% \newcommand{\bexp}[1]{\exp\left[ #1 \right]} % Eksponentialfunktion
+%...
+\newcommand{\pfrac}[2]{\left(\frac{#1}{#2}\right)} % Brøker, \pfrac{a}{b} for (a/b)
+
+% Identitet
+\usepackage{bbold}
+\newcommand{\id}{\mathbb{1}} % Identiteten skrevet som 1 med to steger (som matematiske mængder normalt er)
+
+% Matematisk notation
+\newcommand{\dak}{^{\dagger}}	% Hermitisk konjugering skrives "\dak"
+\newcommand{\T}{^\intercal} % Transponering som \T
+% \DeclareMathOperator\erf{erf}	% Error function as \erf
+% \DeclareMathOperator\erfc{erfc}	% Complementary error function as \erfc
+
+% Resten af en sekvens med højereordensled
+\newcommand{\Onot}{\mathcal{O}}
+
+% Negation af matematiske tegn
+\usepackage{centernot} % Brug \centernot{<command>}

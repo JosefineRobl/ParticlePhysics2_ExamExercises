@@ -1,0 +1,36 @@
+\title{Partikelfysik II - Eksamensopgaver}
+\author{Josefine Bjørndal Robl}
+\date{\today}
+
+% Marginer
+\usepackage[tmargin=1.0in, bmargin=1in, lmargin=1.25in, rmargin=1.25in]{geometry}
+
+% Header og footer
+\usepackage{lastpage} % Tillader reference til sidetal på sidste side
+\usepackage{fancyhdr} % Tillader mere personliggørelse af header og footer
+\pagestyle{fancy} % Sætter pagestyle til "fancy", så "fancyhdr"-pakken bruges
+\newcommand{\headerFooterFontStyle}{\small\scshape} % Font & størrelse for header og footer
+\lhead{\headerFooterFontStyle
+    Josefine Bjørndal Robl \\
+	Aarhus Universitet - 201706760
+}
+\chead{}
+\rhead{\headerFooterFontStyle
+	Partikelfysik II \\
+	Eksamensopgaver
+}
+\fancyfoot[L]{\headerFooterFontStyle
+    \ifthenelse{\equal{\thepage}{1} \OR \equal{\thepage}{2}}{
+        Indholdsfortegnelse for eksamensopgaver % Speciel "titel" i første og anden sidefod
+        % Indholdsfortegnelse for dispositioner % Speciel "titel" i første sidefod
+    }{
+        \nouppercase{\leftmark}
+        % Spg. \nouppercase{\leftmark}
+    }
+} % Sætter i footer venstre side til "Spg. <titel>" givet ved \sectionmark{titel} under hver section titel, untagen hvor if-then statementet passer (her side 1 og 2)
+\cfoot{}
+\rfoot{\headerFooterFontStyle
+    Side \thepage\ af \pageref{LastPage}
+}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
