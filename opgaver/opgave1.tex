@@ -18,7 +18,7 @@ Naivt set kunne man tro, at man kunne benytte en trevektor, $\vv{e}$, som en gen
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph*{\textbf{2)}}
+\paragraph*{\textbf{2)}} \label{sec:Opg1_Q2}
 
 Antag at vi insisterer på at $e_\mu p^\mu = 0$ og $e_\mu e^\mu = -1$, hvor $p^\mu$ er firimpulsen for partiklen. Bevis at disse relationer vil holde i ethvert referencesystem.
 
@@ -28,7 +28,7 @@ Antag at vi insisterer på at $e_\mu p^\mu = 0$ og $e_\mu e^\mu = -1$, hvor $p^\
 \paragraph*{\textbf{3)}}
 
 Betragt hvilesystemet for spin-$1$-partiklen og lad os som basis for de tre polarisationstilstande vælge de standard kartesiske basisvektorer for et tredimensionelt vektorrum, blot skrevet som firvektorer, altså
-\begin{align}
+\begin{align} \label{eq:Opg1_Q3_PolarisationStatesInRestFrame}
     e^\mu (\xhat) = \FourRowMat{0}{1}{0}{0} \: , \quad
     e^\mu (\yhat) = \FourRowMat{0}{0}{1}{0} \: , \quad \text{og} \quad
     e^\mu (\zhat) = \FourRowMat{0}{0}{0}{1} \: .
@@ -41,10 +41,10 @@ Antag at partiklens treimpuls, $\vv{p}$, er langs $\zhat$-retningen. Vis at de g
 
 \paragraph*{\textbf{4)}}
 
-Ofte bruges en relateret men en smule anderledes basis for poolarisationstilstandene for et massiv spin-$1$-felt, de såkaldte helicitetstilstande, hvilke indiceres med heltallet $\lambda$. Disse har formen
-\begin{align}
-    e^\mu(\lambda = \pm 1) = \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0} \: , \quad \text{og} \quad
-    e^\mu(\lambda = 0) = \invsqrtTo \FourRowMat{0}{0}{0}{1} \: .
+Ofte bruges en relateret men en smule anderledes basis for poolarisationstilstandene for et massiv spin-$1$-felt, de såkaldte helicitetstilstande, hvilke indekseres med heltallet $\lambda$. Disse har formen
+\begin{align} \label{eq:Opg1_Q4_HelicityStates}
+    e^\mu(\lambda = \pm 1) &= \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0} \: , \quad \text{og} \quad
+    e^\mu(\lambda = 0) = \FourRowMat{0}{0}{0}{1} \: .
 \end{align}
 
 Vis at hvis vi roterer disse polarisationstilstande omkring $\zhat$-aksen med en vinkel på $\theta$, da bliver de multipliceret med en faktor $\pexp{-i\lambda\theta}$. Argumentér for at denne rotation medfører, at $\lambda$ er egenværdien for den kvantemekaniske rotationsoperator, $J_z$, for hver af tilstandene.
@@ -54,7 +54,7 @@ Vis at hvis vi roterer disse polarisationstilstande omkring $\zhat$-aksen med en
 
 \paragraph*{\textbf{5)}}
 
-Heliciteten for en partikel er defineret som projektionen af partiklens spin på dens impuls, altså $\vv{J}\cdot\vv{p}$, hvor $J$ er spinoperatoren og $\vv{p}$ er treimpulsen. Argumentér for at hvis vi booster fra hvilesystemet til et system, som bevæger sig med partiklen med hastighed $\vv{p}/E$, så bliver $J_z$ til helicitetsoperatoren.
+Heliciteten for en partikel er defineret som projektionen af partiklens spin på dens impuls, altså $\vv{J}\cdot\vv{p} / \abs{\vv{p}}$, hvor $J$ er spinoperatoren og $\vv{p}$ er treimpulsen. Argumentér for at hvis vi booster fra hvilesystemet til et system, som bevæger sig med partiklen med hastighed $\vv{p}/E$, så bliver $J_z$ til helicitetsoperatoren.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,7 +64,7 @@ Heliciteten for en partikel er defineret som projektionen af partiklens spin på
 Vis at polarisationstilstandene med veldefineret helicitet for en spin-$1$-partikel, som bevæger sig langs $\zhat$-retningen, er
 \begin{align}
     e^\mu(\lambda = \pm 1) = \mp \left(0,\, \frac{\vv{e}_x \pm i\vv{e}_y}{\sqrt{2}}\right) \: , \quad \text{og} \quad
-    e^\mu(\lambda = 0) = \mp \left(\abs{p},\, 0,\, 0,\, E\right) \: ,
+    e^\mu(\lambda = 0) = \inv{m} \left(\abs{\vv{p}},\, 0,\, 0,\, E\right) \: ,
 \end{align}
 hvor $\vv{e}_x$ og $\vv{e}_y$ er de standard trekomponent basisvektorer.
 
@@ -82,51 +82,168 @@ Antag at nogen beder dig opstille en teori for en partikel med et generelt spin 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph[1) Polarisationsvektor for massivt spin-$1$.fekt]{\textbf{1)}}
+\paragraph[1) Polarisationsvektor for massivt spin-$1$-felt]{\textbf{1)}}
 
+Idet at man udfører en Lorentztransformation vil denne påvirke både påvirke rum og tid, da disse bliver blandet under transformationen. Derfor er det ikke nok kun at beskrive polarisationen med en trevektor i rummet. Den mest generelle måde at beskrive både de rummelige og det tidslige koordinat i relativitetsteori er med en firvektor, hvorfor en firvektor også skal benyttes til at beskrive polarisationen, $e^\mu$. Ydermere giver det mening at benytte en firvektor til at beskrive polarisationen, da vi normalt ønsker vores teorier til at være Lorentzinvariant, hvilket en sammentrækning (eng: contraction) af firvektorer er.
 
+Som beskrevet i opgavebeskrivelsen, så har partiklen tre frihedsgrader for kvantepolarisationstilstandene. Derfor må der findes tre ortogonale og dermed uafhængige polarisationsfirvektorer.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[2) $e_\mu p^\mu = 0$ og $e_\mu e^\mu = 1$]{\textbf{2)}}
 
+Lad $\Lambda_\nu^\mu$ betegne en general Lorentztransformation således, at en arbitrær firvektor $x^\nu$ ved transformation til det nye system ved $x'^\mu = \Lambda_\nu^\mu x^\nu$. Sammentrækningen mellem en arbitrær kontravariant firvektor $x^\mu$ og en arbitrær kovariant firvektor $y_\mu$ er i det transformerede referencesystem derved
+\begin{align} \label{eq:Opg1_A2_ContractionsInvariantUnderLorentzTransformation}
+\begin{split}
+    y'_\mu x'^\mu &= \eta_{\mu\nu} y'^\nu x'^\mu \\
+        &= \eta_{\mu\nu} \Lambda_\alpha^\nu y^\alpha \Lambda_\beta^\mu x^\beta \\
+        &= \eta_{\mu\nu} \Lambda_\alpha^\nu \eta^{\alpha\gamma} y_\gamma \Lambda_\beta^\mu x^\beta \\
+        &= \eta_{\mu\nu} \Lambda_\alpha^\nu \Lambda_\beta^\mu \eta^{\alpha\gamma} y_\gamma x^\beta \\
+        &= \eta_{\beta\alpha} \eta^{\alpha\gamma} y_\gamma x^\beta \\
+        &= \delta_\beta^\gamma y_\gamma x^\beta \\
+        &= y_\beta x^\beta \: ,
+\end{split}
+\end{align}
+hvor $\eta_{\alpha\beta}$ er den metriske tensor, hvilken for Minkowskirum er invariant under Lorentztransformation, $\eta_{\mu\nu} \Lambda_\beta^\mu \Lambda_\alpha^\nu = \eta_{\beta\alpha}$, og det er i det ovenstående blevet benyttet at $\eta_{\beta\alpha} \eta^{\alpha\gamma} = \delta_\beta^\gamma$, hvilket igen gør sig gældende i fladt Minkownskirum.
 
+Af \cref{eq:Opg1_A2_ContractionsInvariantUnderLorentzTransformation} kan det ses, at en sammentrækning af to arbitrære firvektorer er Lorentzinvariant. Dermed, hvis vi insisterer på at $e_\mu p^\mu = 0$ og $e_\mu e^\mu = -1$ i ét referencesystem, da må de gøre sig gældende i ethvert referencesystem.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[3) Generelle polarisationsvektorer]{\textbf{3)}}
 
+Jeg vil starte med at notere, at der beregnes i naturlige enheder, altså er $\hbar = c = 1$.
 
+Idet vi kender polarisationstilstandene i hvilesystemet, da kan vi benytte en Lorentztransformation til at finde de generelle polarisationstilstande. Vi benytter dermed en Lorentztransformation, som transformerer fra hvilesystemet til et system, hvori partiklen har treimpuls $\vv{p}$ i $\zhat$-retningen, altså $\abs{\vv{p}} = p_z$. Dette kan gøres på en af to måder, som begge giver samme resultat: 1) Vi benytter en Lorentztransformation fra hvilesystemet til referencesystemet med impuls $-\vv{p}$ med hensyn til partiklen, eller 2) vi benytter en invers Lorentztransformation fra partiklens hvilesystem til laboratoriesystemet, hvor partiklen har impuls $\vv{p}$. For begge tilfælde er Lorentztransformationen
+\begin{align} \label{eq:Opg1_A3_LorentzTransformation}
+    \Lambda_\mu^\nu &= \FourRowMat{\gamma & 0 & 0 & \beta\gamma}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\beta\gamma & 0 & 0 & \gamma}
+        = \FourRowMat{\gamma & 0 & 0 & \abs{\vv{v}}\gamma}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{v}}\gamma & 0 & 0 & \gamma}
+        = \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m}
+\end{align}
+hvor vi har benyttet, at $\vv{p} = \gamma m \vv{v}$ og at energien er givet ved $E = \gamma m$. Benytter vi nu ovenstående Lorentztransformation, \cref{eq:Opg1_A3_LorentzTransformation}, på polarisationstilstandene i hvilesystemet, \cref{eq:Opg1_Q3_PolarisationStatesInRestFrame}, får vi de generelle polarisationstilstande i det nye system til
+\begin{subequations} \label{eq:Opg1_A3_GeneralPolarisationVectors}
+\begin{align}
+    \Lambda_\mu^\nu e^\mu (\xhat) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{1}{0}{0}
+        = \FourRowMat{0}{1}{0}{0}
+        = e^\mu (\xhat) \: , \\
+    \Lambda_\mu^\nu e^\mu (\yhat) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{1}{0}
+        = \FourRowMat{0}{0}{1}{0}
+        = e^\mu (\yhat) \: , \quad \text{og} \\
+    \Lambda_\mu^\nu e^\mu (\zhat) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{0}{1}
+        = \FourRowMat{\abs{\vv{p}}/m}{0}{0}{E/m} \: ,
+\end{align}
+\end{subequations}
+hvilket var det, som skulle vises.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[4) $\lambda$ egenværdi for rotationsoperator $J_z$ for helicitetstilstande]{\textbf{4)}}
 
+% \begin{align}
+%     e^\mu(\lambda = \pm 1) = \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0} \: , \quad \text{og} \quad
+%     e^\mu(\lambda = 0) = \invsqrtTo \FourRowMat{0}{0}{0}{1} \: .
+% \end{align}
 
+% Vis at hvis vi roterer disse polarisationstilstande omkring $\zhat$-aksen med en vinkel på $\theta$, da bliver de multipliceret med en faktor $\pexp{-i\lambda\theta}$. Argumentér for at denne rotation medfører, at $\lambda$ er egenværdien for den kvantemekaniske rotationsoperator, $J_z$, for hver af tilstandene.
+
+For en rotation med en vinkel $\theta$ omkring $\zhat$-aksen er rotationsmatricen
+\begin{align}
+    R_z(\theta) &= \FourRowMat{1 & 0 & 0 & 0}{0 & \cos(\theta) & - \sin(\theta) & 0}{0 & \sin(\theta) & \cos(\theta) & 0}{0 & 0 & 0 & 1} \: .
+\end{align}
+Benytter vi denne på helicitetstilstandene, \cref{eq:Opg1_Q4_HelicityStates}, får vi
+\begin{subequations}
+\begin{align}
+    \begin{split}
+        R_z(\theta) e^\mu(\lambda = \pm 1) &= \FourRowMat{1 & 0 & 0 & 0}{0 & \cos(\theta) & - \sin(\theta) & 0}{0 & \sin(\theta) & \cos(\theta) & 0}{0 & 0 & 0 & 1} \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0} \\
+            &= \invsqrtTo \FourRowMat{0}{\mp \cos(\theta) + i \sin(\theta)}{\mp \sin(\theta) - i \cos(\theta)}{0} \\
+            &= \invsqrtTo \FourRowMat{0}{-1 \big[\cos(\theta) \mp i \sin(\theta)\big]}{-i \big[\cos(\theta) \mp i\sin(\theta)\big]}{0} \\
+            &= \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0} \big[ \cos(\theta) \mp \sin(\theta) \big] \\
+            &= e^\mu(\lambda = \pm 1) \pexp{\mp i\theta} \\
+            &= e^\mu(\lambda = \pm 1) \pexp{-i[\pm 1]\theta} \\
+            &= e^\mu(\lambda = \pm 1) \pexp{-i\lambda\theta} \: ,
+    \end{split}
+\end{align}
+idet at $\pexp{\pm i \theta} = \cos(\theta) \pm i \sin(\theta)$, og
+\begin{align}
+    \begin{split}
+        R_z(\theta) e^\mu(\lambda = 0) &= \FourRowMat{1 & 0 & 0 & 0}{0 & \cos(\theta) & - \sin(\theta) & 0}{0 & \sin(\theta) & \cos(\theta) & 0}{0 & 0 & 0 & 1} \FourRowMat{0}{0}{0}{1} \\
+            &= \FourRowMat{0}{0}{0}{1} \\
+            &= e^\mu(\lambda = 0) \\
+            &= e^\mu(\lambda = 0) \id \\
+            &= e^\mu(\lambda = 0) \pexp{0} \\
+            &= e^\mu(\lambda = 0) \pexp{-i \lambda \theta} \: .
+    \end{split}
+\end{align}
+\end{subequations}
+
+Ergo et det vist, at under rotation omkring $\zhat$-aksen med en vinkel $\theta$, så bliver
+\begin{align} \label{eq:Opg1_A4_RotationOfPolarisationStates}
+    e^\mu(\lambda) \xrightarrow{R_z(\theta)} e^\mu(\lambda) \pexp{-i\lambda\theta} \: .
+\end{align}
+
+Siden rotationen omkring $\zhat$-aksen af de tre helicitetstilstande ikke ændrer retningen af deres stråler, da er tilstandene egentilstande for rotation omkring $\zhat$-aksen.
+
+Den kvantemekaniske rotationsoperator for en rotation omkring $\zhat$-aksen er givet som $\mathcal{D}_\zhat (\theta) = \pexp{-iJ_z\theta}$ i naturlige enheder ($\hbar = c = 1$). Dermed må vi fra \cref{eq:Opg1_A4_RotationOfPolarisationStates} have, at
+\begin{align}
+    \mathcal{D}_\zhat (\theta) e^\mu(\lambda) &= \pexp{-iJ_z\theta} e^\mu(\lambda)
+        = \pexp{-i\lambda\theta} e^\mu(\lambda) \: ,
+\end{align}
+for $\lambda = 0,\pm 1$ og dermed at $J_z e^\mu(\lambda) = \lambda e^\mu(\lambda)$, hvilket tydeligere kan ses fra Taylorudvidelsen af eksponentialfunktionerne
+\begin{align}
+    \left( \sum_{n=0}^\infty \inv{n!}(-iJ_z\theta) \right) e^\mu(\lambda) &= \left( \sum_{n=0}^\infty \inv{n!}(-i\lambda\theta) \right) e^\mu(\lambda) \: ,
+\end{align}
+hvilket skal være sandt for en et vilkårligt $\theta$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[5) $J_z$ bliver helicitetsoperator]{\textbf{5)}}
 
+FIND BEDRE ARGUMENTATION FOR DETTE, DA DER MÅSKE ER EN SMULE PROBLEMER MED AT FORSTÅ DET, SOM CLAUS HAR SKREVET.
 
+% Heliciteten for en partikel er defineret som projektionen af partiklens spin på dens impuls, altså $\vv{J}\cdot\vv{p}$, hvor $J$ er spinoperatoren og $\vv{p}$ er treimpulsen. Argumentér for at hvis vi booster fra hvilesystemet til et system, som bevæger sig med partiklen med hastighed $\vv{p}/E$, så bliver $J_z$ til helicitetsoperatoren.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[6) Polarisationstilstande for spin-$1$-partikel i bevægelse langs $\zhat$]{\textbf{6)}}
 
+% Polarisationstilstandene med veldefineret helicitet for en spin-1-partikel er givet i \cref{eq:Opg1_Q4_HelicityStates}, og for at finde ud af, hvordan disse ser ud, når partiklen bevæger sig langs $\zhat$-retningen med treimpuls $\vv{p}$, da benytter vi det inverse Lorentzboost fra \cref{eq:Opg1_A3_LorentzTransformation}
+% \begin{subequations}
+% \begin{align}
+%     e^\mu(\lambda = \pm 1) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0} \\
+%     e^\mu(\lambda = 0) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{0}{1}
+% \end{align}
+% \end{subequations}
 
+% \begin{align}
+%     \Lambda_\mu^\nu &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m}
+% \end{align}
+
+
+SKRIV HER HVORDAN MAN KUNNE HAVE ARGUMENTERET SIG FREM TIL SVARET I STEDET?
+
+% Vi betragter polarisationstilstandene i \cref{eq:Opg1_Q3_PolarisationStatesInRestFrame} og booster ved brug af den inverse Lorentztransformation i \cref{eq:Opg1_A3_LorentzTransformation} til systemet, hvor partiklen bevæger sig med impuls $\vv{p}$ i $\zhat$-retningen.
+% \begin{align}
+%     e^\mu(\lambda = \pm 1) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m}
+% \end{align}
+
+% Vis at polarisationstilstandene med veldefineret helicitet for en spin-$1$-partikel, som bevæger sig langs $\zhat$-retningen, er
+% \begin{align}
+%     e^\mu(\lambda = \pm 1) = \mp \left(0,\, \frac{\vv{e}_x \pm i\vv{e}_y}{\sqrt{2}}\right) \: , \quad \text{og} \quad
+%     e^\mu(\lambda = 0) = \inv{m} \left(\abs{\vv{p}},\, 0,\, 0,\, E\right) \: ,
+% \end{align}
+% hvor $\vv{e}_x$ og $\vv{e}_y$ er de standard trekomponent basisvektorer.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[7) Teori for spin-$S$ partikel med $S > 1$]{\textbf{7)}}
 
-
+% Antag at nogen beder dig opstille en teori for en partikel med et generelt spin $S > 1$. Ved brug af det, som du har lært i de foregående delopgaver, hvordan vil du da generalisere proceduren for at konstruere polarisationstilstande for et sådan felt? Skitser blot proceduren; \emph{lad være med} gå i gang med de detaljerede beregninger.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

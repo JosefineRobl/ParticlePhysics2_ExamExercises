@@ -11,7 +11,12 @@
 \Crefname{subsection}{Afsnit}{Afsnittene}
 \crefname{subsubsection}{afsnit}{afsnittene}
 \Crefname{subsubsection}{Afsnit}{Afsnittene}
+\crefname{footnote}{fodnote}{fodnoterne}
+\Crefname{footnote}{Fodnote}{Fodnoterne}
+\crefname{page}{side}{siderne}
+\Crefname{page}{Side}{Siderne}
 
 % Referencer med parenteser omkring som \ref{ref1,ref2,...,refN}
-\creflabelformat{equation}{#2(#1)#3}
-\crefrangelabelformat{equation}{#3(#1)#4 to #5(#2)#6}
+\creflabelformat{equation}{#2(#1)#3} % Ikke sikker på, hvad denne gør
+\crefrangelabelformat{equation}{#3(#1)#4 til #5(#2)#6} % Ændrer 'x to y' til 'x til y'
+\newcommand\crefpairconjunction{ og } % Ændrer 'x and y' til 'x og y'

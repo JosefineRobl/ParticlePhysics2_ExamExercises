@@ -7,7 +7,7 @@
 \section{Den lineære sigmamodel}
 
 Betragt den følgende Lagrangedensitet
-\begin{align}
+\begin{align} \label{eq:Opg6_Lagrangian}
     \L &= \inv{2} \left( \partial_\mu \sigma \right) \left( \partial^\mu \sigma \right) + \inv{2} \left( \partial_\mu \pi \right) \left( \partial^\mu \pi \right) - \inv{2} m^2 \sigma^2 - \lambda v \sigma^3 - \lambda v \sigma \pi^2 - \inv{4} \lambda \left( \sigma^2 + \pi^2 \right)^2 \: ,
 \end{align}
 hvor $\sigma$ og $\pi$ er skalarfelter og $v^2 = m^2/(2\lambda)$.
@@ -31,7 +31,7 @@ Ved at kigge på $\L$, hvad vil du så mene, at massen af $\sigma$ og $\pi$ er?
 
 \paragraph*{\textbf{3)}}
 
-Tegn alle de lovlige vekselvirkningsvertices for denne Lagrangedensitet og bestem deres tilsvarende koblingskonstanter.
+Tegn alle de lovlige vekselvirkningsknudepunkter (eng: interaction vertices) for denne Lagrangedensitet og bestem deres tilsvarende koblingskonstanter.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,9 +45,8 @@ Tegn alle loopkorrigeringerne til $\pi$-propagatoren. Du skal finde fem forskell
 
 \paragraph*{\textbf{5)}}
 
-Betragt diagrammet hvor der er én $\pi$ og én $\sigma$, som løber i loopet (eng: running 
-around the loop). Dette tillades af $\pi\pi\sigma$-ledet for andenordensperturbation. Vis at diagrammets amplitude er
-\begin{align}
+Betragt diagrammet hvor der er én $\pi$ og én $\sigma$, som løber i loopet (eng: running around the loop). Dette tillades af $\pi\pi\sigma$-ledet for andenordensperturbation. Vis at diagrammets amplitude er
+\begin{align} \label{eq:Opg6_A5_AmplitudeOfLoopCorrection}
     4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4} \inv{k^2 - m^2} \inv{(k + p)^2} \: .
 \end{align}
 Er amplituden endelig eller uendelig, og hvis den er uendelig, hvordan divergerer den så for store $k$?\\
@@ -83,55 +82,228 @@ I de ovenstående opgaver er loopkorrektionerne blevet betragtet til laveste ord
 
 \paragraph[1) Dimension af felter og koblingskostanter i $\L$]{\textbf{1)}}
 
+Først betragter vi effekten af naturlige enheder $\hbar = c = 1$: Idet at $c = 1$, da bliver tid og sted sat på lige fod $1 = c = [l]/[t]$, hvorfor $[\text{længde}] = [\text{tid}]$. Ligeså gør det sig gældende, at når $c = 1$ så giver energi-impulsrelationen ($E^2 = p^2 + m^2$) at $[E] = [m]$. Sammenhængen mellem disse to sæt af sammenhænge findes ved $\hbar = 1$, hvilket gør at $E = \omega$, altså $[E] = [t]$. Ergo betyder naturlige enheder, at
+\begin{align}
+    [\text{længde}] = [\text{tid}] = [\text{energi}]^{-1} = [\text{masse}]^{-1} \: .
+\end{align}
 
+Dimensionen af alle felter og koblingskonstanter i $\L$ vil nu blive udtrykt i enheder af energi. Først bemærkes det, at Lagrangedensiteten må have dimension $[\L] = [E]$, idet at Lagrangefunktionen er dimensionsløs $[1] = [\int \dd^4 x] [\L] = ([l]^3[t]^1) [\L] = [E]^{-4} [\L] \Rightarrow [\L] = [E]^4$. Dermed skal alle led i Lagrangedensiteten altså have dimensionen $[E]^4$.
+
+Først betragtes de kinetiske led. Siden $[\partial_\mu] = [E]$, da må $[\sigma] = [\pi] = [E]$. Dette stemmer også for tredje led i \cref{eq:Opg6_Lagrangian} med $[m]^2 [\sigma]^2 = [E]^2 [E]^2 = [E]^4$. For det fjerde led i Lagrangedensiteten (det femte led kunne her også have været brugt), hvor $[E]^4 = [\lambda v \sigma^3] = [\lambda v] [E]^3 \Rightarrow [\lambda v] = [E]$. Fra sidste led i Lagrangedensiteten har vi dog, at $[\lambda] = [1]$ idet $[(\sigma^2 + \pi^2)^2] = [E]^4$, hvormed $[v] = [E]$. Dermed har vi tilsammen at
+\begin{align}
+\begin{split}
+    [E] &= [\sigma] = [\pi] = [v] \quad \text{og} \\
+    [1] &= [\lambda] \: .
+\end{split}
+\end{align}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[2) Massen af skalarfelterne $\pi$ og $\sigma$]{\textbf{2)}}
 
-
+Betragter vi Lagrangedensiteten i \cref{eq:Opg6_Lagrangian} ses det, at den kan opdeles i et frit Lagrangedensitetsled og et vekselvirknings-Lagrangedensitetsled, hvor sidstnævnte er de sidste tre led. Dermed er det frie Lagrangedensitetsled
+\begin{align} \label{eq:Opg6_A2_FreeLagrangian}
+    \L_0 &= \inv{2} \left( \partial_\mu \sigma \right) \left( \partial^\mu \sigma \right) + \inv{2} \left( \partial_\mu \pi \right) \left( \partial^\mu \pi \right) - \inv{2} m^2 \sigma^2 \: .
+\end{align}
+Den generelle Lagrangedensitet for et frit skalarfelt $\phi$ er
+\begin{align} \label{eq:Opg6_A2_FreeLagrangianGeneral}
+    \L_{0,\textrm{gen}} &= \inv{2} \left( \partial_\mu \phi \right) \left( \partial^\mu \phi \right) - \inv{2} m^2 \phi^2 \: ,
+\end{align}
+så sammenlignes \cref{eq:Opg6_A2_FreeLagrangian} med \cref{eq:Opg6_A2_FreeLagrangianGeneral} for begge felter, $\sigma$ og $\pi$, ses det, at massen af $\sigma$-feltet er $m_\sigma = m$, mens massen af $\pi$-feltet er $m_\pi = 0$. Altså
+\begin{align}
+    m_\sigma &= m \qquad \text{og} \qquad m_\pi = 0 \: .
+\end{align}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph[3) Vekselvirkningsvertices og tilsvarende koblingskostanter for Lagrangedensiteten $\L$]{\textbf{3)}}
+\paragraph[3) Vekselvirkningsknudepunkter og tilsvarende koblingskostanter for Lagrangedensiteten $\L$]{\textbf{3)}}
 
+Siden der er 5 led i vekselvirkningsledet for Lagrangedensiteten i \cref{eq:Opg6_Lagrangian} forventes også 5 Feynmandiagrammer med vekselvirkning. Koblingskonstanterne tilhørende vekselvirkningsknudepunkterne er angivet på Feynmandiagrammerne, og for en Lagrangedensitet på formen $\L = \L_0 + \L_I$ med vekselvirkningen $\L_I = -k\phi_j^n$ er koblingskonstanten givet som $-i k$.
 
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex [label={right:$-i \lambda v$}] (vertex);
+        \vertex [above left = of vertex] (sigmaUpLeft) {\(\sigma\)};
+        \vertex [above right = of vertex] (sigmaUpRight) {\(\sigma\)};
+        \vertex [below = 2.6em of vertex] (sigmaDown) {\(\sigma\)};
+        \diagram*{
+            (sigmaDown) -- [scalar] (vertex) -- [scalar] (sigmaUpLeft),
+            (vertex) -- [scalar] (sigmaUpRight),
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex [label={right:$-i \lambda v$}] (vertex);
+        \vertex [above left = of vertex] (sigmaUpLeft) {\(\sigma\)};
+        \vertex [above right = of vertex] (piUpRight) {\(\pi\)};
+        \vertex [below = 2.6em of vertex] (piDown) {\(\pi\)};
+        \diagram*{
+            (piDown) -- [ghost] (vertex) -- [scalar] (sigmaUpLeft),
+            (vertex) -- [ghost] (piUpRight),
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex [label={right:$-i \frac{1}{4} \lambda$}] (vertex);
+        \vertex [above left = of vertex] (sigmaUpLeft) {\(\sigma\)};
+        \vertex [above right = of vertex] (sigmaUpRight) {\(\sigma\)};
+        \vertex [below left = of vertex] (sigmaDownLeft) {\(\sigma\)};
+        \vertex [below right = of vertex] (sigmaDownRight) {\(\sigma\)};
+        \diagram*{
+            (sigmaDownLeft) -- [scalar] (vertex) -- [scalar] (sigmaUpLeft),
+            (sigmaDownRight) -- [scalar] (vertex) -- [scalar] (sigmaUpRight),
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex [label={right:$-i \frac{1}{4} \lambda$}] (vertex);
+        \vertex [above left = of vertex] (sigmaUpLeft) {\(\sigma\)};
+        \vertex [above right = of vertex] (piUpRight) {\(\pi\)};
+        \vertex [below left = of vertex] (piDownLeft) {\(\pi\)};
+        \vertex [below right = of vertex] (sigmaDownRight) {\(\sigma\)};
+        \diagram*{
+            (piDownLeft) -- [ghost] (vertex) -- [scalar] (sigmaUpLeft),
+            (sigmaDownRight) -- [scalar] (vertex) -- [ghost] (piUpRight),
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex [label={right:$-i \frac{1}{4} \lambda$}] (vertex);
+        \vertex [above left = of vertex] (piUpLeft) {\(\pi\)};
+        \vertex [above right = of vertex] (piUpRight) {\(\pi\)};
+        \vertex [below left = of vertex] (piDownLeft) {\(\pi\)};
+        \vertex [below right = of vertex] (piDownRight) {\(\pi\)};
+        \diagram*{
+            (piDownLeft) -- [ghost] (vertex) -- [ghost] (piUpLeft),
+            (piDownRight) -- [ghost] (vertex) -- [ghost] (piUpRight),
+        };
+    \end{feynman}
+\end{tikzpicture}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[4) Loopkorrigeringer til $\pi$-propagatoren]{\textbf{4)}}
 
+Loopkorrigeringerne for Lagrangedensiteten i \cref{eq:Opg6_Lagrangian} er vist herunder.
 
+\begin{tikzpicture}
+    \begin{feynman}
+        \vertex (vertexUp);
+        \vertex [below = 2.6em of vertexUp] (vertexDown);
+        \vertex [above = 2.6em of vertexUp] (piUp) {\(\pi\)};
+        \vertex [below = 2.6em of vertexDown] (piDown) {\(\pi\)};
+        \diagram*{
+            (piDown) -- [ghost] (vertexDown) -- [scalar, half left, edge label = $\sigma$] (vertexUp),
+            (vertexDown) -- [ghost, half right, edge label = $\pi$, swap] (vertexUp) -- [ghost] (piUp),
+            % swap is for swapping the side of the edge label placement
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+    \begin{feynman}
+        \vertex (vertex);
+        \vertex [left = 3em of vertex] (loopOutermostPoint);
+        \vertex [above = 3.9em of vertex] (piUp) {\(\pi\)};
+        \vertex [below = 3.9em of vertex] (piDown) {\(\pi\)};
+        \diagram*{
+            (piDown) -- [ghost] (vertex) -- [ghost] (piUp),
+            (vertex) -- [ghost, half right, edge label = $\pi$, swap] (loopOutermostPoint) -- [ghost, half right] (vertex),
+            % swap is for swapping the side of the edge label placement
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+    \begin{feynman}
+        \vertex (vertex);
+        \vertex [left = 3em of vertex] (loopOutermostPoint);
+        \vertex [above = 3.9em of vertex] (piUp) {\(\pi\)};
+        \vertex [below = 3.9em of vertex] (piDown) {\(\pi\)};
+        \diagram*{
+            (piDown) -- [ghost] (vertex) -- [ghost] (piUp),
+            (vertex) -- [scalar, half right, edge label = $\sigma$, swap] (loopOutermostPoint) -- [scalar, half right] (vertex),
+            % swap is for swapping the side of the edge label placement
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+    \begin{feynman}
+        \vertex (vertex);
+        \vertex [left = 3em of vertex] (loopInnermostPoint);
+        \vertex [left = 3em of loopInnermostPoint] (loopOutermostPoint);
+        \vertex [above = 3.9em of vertex] (piUp) {\(\pi\)};
+        \vertex [below = 3.9em of vertex] (piDown) {\(\pi\)};
+        \diagram*{
+            (piDown) -- [ghost] (vertex) -- [ghost] (piUp),
+            (vertex) -- [scalar, edge label = $\sigma$, swap] (loopInnermostPoint),
+            (loopInnermostPoint) -- [ghost, half right, edge label = $\pi$, swap] (loopOutermostPoint) -- [ghost, half right] (loopInnermostPoint),
+            % swap is for swapping the side of the edge label placement
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+    \begin{feynman}
+        \vertex (vertex);
+        \vertex [left = 3em of vertex] (loopInnermostPoint);
+        \vertex [left = 3em of loopInnermostPoint] (loopOutermostPoint);
+        \vertex [above = 3.9em of vertex] (piUp) {\(\pi\)};
+        \vertex [below = 3.9em of vertex] (piDown) {\(\pi\)};
+        \diagram*{
+            (piDown) -- [ghost] (vertex) -- [ghost] (piUp),
+            (vertex) -- [scalar, edge label = $\sigma$, swap] (loopInnermostPoint),
+            (loopInnermostPoint) -- [scalar, half right, edge label = $\sigma$, swap] (loopOutermostPoint) -- [scalar, half right] (loopInnermostPoint),
+            % swap is for swapping the side of the edge label placement
+        };
+    \end{feynman}
+\end{tikzpicture}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph[5) Amplitude af specifik loopkorrigering]{\textbf{5)}}
+\paragraph[5) Amplitude af $\pi\pi\sigma$-ledets loopkorrigering]{\textbf{5)}}
 
-
+% Betragt diagrammet hvor der er én $\pi$ og én $\sigma$, som løber i loopet (eng: running around the loop). Dette tillades af $\pi\pi\sigma$-ledet for andenordensperturbation. Vis at diagrammets amplitude er
+% \begin{align}
+%     4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4} \inv{k^2 - m^2} \inv{(k + p)^2} \: .
+% \end{align}
+% Er amplituden endelig eller uendelig, og hvis den er uendelig, hvordan divergerer den så for store $k$?\\
+% (Hint: Faktoren af $4$ er den såkaldte symmetrifaktor. For at udlede den, tænk da på det mulige antal måder, som man kan parre de eksterne $\pi_\textrm{in}$-  og $\pi_\textrm{out}$-felter med operatorerne i matrixelementet $\pi\pi\sigma\pi\pi\sigma$. Du kan også gøre dette ved at brute force gennem udvidelsen af Dysonserien, men at tænke sig til udledningen er noget mere elegant.)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[6) Amplitude for resterende loopkorrigeringer]{\textbf{6)}}
 
-
+% Nedskriv amplituderne for resten af loopkorrigeringerne til $\pi$-propagatoren. Husk symmetrifaktorerne; de er vigtige!
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[7) For $p_\mu = 0$ for $\pi$ er addition af alle loopkorrektioners amplituder $0$]{\textbf{7)}}
 
-
+% Betragt nu grænsen for nul-firimpuls for $\pi$ ($p_\mu = 0$) i propagatoren. Vis at når du adderer alle korrektionerne for amplituden for $p_\mu = 0$, så får man $0$! (Hint: Der er en god idé at nedbryde (eng: decompose) integranten i amplituden i \textbf{5)} til partielle brøker (eng: partial fractions).)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[8) Højereordens loopkorrektioner og $\pi$-propagatoren]{\textbf{8)}}
 
+\ldots
 
+% I de ovenstående opgaver er loopkorrektionerne blevet betragtet til laveste orden. Forestil dig at vi kunne inkludere højereordenskorrektioner i propagatoren (flere loops osv.). Hvordan forestiller du dig, at $\pi$-propagatoren kan modificeres for højere ordener?
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

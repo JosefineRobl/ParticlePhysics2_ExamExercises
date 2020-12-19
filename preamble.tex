@@ -54,6 +54,9 @@
         \tikz[remember picture,baseline=(#1.base),inner sep=0pt] \node (#1) {#2};%
     \fi}
 
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.1.0}
+
 % Cancels to number (arrow through with number)
 \usepackage{cancel} 
 
@@ -81,3 +84,6 @@
 \let\olddagger\dagger
 \renewcommand{\dagger}{^\olddagger}
 
+\newcommand{\Div}[1]{\vgv{\nabla} \cdot #1} % Divergens
+
+\usepackage{physics}

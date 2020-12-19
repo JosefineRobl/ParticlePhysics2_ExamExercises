@@ -24,6 +24,7 @@ Antag at vi spontant ødelægger symmetrien for Higgspotentialet på en sådan m
         \quad \text{og} \quad
     \Phi_2 = \TwoRowMat{0}{\frac{v_2}{\sqrtTo}} \: .
 \end{align}
+
 Find gaugebosonernes masser ved dette valg af vakuum.   
 
 
@@ -35,6 +36,7 @@ Antag at Higgspotentialet i denne model er på formen
 \begin{align} \label{eq:Opg5_Q2_HiggsPotential}
     V(\Phi_1,\Phi_2) &= -\mu_1^2 \Phi_1\dagger \Phi_1 - \mu_2^2 \Phi_{2}\dagger \Phi_2 + \lambda_1^2 \left( \Phi_{1}\dagger \Phi_1 \right)^2 + \lambda_2^2 \left( \Phi_2\dagger \Phi_2 \right)^2 + \lambda_3 \Phi_1\dagger \Phi_1 \Phi_2\dagger \Phi_2 \: .
 \end{align}
+
 Find betingelserne for konstanterne $\mu_i$ og $\lambda_i$ for at der er et lokalt minimum på formen brugt i \textbf{1)}.
 
 
@@ -42,7 +44,7 @@ Find betingelserne for konstanterne $\mu_i$ og $\lambda_i$ for at der er et loka
 
 \paragraph*{\textbf{3)}}
 
-Når vi bruger gaugesymmetri i Standardmodeltilfældet med én Higgsdublet får vi et partikelspektrum med en enkelt ikkeladet Higgsboson. Betragt hvad der vil ske i tilfældet med to Higgsdubletter. Hvor mange frihedsgrader kan vi eliminere med gaugetransformationer og hvor mange er tilbage? Karakterisér alle ''Higgs''-partiklerne ud fra deres kvantetal (ladning).
+Når vi bruger gaugesymmetri i Standardmodeltilfældet med én Higgsdublet får vi et partikelspektrum med en enkelt ikke-ladet Higgsboson. Betragt hvad der vil ske i tilfældet med to Higgsdubletter. Hvor mange frihedsgrader kan vi eliminere med gaugetransformationer og hvor mange er tilbage? Karakterisér alle ''Higgs''-partiklerne ud fra deres kvantetal (ladning).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,14 +62,69 @@ Når vi bruger gaugesymmetri i Standardmodeltilfældet med én Higgsdublet får 
 
 \paragraph[2) Betingelser for konstanterne $\mu_i$ og $\lambda_i$ i Higgspotential]{\textbf{2)}}
 
+Higgspotentialet indeholder kun felterne i sammensætningen $\Phi_i\dagger \Phi_i$ som er positive og reelle. For at lette notationen defineres derfor $x_i = \abs{\Phi_i}^2$, hvormed potentialet i \cref{eq:Opg5_Q2_HiggsPotential} bliver
+\begin{align}
+    V(x_1, x_2) &= -\mu_1^2 x_1 - \mu_2^2 x_2 + \lambda_1^2 x_1^2 + \lambda_2^2 x_2^2 + \lambda_3 x_1 x_2 \: .
+\end{align}
 
+Først finder vi minimum ved at differentierer potentialet med hensyn til hvert felt og sætter dette lig nul
+\begin{align} \label{eq:Opg5_A2_VDifferentiatedOnce}
+\begin{split}
+    0 &= \pdif{V}{x_1} = - \mu_1^2 + 2 \lambda_1^2 x_1 + \lambda_3 x_2
+        \qquad \text{og} \\
+    0 &= \pdif{V}{x_2} = - \mu_2^2 + 2 \lambda_2^2 x_2 + \lambda_3 x_1 \: ,
+\end{split}
+\end{align}
+fra hvilket $x_1$ og $x_2$ kan findes som
+\begin{align}
+\begin{split}
+    x_1 &= \frac{2\lambda_2^2 \mu_1^2 - \lambda_3 \mu_2^2}{4 \lambda_1^2 \lambda_2^2 - \lambda_3^2}
+        \qquad \text{og} \\
+    x_2 &= \frac{2\lambda_1^2 \mu_2^2 - \lambda_3 \mu_1^2}{4 \lambda_1^2 \lambda_2^2 - \lambda_3^2}
+\end{split}
+\end{align}
+under antagelse af at $4 \lambda_1^2 \lambda_2^2 - \lambda_3^2 \ne 0$ og $\lambda_2 \ne 0$.
+
+\ldots
+\begin{align} \label{eq:Opg5_A2_VDifferentiatedTwice}
+\begin{split}
+    0 &< \pdif[2]{V}{x_1} = 2 \lambda_1^2
+        \qquad \text{og} \\
+    0 &< \pdif[2]{V}{x_2} = 2 \lambda_2^2 \: ,
+\end{split}
+\end{align}
+
+\ldots !!! DISKUTER DENNE OPGAVE MED ANDRE !!! \ldots
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[3) To Higgsdubletter vs. én Higgsdublet]{\textbf{3)}}
 
-\ldots
+Den mest generelle form at de to Higgsdoubletter, når de er korrekt normaliserede (se \cite[lign. 25]{problemSetHiggsInStandardModel}), er
+\begin{align}
+    \Phi_1 &= \TwoRowMat{\phi_1^R + i \phi_1^I}{\phi_2^R + i \phi_2^I}
+        \qquad \text{og} \qquad
+    \Phi_2 = \TwoRowMat{\phi_3^R + i \phi_3^I}{\phi_4^R + i \phi_4^I} \: ,
+\end{align}
+altså er der 8 frihedsgrader tilsammen i de to Higgsdubletter, hvilket giver god mening, da en dublet består af to komplekse skalarfelter, som hver har to frihedsgrader, da de er komplekse, så vi har i alt $2 \cdot 2 \cdot 2 = 8$ frihedsgrader.
+
+Den generelle gaugesymmetri for Higgsfeltet er $\exp(i[\vv{T}\cdot\vgv{\alpha}(x) + \beta])$, hvilken har fire frihedsgrader da $\vgv{\alpha}(x)$ har tre frihedsgrader og $\beta$ én. Vi kan, som i \cite[lign. 26]{problemSetHiggsInStandardModel}, skrive Higgsdubletterne ved denne gaugesymmetri
+\begin{align}
+    \Phi_1 &= \pexp{i\vv{T}\cdot\vgv{\alpha}_1(x)} \TwoRowMat{0}{\frac{v_1 + H_1(x)}{\sqrtTo}}
+        \qquad \text{og} \qquad
+    \Phi_2 = \pexp{i\vv{T}\cdot\vgv{\alpha}_2(x)} \TwoRowMat{0}{\frac{v_2 + H_2(x)}{\sqrtTo}} \: ,
+\end{align}
+idet vi stadig ønsker at efterlade én af frihedsgraderne i gaugesymmetrien ubrudt for det elektromagnetiske felt. Dog skal de to Higgsdubletter være i samme gauge, hvorfor vi kun kan gaugetransformere tre frihedsgrader væk, så
+\begin{align}
+    \Phi_1 &= \TwoRowMat{0}{\frac{v_1 + H_1(x)}{\sqrtTo}}
+        \qquad \text{og} \qquad
+    \Phi_2 = \TwoRowMat{\phi_3^R + i \phi_3^I}{\phi_4^R + i \phi_4^I} \: .
+\end{align}
+Der er altså fem Higgsfelter, og dermed fem frihedsgrader, tilbage.
+\\
+
+Som det næste skal Higgsfelterne karakteriseres ud fra deres kvantetal. Vi ved at begge Higgsdubletter har hyperladning $Y=1$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

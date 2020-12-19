@@ -7,12 +7,12 @@
 \section{Helicitetsoperatoren}
 
 I denne opgave skal vi kigge nærmere på heliciteten som en operator: Først kigger på helicitet med hensyn til spinorer (eng: spinors), og derefter kigger på heliciteten med hensyn til de kvantiserede felter. Gamma matricerne i Dirac-Pauli repræsentationen er
-\begin{align}
+\begin{align} \label{eq:Opg3_GammaMatrices}
     \gamma^0 &= \TwoRowMat{\id & 0}{0 & -\id} \: , \quad
     \gamma^i = \TwoRowMat{0 & \sigma_i}{-\sigma_i & 0} \: , \quad \text{og} \quad
-    \gamma_5 = i \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \TwoRowMat{0 & \id}{\id & 0} \: ,
+    \gamma^5 = i \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \TwoRowMat{0 & \id}{\id & 0} \: ,
 \end{align}
-hvor $\sigma_i$ er den i'te Paulimatrix. Løsningerne til Diracligningen er på formen
+hvor $\sigma_i$ er den $i$'te Paulimatrix. Løsningerne til Diracligningen er på formen
 \begin{align} \label{eq:Opg3_BeginningText_SolutionsToDiracEquation}
     u_s(p) &= \sqrt{E+m}\TwoRowMat{\chi_s}{\frac{\vgv{\sigma}\cdot\vgv{p}\chi_s}{E+m}} \: , \quad \text{og} \quad
     v_s(p) = \sqrt{E+m}\TwoRowMat{\frac{\vgv{\sigma}\cdot\vgv{p}\chi_{-s}}{E+m}}{\chi_{-s}} \: ,
@@ -20,7 +20,7 @@ hvor $\sigma_i$ er den i'te Paulimatrix. Løsningerne til Diracligningen er på 
 for hhv. positive og negative energier. Her er $\chi_s$ 2-spinorer med kvantiseringsakse lang retningen af impulsen $\vv{p}$ med projektion $s = \pm 1$. Bemærk her ændringen $\chi_s \rightarrow \chi_{-s}$ for løsningerne med negativ energi, $v_s(p)$.
 
 Helicitetsoperatoren kan defineres ved brug af spinoperatorerne, hvilke er passende generaliserede til fir-spinorer. Vi definerer
-\begin{align}
+\begin{align} \label{eq:Opg3_Sigma}
     \vgv{\Sigma} &= \TwoRowMat{\vgv{\sigma} & 0}{0 & \vgv{\sigma}} \: ,
 \end{align}
 og helicitetsoperatoren kan derudfra skrives som $h = \vgv{\Sigma}\cdot\vv{p}/\abs{\vv{p}}$.
@@ -30,15 +30,15 @@ og helicitetsoperatoren kan derudfra skrives som $h = \vgv{\Sigma}\cdot\vv{p}/\a
 
 \paragraph*{\textbf{1)}}
 
-Først betragter vi problemet med at definere en passende firvektor for spin, $s^\mu$. Siden den i bund og grund er en rummelig vektor vil vi normalisere den således, at $s^\mu s_\mu = -1$. Som normalt med sådan en (spin)polarisationsvektor er et særlig praktisk valg, at den er ortogonal til firimpulsen, altså $s^\mu p_\mu = 0$. Argumentér for at i partiklens hvilesystem (under antagelse af at partiklen har masse $m \ne 0$) kan vi vælge $s^\mu = (0,\, \shat)$, hvor $\shat$ er en arbitrær treenhedsvektor.
+Først betragter vi problemet med at definere en passende firvektor for spin, $s^\mu$. Siden den i bund og grund er en rummelig vektor vil vi normalisere den således, at $s^\mu s_\mu = -1$. Som normalt med sådan en (spin)polarisationsvektor er et særlig praktisk valg, at den er ortogonal til firimpulsen, altså $s^\mu p_\mu = 0$. Argumentér for at vi i partiklens hvilesystem (under antagelse af at partiklen har masse $m \ne 0$) kan vælge $s^\mu = (0,\, \shat)$, hvor $\shat$ er en arbitrær treenhedsvektor.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph*{\textbf{2)}}
 
-Argumentér for at siden vi er interesserede i helicitet så vil et godt valg for $\shat$ være $\shat = \vv{p}/\abs{\vv{p}}$. Vis at hvis vi booster fra hvilesystemet til et system, hvor partiklen har impuls $\vv{p}$, da bliver spinfirvektoren
-\begin{align}
+Argumentér for at siden vi er interesserede i helicitet, så vil et godt valg for $\shat$ være $\shat = \vv{p}/\abs{\vv{p}}$. Vis at hvis vi booster fra hvilesystemet til et system, hvor partiklen har impuls $\vv{p}$, da bliver spinfirvektoren
+\begin{align} \label{eq:Opg3_Q2_SpinVector}
     s^\mu &= \left( \frac{\abs{\vv{p}}}{m},\, \frac{E}{m} \frac{\vv{p}}{\abs{\vv{p}}} \right) \: .
 \end{align}
 
@@ -48,10 +48,10 @@ Argumentér for at siden vi er interesserede i helicitet så vil et godt valg fo
 \paragraph*{\textbf{3)}}
 
 Vis at $\vgv{\Sigma} = \gamma^5\gamma^0\vv{\gamma}$ og bevis den nyttige relation
-\begin{align}
+\begin{align} \label{eq:Opg3_Q3_UsefullRelation_Gamma5sSlashed}
     \gamma^5\slashed{s} = \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \frac{\slashed{p}}{m} \: ,
 \end{align}
-hvor $\slashed{A} = \gamma_\mu A^\mu$ for en firvektor $A^\mu$.
+hvor $\slashed{A} = \gamma_\mu A^\mu = \gamma^\mu A_\mu$ for en firvektor $A^\mu$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,7 +60,7 @@ hvor $\slashed{A} = \gamma_\mu A^\mu$ for en firvektor $A^\mu$.
 
 Vis at $u_s(p)$ og $v_s(p)$ er egentilstande for $\gamma^5\slashed{s}$, altså at
 \begin{subequations}
-\begin{align}
+\begin{align} \label{eq:Opg3_Q4_EigenstatesOfGamma5sSlashed}
     \gamma^5\slashed{s} u_s(p) &= s u_s(p) \: , \quad \text{og} \quad \\
     \gamma^5\slashed{s} v_s(p) &= s v_s(p) \: .
 \end{align}
@@ -72,7 +72,7 @@ Vis at $u_s(p)$ og $v_s(p)$ er egentilstande for $\gamma^5\slashed{s}$, altså a
 \paragraph*{\textbf{5)}}
 
 Benyt de foregående delopgaver til at vise at $u_s(p)$ og $v_s(p)$ også er helicitetsegentilstande, altså at
-\begin{subequations}
+\begin{subequations} \label{eq:Opg3_Q5_EigenstatesOfHelicity}
 \begin{align}
     h u_s(p) &= s u_s(p) \: , \quad \text{og} \quad \\
     h v_s(p) &= - s v_s(p) \: .
@@ -88,7 +88,7 @@ Bemærk fortegnsændringen for løsningerne med negativ energi; dette bliver rel
 \paragraph*{\textbf{6)}}
 
 Vi er nu klar til at betragte de kvantiserede fermionfelter,
-\begin{align}
+\begin{align} \label{eq:Opg3_Q6_FieldExpansionOfQuantisedFermions}
     \psi(x) &= \sum_\lambda \int \frac{\dd^3\vv{p}}{(2\pi)^3} \invsqrt{2\omega_{\vv{p}}} \left( \bexp{-ipx} u(p,\, \lambda) b_{\vv{p}, \lambda} + \bexp{ipx} v(p,\, \lambda) d_{\vv{p},\lambda}\dagger \right) \: .
 \end{align}
 
@@ -98,14 +98,14 @@ Når vi forsøger at finde helicitetsoperatoren i anden kvantisering støder vi 
 \end{align}
 
 Vis at man med hensyn til tælleoperatorerne (eng: number operators) for partikler og antipartikler finder at \cref{eq:Opg3_Q6_expression} bliver
-\begin{equation}
+\begin{equation} \label{eq:Opg3_Q6_GeneralResult}
 \begin{alignedat}{2}
-    \int \dd^3\vv{x} & \psi\dagger(x) \vgv{\Sigma} \cdot \nhat \psi(x) && \\
+    \int \dd^3\vv{x}\, & \psi\dagger(x) \vgv{\Sigma} \cdot \nhat \, \psi(x) && \\
         &= \sum_{s,s'} \int \frac{\dd^3\vv{p}}{(2\pi)^3} \inv{2\omega_{\vv{p}}} \Big[
-            && u_s(p)\dagger \vgv{\Sigma} \cdot \nhat u_{s'}(p) b_{\vv{p},s}\dagger b_{\vv{p},s'} \\
-            & && + u_s(p)\dagger \vgv{\Sigma} \cdot \nhat v_{s'}(-p) \pexp{i2E_{\vv{p}}t} b_{\vv{p},s}\dagger d_{-\vv{p},s'}\dagger \\
-            & && + v_s(p)\dagger \vgv{\Sigma} \cdot \nhat u_{s'}(-p) \pexp{-i2E_{\vv{p}}t} d_{\vv{p},s} b_{-\vv{p},s'} \\
-            & &&+ v_s(p)\dagger \vgv{\Sigma} \cdot \nhat v_{s'}(p) d_{\vv{p},s} d_{\vv{p},s'}\dagger
+            && u_s(p)\dagger \vgv{\Sigma} \cdot \nhat \, u_{s'}(p) b_{\vv{p},s}\dagger b_{\vv{p},s'} \\
+            & && + u_s(p)\dagger \vgv{\Sigma} \cdot \nhat \, v_{s'}(-p) \pexp{2iE_{\vv{p}}t} b_{\vv{p},s}\dagger d_{-\vv{p},s'}\dagger \\
+            & && + v_s(p)\dagger \vgv{\Sigma} \cdot \nhat \, u_{s'}(-p) \pexp{-2iE_{\vv{p}}t} d_{\vv{p},s} b_{-\vv{p},s'} \\
+            & &&+ v_s(p)\dagger \vgv{\Sigma} \cdot \nhat \, v_{s'}(p) d_{\vv{p},s} d_{\vv{p},s'}\dagger
         \Big] \: .
 \end{alignedat}
 \end{equation}
@@ -120,7 +120,7 @@ Lad nu $\nhat = \vv{p}/\abs{\vv{p}}$ og vis at helicitetsoperatoren i anden kvan
 
 \paragraph*{\textbf{7)}}
 
-Argumentér for at havde vi brugt $\chi_s$ i stedet for $\chi_{-s}$ i $v_s(p)$ i \cref{eq:Opg3_BeginningText_SolutionsToDiracEquation}, da ville helicitetsoperatoren i \cref{eq:Opg3_Q6_helicityOperator} være inkonsistent, idet heliciteten ville have det forkerte fortegn når operatoren benyttes på tilstanden med negative energier, $v_s(p)$.
+Argumentér for at havde vi brugt $\chi_s$ i stedet for $\chi_{-s}$ i $v_s(p)$ i \cref{eq:Opg3_BeginningText_SolutionsToDiracEquation}, da ville helicitetsoperatoren i \cref{eq:Opg3_Q6_helicityOperator} være inkonsistent, idet heliciteten ville have det forkerte fortegn, når operatoren benyttes på tilstanden med negative energier, $v_s(p)$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,49 +131,279 @@ Argumentér for at havde vi brugt $\chi_s$ i stedet for $\chi_{-s}$ i $v_s(p)$ i
 
 \paragraph[1) $s^\mu = (0,\, \shat)$ i partiklens hvilesystem]{\textbf{1)}}
 
+Vælger vi spinfirvektoren som værende $s^\mu = (0,\, \shat)$, hvor $\shat$ er en arbitrær treenhedsvektor, da ses det trivielt, at første kriterie er opfyldt,
+\begin{align}
+    s^\mu s_\mu &= 0 \cdot 0 + \shat \cdot (-\shat)
+        = - \shat^2
+        = - 1 \: ,
+\end{align}
+grundet at Minkowski metrikken er $g_{\mu\nu} = \textrm{diag}(1,\, -\id)$.
 
+I partiklens hvilesystem har partiklen impuls $p^\mu = (E,\, \vv{0})$, hvormed det andet kriterie følger trivielt,
+\begin{align}
+    s^\mu p_\mu = 0 \cdot E + \shat \cdot (- \vv{0}) = 0 \: .
+\end{align}
 
+Dermed kan vi i partiklens hvilesystem vælge spinfirvektoren som værende $s^\mu = (0,\, \shat)$ hvor $\shat$ er en arbitrær treenhedsvektor.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[2) $\shat = \vv{p}/\abs{\vv{p}}$ i partiklens hvilesystem og beregning af $s^\mu$ efter boost]{\textbf{2)}}
 
+Siden helicitet er defineret som projektionen af en partikels spin på retningen af dens impuls, og vi er interesserede i at undersøge partiklers helicitet, da giver det god mening at definere spintreenhedsvektoren som en funktion af impulstreenhedsvektoren $\vv{p} / \abs{\vv{p}}$.
 
+Ved dette valg af spinfirvektor, $s^\mu = (0,\, \vv{p} / \abs{\vv{p}})$, kan vi udføre et invers Lorentzboost, som vil tage os til systemet, hvor partiklen har impuls $\vv{p}$ (som i \cref{eq:Opg1_A3_LorentzTransformation}):
+\begin{align} \label{eq:Opg3_A2_LorentzTransformation}
+    \Lambda_\mu^\nu &= \FourRowMat{\gamma & 0 & 0 & \beta\gamma}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\beta\gamma & 0 & 0 & \gamma}
+        = \FourRowMat{\gamma & 0 & 0 & \abs{\vv{v}}\gamma}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{v}}\gamma & 0 & 0 & \gamma}
+        = \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m}
+\end{align}
+hvor vi har benyttet, at $\vv{p} = \gamma m \vv{v}$ og at energien er givet ved $E = \gamma m$ når vi arbejder i naturlige enheder ($c = 1$).
+
+Udførelsen af boostet gøres ved først at rotere vores koordinatsystem således, at partiklens spin er i $\zhat$-retningen, dernæst udføre det inverse Lorentzboost (\cref{eq:Opg3_A2_LorentzTransformation}),
+\begin{align}
+    \Lambda_\mu^\nu s^\mu &= \FourRowMat{E/m & 0 & 0 & p_z/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{p_z/m & 0 & 0 & E/m} \FourRowMat{0}{0}{0}{p_z/\abs{\vv{p}_z}}
+        = \FourRowMat{p_z^2/(\abs{\vv{p}_z} m)}{0}{0}{p_z E/(\abs{\vv{p}_z} m)} \: ,
+\end{align}
+hvor $\vv{p}_z = \zhat p_z$, og derefter udføre en invers rotation, således at spin igen er en kombination af de tre rumlige koordinater og ikke kun i $\zhat$-retningen,
+\begin{align}
+\begin{split}
+    \vv{p}_z &\overset{\Lambda^{-1}}{\rightarrow} \vv{p} = \hatvec{p} \abs{\vv{p}} \: , \\
+    \Rightarrow \frac{\vv{p}_z \cdot \vv{p}_z}{\abs{\vv{p}_z}} &\overset{\Lambda^{-1}}{\rightarrow}
+         \frac{\vv{p} \cdot \vv{p}}{\abs{\vv{p}}}
+         = \frac{\hatvec{p} \abs{\vv{p}} \cdot \hatvec{p} \abs{\vv{p}}}{\abs{\vv{p}}}
+         = (\hatvec{p})^2 \abs{\vv{p}}
+         = \id \abs{\vv{p}}
+         = \abs{\vv{p}} \: ,
+\end{split}
+\end{align}
+hvormed vi får at
+\begin{align}
+    s^\mu &= \left( \frac{\abs{\vv{p}}}{m},\, \frac{E}{m} \frac{\vv{p}}{\abs{\vv{p}}} \right)
+\end{align}
+hvilket er spinvektoren i \cref{eq:Opg3_Q2_SpinVector}, som skulle vises.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[3) $\vgv{\Sigma} = \gamma^5 \gamma^0 \vgv{\gamma}$ og beregning af $\gamma^5 \slashed{s}$]{\textbf{3)}}
 
+Først vil vi beregne $\gamma^5\gamma^0\vv{\gamma}$ og vise, at dette er definitionen af $\vgv{\Sigma}$, \cref{eq:Opg3_Sigma}. Til dette benyttes gammamatricerne fra \cref{eq:Opg3_GammaMatrices}, hvorved vi får
+\begin{align}
+\begin{split}
+    \gamma^5\gamma^0\vv{\gamma} &= \TwoRowMat{0 & \id}{\id & 0} \TwoRowMat{\id & 0}{0 & -\id} \TwoRowMat{0 & \vgv{\sigma}}{-\vgv{\sigma} & 0} \\
+        &= \TwoRowMat{0 \cdot \id + \id \cdot 0 & 0 \cdot 0 + \id \cdot (-\id)}{\id \cdot \id + 0 \cdot 0 & \id \cdot 0 + 0 \cdot (-\id)} \TwoRowMat{0 & \vgv{\sigma}}{-\vgv{\sigma} & 0} \\
+        &= \TwoRowMat{0 & -\id}{\id & 0} \TwoRowMat{0 & \vgv{\sigma}}{-\vgv{\sigma} & 0} \\
+        &= \TwoRowMat{0 \cdot 0 - \id \cdot (-\vgv{\sigma}) & 0 \cdot \vgv{\sigma} - \id \cdot 0}{\id \cdot 0 + 0 \cdot (-\vgv{\sigma}) & \id \cdot \vgv{\sigma} + 0 \cdot 0} \\
+        &= \TwoRowMat{\vgv{\sigma} & 0}{0 & \vgv{\sigma}} \\
+        &= \vgv{\Sigma} \: .
+\end{split}
+\end{align}
+\\
 
+Som det næste skal den nyttige relation i \cref{eq:Opg3_Q3_UsefullRelation_Gamma5sSlashed} bevises. Her er $\slashed{A} = \gamma_\mu A^\mu = \gamma^\mu A_\mu$ for en firvektor $A^\mu$, og spinvektoren $s^\mu$ er givet af \cref{eq:Opg3_Q2_SpinVector}.\\
+\begin{align}
+\begin{split}
+    \gamma^5 \slashed{s} &= \gamma^5 \gamma^\mu s_\mu \\
+        &= \TwoRowMat{0 & \id}{\id & 0} \left( \gamma^0 \frac{\abs{\vv{p}}}{m} - \vgv{\gamma} \cdot \frac{E \vv{p}}{m\abs{\vv{p}}} \right) \\
+        &= \TwoRowMat{0 & \id}{\id & 0} \left( \TwoRowMat{\frac{\abs{\vv{p}}}{m} & 0}{0 & -\frac{\abs{\vv{p}}}{m}} - \TwoRowMat{0 & \frac{E \vgv{\sigma} \cdot \vv{p}}{m\abs{\vv{p}}}}{- \frac{E \vgv{\sigma} \cdot \vv{p}}{m\abs{\vv{p}}} & 0} \right) \\
+        &= \TwoRowMat{0 & \id}{\id & 0} \TwoRowMat{\frac{\abs{\vv{p}}}{m} & - \frac{E \vgv{\sigma} \cdot \vv{p}}{m\abs{\vv{p}}}}{\frac{E \vgv{\sigma} \cdot \vv{p}}{m\abs{\vv{p}}} & -\frac{\abs{\vv{p}}}{m}} \\
+        &= \TwoRowMat{\frac{E \vgv{\sigma} \cdot \vv{p}}{m\abs{\vv{p}}} & -\frac{\abs{\vv{p}}}{m}}{\frac{\abs{\vv{p}}}{m} & - \frac{E \vgv{\sigma} \cdot \vv{p}}{m\abs{\vv{p}}}} \\
+        &= \TwoRowMat{\frac{E \vgv{\sigma} \cdot \vv{p}}{m\abs{\vv{p}}} & -\frac{(\vgv{\sigma} \cdot \vv{p})^2}{m\abs{\vv{p}}}}{\frac{(\vgv{\sigma} \cdot \vv{p})^2}{m\abs{\vv{p}}} & - \frac{E \vgv{\sigma} \cdot \vv{p}}{m\abs{\vv{p}}}} \\
+        &= \id \left( \vgv{\sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \right) \TwoRowMat{\frac{E}{m} & -\frac{\vgv{\sigma} \cdot \vv{p}}{m}}{\frac{\vgv{\sigma} \cdot \vv{p}}{m} & - \frac{E}{m}} \\
+        &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \left( \TwoRowMat{\frac{E}{m} & 0}{0 & - \frac{E}{m}} - \TwoRowMat{0 & -\frac{\vgv{\sigma} \cdot \vv{p}}{m}}{\frac{\vgv{\sigma} \cdot \vv{p}}{m} & 0} \right) \\
+        &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \left( \gamma^0 \frac{E}{m} - \vgv{\gamma} \cdot \frac{\vv{p}}{m} \right) \\
+        &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \gamma^\mu \frac{p_\mu}{m} \\
+        &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \frac{\slashed{p}}{m} \: ,
+\end{split}
+\end{align}
+da det vides, at $\abs{\vv{p}}^2 = (\vgv{\sigma} \cdot \vv{p})^2$ \cite[ligning 3.2.39]{sakurai} og $p^\mu = (E,\, \vv{p})$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[4) $u_s(p)$ og $v_s(p)$ egentilstande for $\gamma^5\slashed{s}$]{\textbf{4)}}
 
+Udregningen kan foretages ved brute force, men en hurtigere og mere elegant metode er at benytte de generelle relationer $(\slashed{p} - m) u_s(p) = 0$ og $(\slashed{p} + m) v_s(p) = 0$, som er blevet bevist i kurset \cite[opgave 2.4]{problemSet3}:
+\begin{subequations}
+\begin{alignat}{3}
+    0 &= (\slashed{p} - m) u_s(p)
+        \quad &&\Rightarrow \quad
+    \slashed{p} u_s(p) &&= m u_s(p) \: , \quad \text{og}
+        \label{eq:Opg3_A4_GeneralExpressionWithPSlashedAndUs} \\
+    0 &= (\slashed{p} + m) v_s(p)
+        \quad &&\Rightarrow \quad
+    \slashed{p} v_s(p) &&= - m v_s(p) \: .
+        \label{eq:Opg3_A4_GeneralExpressionWithPSlashedAndVs}
+\end{alignat}
+\end{subequations}
 
+Benytter vi nu den nyttige relation, \cref{eq:Opg3_Q3_UsefullRelation_Gamma5sSlashed} med disse relationer (\cref{eq:Opg3_A4_GeneralExpressionWithPSlashedAndUs,eq:Opg3_A4_GeneralExpressionWithPSlashedAndVs}) samt bemærker, at vi grundet definitionen af $u_s(p)$ og $v_s(p)$ (\cref{eq:Opg3_BeginningText_SolutionsToDiracEquation}) kan lade $\vgv{\sigma} \cdot \vv{p}$ operere direkte på $\chi_{\pm s}$, hvor $\vv{p} \chi_s = \abs{\vv{p}} \chi_s$ og $\vgv{\sigma} \chi_s = s \chi_s$, så får vi\\
+\begin{align}
+    \begin{split} \label{eq:Opg3_A4_EigenstatesOfGamma5sSlashed_us}
+        \gamma^5 \slashed{s} u_s(p) &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \frac{\slashed{p}}{m} u_s(p) \\
+            &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \inv{m} \big( m u_s(p) \big) \\
+            &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} u_s(p) \\
+            &= \inv{\abs{\vv{p}}} \id \vgv{\sigma} \cdot \vv{p} u_s(p) \\
+            &= \id \inv{\abs{\vv{p}}} \big( \abs{\vv{p}} s u_s(p) \big) \\
+            &= s u_s(p) \: , \qquad \text{og}
+    \end{split} \\
+    \begin{split} \label{eq:Opg3_A4_EigenstatesOfGamma5sSlashed_vs}
+        \gamma^5 \slashed{s} v_s(p) &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \frac{\slashed{p}}{m} v_s(p) \\
+            &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \inv{m} \big(- m v_s(p) \big) \\
+            &= - \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} v_s(p) \\
+            &= - \inv{\abs{\vv{p}}} \id \vgv{\sigma} \cdot \vv{p} v_s(p) \\
+            &= - \id \inv{\abs{\vv{p}}} \big( \abs{\vv{p}} (-s) v_s(p) \big) \\
+            &= s v_s(p) \: ,
+    \end{split}
+\end{align}
+hvilket skulle vises.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph[5) $u_s(p)$ og $v_s(p)$ helicitetsegentilstande]{\textbf{5)}}
 
+Vi benytter igen de generelle relationer $(\slashed{p} - m) u_s(p) = 0$ og $(\slashed{p} + m) v_s(p) = 0$ fra \cite[opgave 2.4]{problemSet3}, hvor vi denne gang ønsker at finde et udtryk for hhv. $u_s(p)$ og $v_s(p)$, hvilket gøres ved at isolere i \cref{eq:Opg3_A4_GeneralExpressionWithPSlashedAndUs,eq:Opg3_A4_GeneralExpressionWithPSlashedAndVs}
+\begin{subequations}
+\begin{alignat}{3}
+    0 &= (\slashed{p} - m) u_s(p)
+        \quad &&\Rightarrow \quad
+    u_s(p) &&= \frac{\slashed{p}}{m} u_s(p) \: , \quad \text{og}
+        \label{eq:Opg3_A5_GeneralExpressionWithPSlashedAndUs} \\
+    0 &= (\slashed{p} + m) v_s(p)
+        \quad &&\Rightarrow \quad
+    v_s(p) &&= - \frac{\slashed{p}}{m} v_s(p) \: .
+        \label{eq:Opg3_A5_GeneralExpressionWithPSlashedAndVs}
+\end{alignat}
+\end{subequations}
 
+Benytter vi nu at $h = \vgv{\Sigma} \cdot \vv{p} / \abs{\vv{p}}$, samt \cref{eq:Opg3_A5_GeneralExpressionWithPSlashedAndUs,eq:Opg3_A5_GeneralExpressionWithPSlashedAndVs} samt resultatet fra \textbf{4)} (\cref{eq:Opg3_Q4_EigenstatesOfGamma5sSlashed}), så får vi
+\begin{align}
+    \begin{split}
+        h u_s(p) &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} u_s(p) \\
+            &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \left( \frac{\slashed{p}}{m} u_s(p) \right) \\
+            &= \gamma^5 \slashed{s} u_s(p) \\
+            &= s u_s(p) \: , \qquad \text{og}
+    \end{split} \\
+    \begin{split}
+        h v_s(p) &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} v_s(p) \\
+            &= \vgv{\Sigma} \cdot \frac{\vv{p}}{\abs{\vv{p}}} \left( - \frac{\slashed{p}}{m} v_s(p) \right) \\
+            &= - \gamma^5 \slashed{s} v_s(p) \\
+            &= - s v_s(p) \: ,
+    \end{split}
+\end{align}
+hvilket er \cref{eq:Opg3_Q5_EigenstatesOfHelicity}, som skulle vises.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph[6) $\int \dd^3\vv{x} \psi\dagger(x) \vgv{\Sigma}\cdot\nhat \psi(x)$ og helicitetsoperator]{\textbf{6)}}
+\paragraph[6) $\int \dd^3\vv{x} \, \psi\dagger(x) \vgv{\Sigma}\cdot\nhat \psi(x)$ og helicitetsoperator]{\textbf{6)}}
 
+Først indsættes \cref{eq:Opg3_Q6_FieldExpansionOfQuantisedFermions} i \cref{eq:Opg3_Q6_expression}, hvilket giver
+\begin{align} \label{eq:Opg3_A6_ShowExpressionPart1}
+\begin{split}
+    \int \dd^3\vv{x}\, & \psi\dagger(x) \vgv{\Sigma} \cdot \nhat \, \psi(x) \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{x}\, \dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \\
+            &\qquad\qquad \times \left[ \pexp{-ipx} u_s(p) b_{\vv{p}, s} + \pexp{ipx} v_s(p) d_{\vv{p}, s}\dagger \right]\dagger \vgv{\Sigma} \cdot \nhat \\
+            &\qquad\qquad \times \left[ \pexp{-ip'x} u_{s'}(p') b_{\vv{p}', s'} + \pexp{ip'x} v_{s'}(p') d_{\vv{p}', s'}\dagger \right] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{x}\, \dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \\
+            &\qquad\qquad \times \left[ b_{\vv{p}, s}\dagger u_s\dagger(p) \pexp{ipx} + d_{\vv{p}, s} v_s\dagger(p) \pexp{-ipx} \right] \vgv{\Sigma} \cdot \nhat \\
+            &\qquad\qquad \times \left[ \pexp{-ip'x} u_{s'}(p') b_{\vv{p}', s'} + \pexp{ip'x} v_{s'}(p') d_{\vv{p}', s'}\dagger \right] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{x}\, \dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \\
+            &\qquad\qquad \times \Big[ b_{\vv{p}, s}\dagger u_s\dagger(p) \pexp{ipx} \vgv{\Sigma} \cdot \nhat \pexp{-ip'x} u_{s'}(p') b_{\vv{p}', s'} \\
+            &\qquad\qquad\qquad + b_{\vv{p}, s}\dagger u_s\dagger(p) \pexp{ipx} \vgv{\Sigma} \cdot \nhat \pexp{ip'x} v_{s'}(p') d_{\vv{p}', s'}\dagger \\
+            &\qquad\qquad\qquad + d_{\vv{p}, s} v_s\dagger(p) \pexp{-ipx} \vgv{\Sigma} \cdot \nhat \pexp{-ip'x} u_{s'}(p') b_{\vv{p}', s'} \\
+            &\qquad\qquad\qquad + d_{\vv{p}, s} v_s\dagger(p) \pexp{-ipx} \vgv{\Sigma} \cdot \nhat \pexp{ip'x} v_{s'}(p') d_{\vv{p}', s'}\dagger \Big] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{x}\, \dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \\
+            &\qquad\qquad \times \Big[ u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(p') b_{\vv{p}, s}\dagger b_{\vv{p}', s'} \pexp{i[p-p']x} \\
+            &\qquad\qquad\qquad + u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(p') b_{\vv{p}, s}\dagger d_{\vv{p}', s'}\dagger \pexp{i[p+p']x} \\
+            &\qquad\qquad\qquad + v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(p') d_{\vv{p}, s} b_{\vv{p}', s'} \pexp{-i[p+p']x} \\
+            &\qquad\qquad\qquad + v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(p') d_{\vv{p}, s} d_{\vv{p}', s'}\dagger \pexp{-i[p-p']x} \Big] \: .
+\end{split}
+\end{align}
+Dernæst udføres integrationen mht. $\vv{x}$ i \cref{eq:Opg3_A6_ShowExpressionPart1}, hvilket giver deltafunktioner i impuls, hvilke dernæst integreres over ved $\vv{p}'$ integration, således at hele udtrykket blot afhænger af $\vv{p}$:
+\begin{align} \label{eq:Opg3_A6_ShowExpressionPart2}
+\begin{split}
+    \int \dd^3\vv{x}\, & \psi\dagger(x) \vgv{\Sigma} \cdot \nhat \, \psi(x) \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{x}\, \dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \\
+            &\qquad \times \Big[ u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(p') b_{\vv{p}, s}\dagger b_{\vv{p}', s'} \pexp{i[p-p']x} \\
+            &\qquad\quad + u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(p') b_{\vv{p}, s}\dagger d_{\vv{p}', s'}\dagger \pexp{i[p+p']x} \\
+            &\qquad\quad + v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(p') d_{\vv{p}, s} b_{\vv{p}', s'} \pexp{-i[p+p']x} \\
+            &\qquad\quad + v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(p') d_{\vv{p}, s} d_{\vv{p}', s'}\dagger \pexp{-i[p-p']x} \Big] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^3} \inv{2 \sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \\
+            &\qquad \times \Big[ u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(p') b_{\vv{p}, s}\dagger b_{\vv{p}', s'} \pexp{i[E_{\vv{p}}-E_{\vv{p}'}]t} \delta^3(\vv{p}-\vv{p}') \\
+            &\qquad\quad + u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(p') b_{\vv{p}, s}\dagger d_{\vv{p}', s'}\dagger \pexp{i[E_{\vv{p}}+E_{\vv{p}'}]t} \delta^3(\vv{p}+\vv{p}') \\
+            &\qquad\quad + v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(p') d_{\vv{p}, s} b_{\vv{p}', s'} \pexp{-i[E_{\vv{p}}+E_{\vv{p}'}]t} \delta^3(\vv{p}+\vv{p}') \\
+            &\qquad\quad + v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(p') d_{\vv{p}, s} d_{\vv{p}', s'}\dagger \pexp{-i[E_{\vv{p}}-E_{\vv{p}'}]t} \delta^3(\vv{p}-\vv{p}') \Big] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \sqrt{\omega_{\vv{p}}}} \\
+            &\qquad \times \Big[ \sqrt{\omega_{\vv{p}}}\, u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(p) b_{\vv{p}, s}\dagger b_{\vv{p}, s'} \pexp{i[E_{\vv{p}}-E_{\vv{p}}]t} \\
+            &\qquad\quad + \sqrt{\omega_{-\vv{p}}}\, u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(-p) b_{\vv{p}, s}\dagger d_{-\vv{p}, s'}\dagger \pexp{i[E_{\vv{p}}+E_{-\vv{p}}]t} \\
+            &\qquad\quad + \sqrt{\omega_{-\vv{p}}}\, v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(-p) d_{\vv{p}, s} b_{-\vv{p}, s'} \pexp{-i[E_{\vv{p}}+E_{-\vv{p}}]t} \\
+            &\qquad\quad + \sqrt{\omega_{\vv{p}}}\, v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(p) d_{\vv{p}, s} d_{\vv{p}, s'}\dagger \pexp{-i[E_{\vv{p}}-E_{\vv{p}}]t} \Big] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \Big[ u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(p) b_{\vv{p}, s}\dagger b_{\vv{p}, s'} \\
+            &\qquad\qquad\qquad\qquad\quad + u_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(-p) b_{\vv{p}, s}\dagger d_{-\vv{p}, s'}\dagger \pexp{2iE_{\vv{p}}t} \\
+            &\qquad\qquad\qquad\qquad\quad + v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, u_{s'}(-p) d_{\vv{p}, s} b_{-\vv{p}, s'} \pexp{-2iE_{\vv{p}}t} \\
+            &\qquad\qquad\qquad\qquad\quad + v_s\dagger(p) \vgv{\Sigma} \cdot \nhat \, v_{s'}(p) d_{\vv{p}, s} d_{\vv{p}, s'}\dagger \Big]
+\end{split}
+\end{align}
+hvor det er blevet benyttet, at $E_{-\vv{p}} = \sqrt{(-\vv{p})^2 + m^2} = \sqrt{\vv{p}^2 + m^2} = E_{\vv{p}}$ og ligeledes for $\omega_{\vv{p}}$.\footnote{
+    Efter integrationen over $\vv{p}'$, hvilket lod $\vv{p}' \rightarrow \pm \vv{p}$, da har vi ladet $p' \rightarrow \pm p$ også, idet at $p' = (E_{\vv{p}'}, \vv{p}') \xrightarrow{\vv{p}' \rightarrow \pm \vv{p}} (E_{\pm \vv{p}}, \vv{p}) = (E_{\vv{p}}, \vv{p}) = p$.
+}
+Dermed er \cref{eq:Opg3_Q6_GeneralResult} vist.
+\\
 
+Lader vi nu $\nhat = \vv{p}/\abs{\vv{p}}$, da er $\vgv{\Sigma} \cdot \nhat = \vgv{\Sigma} \cdot \vv{p} / \abs{\vv{p}} = h$ altså helicitetsoperatoren før kvantisering. Indsætter vi nu dette i \cref{eq:Opg3_A6_ShowExpressionPart2} og husker hvordan $h$ virker på $u$ og $v$ fra \cref{eq:Opg3_Q5_EigenstatesOfHelicity} (opgave \textbf{5)}), så får vi
+\begin{align}
+\begin{split}
+    \hat{h} &= \int \dd^3\vv{x}\, \psi\dagger(x) h \, \psi(x) \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \Big[ u_s\dagger(p) h \, u_{s'}(p) b_{\vv{p}, s}\dagger b_{\vv{p}, s'} \\
+            &\qquad\qquad\qquad\qquad\quad + u_s\dagger(p) h \, v_{s'}(-p) b_{\vv{p}, s}\dagger d_{-\vv{p}, s'}\dagger \pexp{2iE_{\vv{p}}t} \\
+            &\qquad\qquad\qquad\qquad\quad + v_s\dagger(p) h \, u_{s'}(-p) d_{\vv{p}, s} b_{-\vv{p}, s'} \pexp{-2iE_{\vv{p}}t} \\
+            &\qquad\qquad\qquad\qquad\quad + v_s\dagger(p) h \, v_{s'}(p) d_{\vv{p}, s} d_{\vv{p}, s'}\dagger \Big] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \Big[ u_s\dagger(p) s \, u_{s'}(p) b_{\vv{p}, s}\dagger b_{\vv{p}, s'} \\
+            &\qquad\qquad\qquad\qquad\quad + u_s\dagger(p) (-s) v_{s'}(-p) b_{\vv{p}, s}\dagger d_{-\vv{p}, s'}\dagger \pexp{2iE_{\vv{p}}t} \\
+            &\qquad\qquad\qquad\qquad\quad + v_s\dagger(p) s \, u_{s'}(-p) d_{\vv{p}, s} b_{-\vv{p}, s'} \pexp{-2iE_{\vv{p}}t} \\
+            &\qquad\qquad\qquad\qquad\quad + v_s\dagger(p) (-s) v_{s'}(p) d_{\vv{p}, s} d_{\vv{p}, s'}\dagger \Big] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \frac{s}{2 \omega_{\vv{p}}} \Big[ u_s\dagger(p) u_{s'}(p) b_{\vv{p}, s}\dagger b_{\vv{p}, s'} \\
+            &\qquad\qquad\qquad\qquad\quad - \cancelto{0}{u_s\dagger(p) v_{s'}(-p)} \quad b_{\vv{p}, s}\dagger d_{-\vv{p}, s'}\dagger \pexp{2iE_{\vv{p}}t} \\
+            &\qquad\qquad\qquad\qquad\quad + \cancelto{0}{v_s\dagger(p) u_{s'}(-p)} \quad d_{\vv{p}, s} b_{-\vv{p}, s'} \pexp{-2iE_{\vv{p}}t} \\
+            &\qquad\qquad\qquad\qquad\quad - v_s\dagger(p) v_{s'}(p) d_{\vv{p}, s} d_{\vv{p}, s'}\dagger \Big] \\
+        &= \sum_{s,s'} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \frac{s}{2 \omega_{\vv{p}}} \Big[ 2 \omega_{\vv{p}} \delta_{s,s'} b_{\vv{p}, s}\dagger b_{\vv{p}, s'} - 2 \omega_{\vv{p}} \delta_{s,s'} d_{\vv{p}, s} d_{\vv{p}, s'}\dagger \Big] \\
+        &= \sum_{s} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} s \Big[ b_{\vv{p}, s}\dagger b_{\vv{p}, s} - d_{\vv{p}, s} d_{\vv{p}, s}\dagger \Big] \\
+        &= \sum_{s} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} s \Big[ b_{\vv{p}, s}\dagger b_{\vv{p}, s} + d_{\vv{p}, s}\dagger d_{\vv{p}, s} - \anticommutator{d_{\vv{p}, s}}{d_{\vv{p}, s}\dagger} \Big] \: ,
+\end{split}
+\end{align}
+hvor vi har benyttet standardnormaliseringen af Diracspinorerne,
+\begin{subequations}
+\begin{align}
+    u_s\dagger(p) u_{s'}(p) &= 2 \omega_{\vv{p}} \delta_{s,s'} \: , \\
+    v_s\dagger(p) v_{s'}(p) &= 2 \omega_{\vv{p}} \delta_{s,s'} \: , \\
+    u_s\dagger(p) v_{s'}(-p) &= 0 \: , \qquad \text{og} \\
+    v_s\dagger(p) u_{s'}(-p) &= 0 \: ,
+\end{align}
+\end{subequations}
+samt den fermioniske antikommutatorrelation for kreations- og annihilationsoperatorer
+\begin{align}
+    \anticommutator{d_{\vv{p}, s}}{d_{\vv{p}, s}\dagger} &= d_{\vv{p}, s} d_{\vv{p}, s}\dagger + d_{\vv{p}, s}\dagger d_{\vv{p}, s} \: .
+\end{align}
+
+\ldots. Dermed bliver helicitetsoperatoren i anden kvantisering
+\begin{align}
+    \hat{h} &= \sum_{s} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} s \Big[ b_{\vv{p}, s}\dagger b_{\vv{p}, s} + d_{\vv{p}, s}\dagger d_{\vv{p}, s} \Big] \: ,
+\end{align}
+hvilket er \cref{eq:Opg3_Q6_helicityOperator}, som skulle vises.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[7) Betydningen af $\chi_{-s} \rightarrow \chi_s$ for helicitet af $v_s(p)$]{\textbf{7)}}
 
-
+Havde vi valgt at benytte $\chi_{-s} \rightarrow \chi_s$ i udtrykket for $v_s(p)$ i \cref{eq:Opg3_BeginningText_SolutionsToDiracEquation}, da ville dette give en ændring i egenværdien beregnet i \textbf{4)}, således at $\gamma^5 \slashed{s} v_s(p) = -s v_s(p)$, hvilket igen ville ændre egenværdien for heliciteten beregnet i \textbf{5)} til $h v_s(p) = s v_s(p)$. Dette ændrer fortegnet for andet led i helicitetsoperatoren i anden kvantisering, \cref{eq:Opg3_Q6_helicityOperator}, således, at den nu vil være
+\begin{align} \label{eq:Opg3_A7_helicityOperatorChangedDueToChiSToChiMinusS}
+    \hat{h} &= \sum_s \int \frac{\dd^3\vv{p}}{(2\pi)^3} \left( s b_{\vv{p},s}\dagger b_{\vv{p},s} - s d_{\vv{p},s}\dagger d_{\vv{p},s} \right) \: .
+\end{align}
+Idet at helicitetsoperatoren effektivt set tæller antallet af partikler ($b_{\vv{p},s}\dagger b_{\vv{p},s}$) og antipartikler ($d_{\vv{p},s}\dagger d_{\vv{p},s}$) i de forskellige helicitetstilstande, da vil den ''modificerede'' helicitetsoperator (\cref{eq:Opg3_A7_helicityOperatorChangedDueToChiSToChiMinusS}) nu tælle antipartiklerne som havende negativ helicitet. Der er dog ingenting som fortæller os, at partilker og deres tilhørende antipartikler skulle have modsat helicitet, mens det modsatte -- at heliciteten er den samme af de to -- er forventet. Dermed ville ændringen $\chi_{-s} \rightarrow \chi_s$ gøre helicitetsoperatoren, der nu er \cref{eq:Opg3_A7_helicityOperatorChangedDueToChiSToChiMinusS}, inkonsistent.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
