@@ -55,14 +55,55 @@ Når vi bruger gaugesymmetri i Standardmodeltilfældet med én Higgsdublet får 
 
 \paragraph[1) Gaugebosoners masse ved valg af vakuumtilstande]{\textbf{1)}}
 
+For at finde gaugebosonernes masser ved valget af vakuum som i \cref{eq:Opg5_Q1_Vaccum}, så indsættes disse komplekse dubletter i Lagrangedensiteten i \cref{eq:Opg5_Lagrangian}, hvor vi kun medtager vakuumdelen, da differentialoperatorledene ikke medvirker til at finde masserne, samt vi udelader potentialet, da det heller ikke indeholder nogle led med bosoner
 
+% To find the masses of the gauge bosons we put the fields into the Lagrangian, however we only need the vacuum part to identify the masses. We also omit the potential part of the Lagrangian since they do not contain any boson terms.
+
+% Using the same procedure as the Standard Model Higgs note, inserting the two expressions for φ1 and φ2 into the Lagrangian and ignoring both the potential and the space-dependent i∂µ terms. Doing this gives
+
+\begin{align} \label{eq:Opg5_A1_CalculationOfMassesPart1}
+\begin{split}
+    &\abs{\left( - g \vv{T} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_1}{\sqrtTo}}}^2 + \abs{\left( - g \vv{T} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_2}{\sqrtTo}}}^2 \\
+        &\quad = \abs{\left( - g \frac{\vgv{\sigma}}{2} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_1}{\sqrtTo}}}^2 + \abs{\left( - g \frac{\vgv{\sigma}}{2} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_2}{\sqrtTo}}}^2 \\
+        &\quad = \inv{8} \left\{ \abs{\left( - g \vgv{\sigma} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{v_1}}^2 + \abs{\left( - g \vgv{\sigma} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{v_2}}^2 \right\} \\
+        &\quad = \inv{8} \Bigg\{ \abs{\TwoRowMat{g' B_\mu + g W_\mu^3 & g(W_\mu^1 - i W_\mu^2)}{g(W_\mu^1 + i W_\mu^2) & g' B_\mu - g W_\mu^3} \TwoRowMat{0}{v_1}}^2 \\
+            &\qquad\qquad\qquad + \abs{\TwoRowMat{g' B_\mu + g W_\mu^3 & g(W_\mu^1 - i W_\mu^2)}{g(W_\mu^1 + i W_\mu^2) & g' B_\mu - g W_\mu^3} \TwoRowMat{0}{v_2}}^2 \Bigg\} \\
+        &\quad = \inv{8} \left\{ \abs{\TwoRowMat{g(W_\mu^1 - i W_\mu^2)}{g' B_\mu - g W_\mu^3} v_1}^2 + \abs{\TwoRowMat{g(W_\mu^1 - i W_\mu^2)}{g' B_\mu - g W_\mu^3} v_2}^2 \right\} \\
+        &\quad = \frac{v_1^2 + v_2^2}{8} \abs{\TwoRowMat{g(W_\mu^1 - i W_\mu^2)}{g' B_\mu - g W_\mu^3}}^2 \: ,
+\end{split}
+\end{align}
+hvilket præcis er udtrykket fundet i \cite[lign. 27]{problemSetHiggsInStandardModel} med $v^2 \rightarrow v'^2 = v_1^2 + v_2^2$.
+
+Feltet for en massiv spin-$1$-boson har en Lagrangedensitet på formen
+\begin{align} \label{eq:Opg5_A1_LagrangianDensityOfMassivSpin1Boson}
+    \L_{S=1,B} = - \frac{1}{4} F_{\mu\nu} F^{\mu\nu} + \frac{1}{2} M^2 A_\mu A^\mu \: .
+\end{align}
+Udskriver vi \cref{eq:Opg5_A1_CalculationOfMassesPart1} og sammenligner med Lagrangedensiteten i \cref{eq:Opg5_A1_LagrangianDensityOfMassivSpin1Boson}, hvor vi husker på, at vi kun har medtaget led, som giver masseledet, altså $\frac{1}{2} m^2 A_\mu A^\mu$, da får vi
+\begin{align}
+\begin{split}
+    &\abs{\left( - g \vv{T} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_1}{\sqrtTo}}}^2 + \abs{\left( - g \vv{T} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_2}{\sqrtTo}}}^2 \\
+        &\quad = \frac{v_1^2 + v_2^2}{8} \abs{\TwoRowMat{g(W_\mu^1 - i W_\mu^2)}{g' B_\mu - g W_\mu^3}}^2 \\
+        &\quad = \frac{v_1^2 + v_2^2}{8} \left\{ g^2 \left[ W_\mu^1 \right]^2 + g^2 \left[ W_\mu^2 \right]^2 + \left[ g' B_\mu - g W_\mu^3 \right]^2 \right\} \\
+        &\quad = \inv{2} \left( \frac{g\sqrt{v_1^2 + v_2^2}}{2} \right)^2 \left( \left[ W_\mu^1 \right]^2 + \left[ W_\mu^2 \right]^2 \right) \\
+            &\qquad\qquad\qquad + \inv{2} \left( \frac{\sqrt{g^2 + g'^2} \sqrt{v_1^2 + v_2^2}}{2} \right)^2 \left( \frac{g' B_\mu - g W_\mu^3}{\sqrt{g^2 + g'^2}} \right)^2 \\
+        &\quad = m_{W^\pm}^2 W_\mu^+ \left(W^-\right)^\mu + \inv{2} m_Z^2 Z_\mu Z^\mu \: ,
+\end{split}
+\end{align}
+hvor vi har benyttet, at $W_\mu^\pm = (W_\mu^1 \mp i W_\mu^2)/\sqrtTo$ (\cite[opg. 4]{problemSetHiggsInStandardModel}) og $Z_\mu = ???$. Dermed er gaugebosonernes masser
+\begin{align}
+    m_{W^\pm} &= \frac{g\sqrt{v_1^2 + v_2^2}}{2}
+        \qquad \text{og} \qquad
+    m_Z = \frac{\sqrt{g^2 + g'^2} \sqrt{v_1^2 + v_2^2}}{2} \: ,
+\end{align}
+hvor 
+hvilket er samme masser som fundet i \cite[opg. 17]{problemSetHiggsInStandardModel}, hvor vi blot har ladet $v \rightarrow v' = \sqrt{v_1^2 + v_2^2}$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[2) Betingelser for konstanterne $\mu_i$ og $\lambda_i$ i Higgspotential]{\textbf{2)}}
 
-Higgspotentialet indeholder kun felterne i sammensætningen $\Phi_i\dagger \Phi_i$ som er positive og reelle. For at lette notationen defineres derfor $x_i = \abs{\Phi_i}^2$, hvormed potentialet i \cref{eq:Opg5_Q2_HiggsPotential} bliver
+Higgspotentialet indeholder kun felterne i sammensætningen $\Phi_i\dagger \Phi_i$ som er positiv og reel. For at lette notationen defineres derfor $x_i = \abs{\Phi_i}^2$, hvormed potentialet i \cref{eq:Opg5_Q2_HiggsPotential} bliver
 \begin{align}
     V(x_1, x_2) &= -\mu_1^2 x_1 - \mu_2^2 x_2 + \lambda_1^2 x_1^2 + \lambda_2^2 x_2^2 + \lambda_3 x_1 x_2 \: .
 \end{align}
@@ -110,16 +151,16 @@ Den mest generelle form at de to Higgsdoubletter, når de er korrekt normalisere
 altså er der 8 frihedsgrader tilsammen i de to Higgsdubletter, hvilket giver god mening, da en dublet består af to komplekse skalarfelter, som hver har to frihedsgrader, da de er komplekse, så vi har i alt $2 \cdot 2 \cdot 2 = 8$ frihedsgrader.
 
 Den generelle gaugesymmetri for Higgsfeltet er $\exp(i[\vv{T}\cdot\vgv{\alpha}(x) + \beta])$, hvilken har fire frihedsgrader da $\vgv{\alpha}(x)$ har tre frihedsgrader og $\beta$ én. Vi kan, som i \cite[lign. 26]{problemSetHiggsInStandardModel}, skrive Higgsdubletterne ved denne gaugesymmetri
-\begin{align}
+\begin{align} \label{eq:Opg5_A3_HiggsDoubletsWithTheirGaugeSymmetry}
     \Phi_1 &= \pexp{i\vv{T}\cdot\vgv{\alpha}_1(x)} \TwoRowMat{0}{\frac{v_1 + H_1(x)}{\sqrtTo}}
         \qquad \text{og} \qquad
     \Phi_2 = \pexp{i\vv{T}\cdot\vgv{\alpha}_2(x)} \TwoRowMat{0}{\frac{v_2 + H_2(x)}{\sqrtTo}} \: ,
 \end{align}
 idet vi stadig ønsker at efterlade én af frihedsgraderne i gaugesymmetrien ubrudt for det elektromagnetiske felt. Dog skal de to Higgsdubletter være i samme gauge, hvorfor vi kun kan gaugetransformere tre frihedsgrader væk, så
-\begin{align}
+\begin{align} \label{eq:Opg5_A3_HiggsDoubletsAfterGaugeTransformation}
     \Phi_1 &= \TwoRowMat{0}{\frac{v_1 + H_1(x)}{\sqrtTo}}
         \qquad \text{og} \qquad
-    \Phi_2 = \TwoRowMat{\phi_3^R + i \phi_3^I}{\phi_4^R + i \phi_4^I} \: .
+    \Phi_2 = \invsqrtTo \TwoRowMat{H_2(x) + i H_3(x)}{H_4(x) + i H_5(x)} \: .
 \end{align}
 Der er altså fem Higgsfelter, og dermed fem frihedsgrader, tilbage.
 \\

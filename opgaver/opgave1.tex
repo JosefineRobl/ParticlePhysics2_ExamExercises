@@ -54,7 +54,7 @@ Vis at hvis vi roterer disse polarisationstilstande omkring $\zhat$-aksen med en
 
 \paragraph*{\textbf{5)}}
 
-Heliciteten for en partikel er defineret som projektionen af partiklens spin på dens impuls, altså $\vv{J}\cdot\vv{p} / \abs{\vv{p}}$, hvor $J$ er spinoperatoren og $\vv{p}$ er treimpulsen. Argumentér for at hvis vi booster fra hvilesystemet til et system, som bevæger sig med partiklen med hastighed $\vv{p}/E$, så bliver $J_z$ til helicitetsoperatoren.
+Heliciteten for en partikel er defineret som projektionen af partiklens spin på dens impuls, altså $\vv{J}\cdot\vv{p} / \abs{\vv{p}}$, hvor $\vv{J}$ er spinoperatoren og $\vv{p}$ er treimpulsen. Argumentér for at hvis vi booster fra hvilesystemet til et system, som bevæger sig med partiklen med hastighed $\vv{p}/E$, så bliver $J_z$ til helicitetsoperatoren.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -62,7 +62,7 @@ Heliciteten for en partikel er defineret som projektionen af partiklens spin på
 \paragraph*{\textbf{6)}}
 
 Vis at polarisationstilstandene med veldefineret helicitet for en spin-$1$-partikel, som bevæger sig langs $\zhat$-retningen, er
-\begin{align}
+\begin{align} \label{eq:Opg1_Q6_StatesToShow}
     e^\mu(\lambda = \pm 1) = \mp \left(0,\, \frac{\vv{e}_x \pm i\vv{e}_y}{\sqrt{2}}\right) \: , \quad \text{og} \quad
     e^\mu(\lambda = 0) = \inv{m} \left(\abs{\vv{p}},\, 0,\, 0,\, E\right) \: ,
 \end{align}
@@ -122,16 +122,19 @@ Idet vi kender polarisationstilstandene i hvilesystemet, da kan vi benytte en Lo
         = \FourRowMat{\gamma & 0 & 0 & \abs{\vv{v}}\gamma}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{v}}\gamma & 0 & 0 & \gamma}
         = \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m}
 \end{align}
-hvor vi har benyttet, at $\vv{p} = \gamma m \vv{v}$ og at energien er givet ved $E = \gamma m$. Benytter vi nu ovenstående Lorentztransformation, \cref{eq:Opg1_A3_LorentzTransformation}, på polarisationstilstandene i hvilesystemet, \cref{eq:Opg1_Q3_PolarisationStatesInRestFrame}, får vi de generelle polarisationstilstande i det nye system til
+hvor vi har benyttet, at $\vv{p} = \gamma m \vv{v}$ og at energien er givet ved $E = \gamma m$. Benytter vi nu ovenstående Lorentztransformation, \cref{eq:Opg1_A3_LorentzTransformation}, på polarisationstilstandene i hvilesystemet ($\mu$-systemet), \cref{eq:Opg1_Q3_PolarisationStatesInRestFrame}, får vi de generelle polarisationstilstande i det nye system ($\nu$-systemet) til
 \begin{subequations} \label{eq:Opg1_A3_GeneralPolarisationVectors}
 \begin{align}
-    \Lambda_\mu^\nu e^\mu (\xhat) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{1}{0}{0}
+    e^\nu (\xhat) &= \Lambda_\mu^\nu e^\mu (\xhat)
+        = \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{1}{0}{0}
         = \FourRowMat{0}{1}{0}{0}
         = e^\mu (\xhat) \: , \\
-    \Lambda_\mu^\nu e^\mu (\yhat) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{1}{0}
+    e^\nu (\yhat) &= \Lambda_\mu^\nu e^\mu (\yhat)
+        = \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{1}{0}
         = \FourRowMat{0}{0}{1}{0}
         = e^\mu (\yhat) \: , \quad \text{og} \\
-    \Lambda_\mu^\nu e^\mu (\zhat) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{0}{1}
+    e^\nu (\zhat) &= \Lambda_\mu^\nu e^\mu (\zhat)
+        = \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{0}{1}
         = \FourRowMat{\abs{\vv{p}}/m}{0}{0}{E/m} \: ,
 \end{align}
 \end{subequations}
@@ -202,46 +205,54 @@ hvilket skal være sandt for en et vilkårligt $\theta$.
 
 \paragraph[5) $J_z$ bliver helicitetsoperator]{\textbf{5)}}
 
-FIND BEDRE ARGUMENTATION FOR DETTE, DA DER MÅSKE ER EN SMULE PROBLEMER MED AT FORSTÅ DET, SOM CLAUS HAR SKREVET.
+I hvile kun z-retningen => Ligning
 
-% Heliciteten for en partikel er defineret som projektionen af partiklens spin på dens impuls, altså $\vv{J}\cdot\vv{p}$, hvor $J$ er spinoperatoren og $\vv{p}$ er treimpulsen. Argumentér for at hvis vi booster fra hvilesystemet til et system, som bevæger sig med partiklen med hastighed $\vv{p}/E$, så bliver $J_z$ til helicitetsoperatoren.
+% Vi ved at heliciteten for en partikel er defineret som projektionen af partiklens spin på dens impuls, altså $h = \vv{J}\cdot\vv{p} / \abs{\vv{p}}$, hvor $\vv{J}$ er spinoperatoren og $\vv{p}$ er treimpulsen. Vi kan nu blot vælge at rotere vores system således, at partikel bevæger sig langs $\zhat$-aksen. Når vi så booster (langs $\zhat$-aksen), da vil vi få at partiklen blot får 
+
+\begin{align}
+    h &= \vv{J} \cdot \frac{\vv{p}}{\abs{\vv{p}}}
+        = \vv{J} \cdot \frac{\vv{p}_z}{\abs{\vv{p}_z}}
+        = \vv{J} \cdot \zhat
+        = J_z \: .
+\end{align}
+
+% Argumentér for at hvis vi booster fra hvilesystemet til et system, som bevæger sig med partiklen med hastighed $\vv{p}/E$, så bliver $J_z$ til helicitetsoperatoren.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[6) Polarisationstilstande for spin-$1$-partikel i bevægelse langs $\zhat$]{\textbf{6)}}
 
-% Polarisationstilstandene med veldefineret helicitet for en spin-1-partikel er givet i \cref{eq:Opg1_Q4_HelicityStates}, og for at finde ud af, hvordan disse ser ud, når partiklen bevæger sig langs $\zhat$-retningen med treimpuls $\vv{p}$, da benytter vi det inverse Lorentzboost fra \cref{eq:Opg1_A3_LorentzTransformation}
-% \begin{subequations}
-% \begin{align}
-%     e^\mu(\lambda = \pm 1) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0} \\
-%     e^\mu(\lambda = 0) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{0}{1}
-% \end{align}
-% \end{subequations}
-
-% \begin{align}
-%     \Lambda_\mu^\nu &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m}
-% \end{align}
-
-
-SKRIV HER HVORDAN MAN KUNNE HAVE ARGUMENTERET SIG FREM TIL SVARET I STEDET?
-
-% Vi betragter polarisationstilstandene i \cref{eq:Opg1_Q3_PolarisationStatesInRestFrame} og booster ved brug af den inverse Lorentztransformation i \cref{eq:Opg1_A3_LorentzTransformation} til systemet, hvor partiklen bevæger sig med impuls $\vv{p}$ i $\zhat$-retningen.
-% \begin{align}
-%     e^\mu(\lambda = \pm 1) &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m}
-% \end{align}
-
-% Vis at polarisationstilstandene med veldefineret helicitet for en spin-$1$-partikel, som bevæger sig langs $\zhat$-retningen, er
-% \begin{align}
-%     e^\mu(\lambda = \pm 1) = \mp \left(0,\, \frac{\vv{e}_x \pm i\vv{e}_y}{\sqrt{2}}\right) \: , \quad \text{og} \quad
-%     e^\mu(\lambda = 0) = \inv{m} \left(\abs{\vv{p}},\, 0,\, 0,\, E\right) \: ,
-% \end{align}
-% hvor $\vv{e}_x$ og $\vv{e}_y$ er de standard trekomponent basisvektorer.
+Polarisationstilstandene med veldefineret helicitet for en spin-1-partikel er givet i \cref{eq:Opg1_Q4_HelicityStates}, og for at finde ud af, hvordan disse ser ud, når partiklen bevæger sig langs $\zhat$-retningen med treimpuls $\vv{p}$, da benytter vi det inverse Lorentzboost fra \cref{eq:Opg1_A3_LorentzTransformation},
+\begin{align}
+    \Lambda_\mu^\nu &= \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \: ,
+\end{align}
+hvorved vi får
+\begin{subequations}
+\begin{align}
+    e^\nu(\lambda = \pm 1) &= \Lambda_\mu^\nu e^\mu(\lambda = \pm 1)
+        = \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0}
+        = \invsqrtTo \FourRowMat{0}{\mp 1}{-i}{0} \\
+    e^\nu(\lambda = 0) &= \Lambda_\mu^\nu e^\mu(\lambda = 0)
+        = \FourRowMat{E/m & 0 & 0 & \abs{\vv{p}}/m}{0 & 1 & 0 & 0}{0 & 0 & 1 & 0}{\abs{\vv{p}}/m & 0 & 0 & E/m} \FourRowMat{0}{0}{0}{1}
+        = \FourRowMat{\abs{\vv{p}}/m}{0}{0}{E/m} \: .
+\end{align}
+\end{subequations}
+Dermed er det vist, at når vi benytter et Lorentzboost således, at spin-$1$-partikel nu bevæger sig med impuls $\vv{p}$ i $\zhat$-retningen, da bliver helicitetsegentilstandene fra \cref{eq:Opg1_Q4_HelicityStates}
+\begin{align}
+    e^\mu(\lambda = \pm 1) = \mp \left(0,\, \frac{\vv{e}_x \pm i\vv{e}_y}{\sqrt{2}}\right) \: , \quad \text{og} \quad
+    e^\mu(\lambda = 0) = \inv{m} \left(\abs{\vv{p}},\, 0,\, 0,\, E\right) \: ,
+\end{align}
+hvor $\vv{e}_x$ og $\vv{e}_y$ er de standard trekomponent basisvektorer, hvilket skulle vises. At disse stadig er helicitetsegentilstanden kan ses ved, at et boost langs $\zhat$-retningen commuterer med $J_z$, så når tilstandene før boostet var egentilstande for helicitet vil de efterfølgende også være det. Dette kommer af \textbf{4)} og \textbf{5)}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[7) Teori for spin-$S$ partikel med $S > 1$]{\textbf{7)}}
+
+\ldots
+
+% For a general spin S > 1 particle, we still need an object to describe the internal degrees of freedom. This object has be well defined under Lorenz transformations and there needs to be 2S+1 linearly independent objects like this. For S = 2 a four vector does not have sufficient degrees of freedom, so a rank 2 tensor is needed gµν, and in general one would expect that a rank S tensor is needed to describe a spin S field. This gives too many degrees of freedom, so some assumptions would have to be made, like a form of normalization or symmetry of the tensor. Next, to a basis might be chosen due to some nice rotation properties in the rest frame, and then the general can be found via a Lorentz boost.
 
 % Antag at nogen beder dig opstille en teori for en partikel med et generelt spin $S > 1$. Ved brug af det, som du har lært i de foregående delopgaver, hvordan vil du da generalisere proceduren for at konstruere polarisationstilstande for et sådan felt? Skitser blot proceduren; \emph{lad være med} gå i gang med de detaljerede beregninger.
 

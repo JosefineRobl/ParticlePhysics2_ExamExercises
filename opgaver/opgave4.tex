@@ -125,7 +125,7 @@ hvor vi har benyttet den relativistiske konvention om at $\mu = 0$ betegner tids
 
 Vis at for en reel foton gør det sig gældende, at
 \begin{align} \label{eq:Opg4_Q9_Result}
-    \left[ \sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) \right] \epsilon^\nu(\sigma) J_\mu^{fi}(0)^* J_\nu^{fi}(0) &= - g^{\mu\nu} J_\mu^{fi}(0)^* J_\nu^{fi}(0) \: .
+    \left[ \sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) \right] J_\mu^{fi}(0)^* J_\nu^{fi}(0) &= - g^{\mu\nu} J_\mu^{fi}(0)^* J_\nu^{fi}(0) \: .
 \end{align}
 
 
@@ -152,8 +152,8 @@ Betragt spredningen af elektroner på myoner, $\mathrm{e}^- + \mu^- \rightarrow 
 \paragraph*{\textbf{12)}}
 
 Vis at S-matricen til anden orden for elektron-myon-spredningsprocessen kan skrives som
-\begin{align}
-    S_{fi}^{(2)} &= (-i)^2 \int \dd^4 x_1 \dd^4 x_2 J_\mu^{\mathrm{e}^-}(x_1) J_\nu^{\mu^-}(x_2) \mel**{0}{T\left[A^\mu(x_1)A^\nu(x_2)\right]}{0} \: .
+\begin{align} \label{eq:Opg4_Q12_SMatrixSecondOrder}
+    S_{fi}^{(2)} &= (-i)^2 \int \dd^4 x_1\, \dd^4 x_2\, J_\mu^{\mathrm{e}^-}(x_1) J_\nu^{\mu^-}(x_2) \mel**{0}{T\left[A^\mu(x_1)A^\nu(x_2)\right]}{0} \: .
 \end{align}
 Opskriv eksplicit elektron- og myonstrømmen (eng: electron and muon current) ved brug af overgangsstrømmene fra \textbf{5)}. Sørg for at mærke alle dele nødvendige for at specificere start- og sluttilstandene korrekt.
 
@@ -163,7 +163,7 @@ Opskriv eksplicit elektron- og myonstrømmen (eng: electron and muon current) ve
 \paragraph*{\textbf{13)}}
 
 Ved at benytte Klein-Gordon-propagatoren som analogi, argumentér for at vi kan benytte den følgende form for fotonpropagatoren
-\begin{align}
+\begin{align} \label{eq:Opg4_Q13_PhotonPropagator}
     G^{\mu\nu}(q) &= \int \dd^4 x \pexp{iqx} \mel**{0}{T\left[A^\mu(x)A^\nu(0)\right]}{0}
         = \frac{-ig^{\mu\nu}}{q^2}
 \end{align}
@@ -175,7 +175,7 @@ i udtrykket for $S_{fi}^{(2)}$.
 \paragraph*{\textbf{14)}}
 
 Definer som sædvanligt $S_{fi}^{(2)} = - i \M_{fi} (2\pi)^4 \delta^4(p_f - p_i)$. Vis at
-\begin{align}
+\begin{align} \label{eq:Opg4_Q14_AmplitudeMfi}
     - i \M_{fi} &= \left( -i J_\mu^{\mathrm{e}^-}(0) \right) \frac{-ig^{\mu\nu}}{q^2} \left( -i J_\nu^{\mu^-}(0) \right) \: .
 \end{align}
 Udtryk impulsoverførslen $q$ som funktion af start- og sluttilstandsimpulsen.
@@ -513,8 +513,6 @@ hvorfor
     &\mel**{\mathrm{e}^-,\, \vv{p}',\, \lambda'}{j_\mu^{(1)}}{\mathrm{e}^-,\, \vv{p},\, \lambda} \\
         &\quad = \bigg\langle \mathrm{e}^-,\, \vv{p}',\, \lambda' \bigg\rvert - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{i[q-q']x} \\
             &\qquad\qquad\qquad\qquad\qquad\qquad \times b_{\vv{q},s}\dagger b_{\vv{q}',s'} \overline{u}(\vv{q},s) \gamma_\mu u(\vv{q}',s') \bigg\lvert \mathrm{e}^-,\, \vv{p},\, \lambda \bigg\rangle \\
-        &\quad = \bigg\langle \mathrm{e}^-,\, \vv{p}',\, \lambda' \bigg\rvert - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{i[q-q']x} \\
-            &\qquad\qquad\qquad\qquad\qquad\qquad \times b_{\vv{q},s}\dagger b_{\vv{q}',s'} \overline{u}(\vv{q},s) \gamma_\mu u(\vv{q}',s') \bigg\lvert \mathrm{e}^-,\, \vv{p},\, \lambda \bigg\rangle \\
         &\quad = \bigg\langle 0 \bigg\rvert b_{\vv{p}',\lambda'} \sqrt{2 \omega_{\vv{p}'}}
             - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{i[q-q']x} \\
             &\qquad\qquad\qquad\qquad\qquad\qquad \times b_{\vv{q},s}\dagger b_{\vv{q}',s'} \overline{u}(\vv{q},s) \gamma_\mu u(\vv{q}',s')
@@ -525,32 +523,55 @@ hvorfor
             &\qquad\qquad\qquad \times (2\pi)^6 \delta^3(\vv{q} - \vv{p}') \delta^3(\vv{p} - \vv{q}') \delta_{s,\lambda'} \delta_{\lambda,s'} \overline{u}(\vv{q},s) \gamma_\mu u(\vv{q}',s') \\
         &\quad = - e \sqrt{\omega_{\vv{p}'}\omega_{\vv{p}}} \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{i[q-q']x} \\
             &\qquad\qquad\qquad \times \delta^3(\vv{q} - \vv{p}') \delta^3(\vv{p} - \vv{q}') \delta_{s,\lambda'} \delta_{\lambda,s'} \overline{u}(\vv{q},s) \gamma_\mu u(\vv{q}',s') \\
-        &\quad = - e \sqrt{\omega_{\vv{p}'}\omega_{\vv{p}}} \sum_{s,s'} \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{i[q-q']x} \\
-            &\qquad\qquad\qquad \times \delta^3(\vv{q} - \vv{p}') \delta^3(\vv{p} - \vv{q}') \delta_{s,\lambda'} \delta_{\lambda,s'} \overline{u}(\vv{q},s) \gamma_\mu u(\vv{q}',s')
+        &\quad = - e \sum_{s,s'} \pexp{i[p'-p]x} \delta_{s,\lambda'} \delta_{\lambda,s'} \overline{u}(\vv{p}',s) \gamma_\mu u(\vv{p},s') \\
+        &\quad = - e \overline{u}(\vv{p}',\lambda') \gamma_\mu u(\vv{p},\lambda) \pexp{i[p'-p]x} \: ,
 \end{split}
 \end{align}
+da $q^\mu = (\sqrt{\vv{q}^2 + m^2},\, \vv{q})$, hvorfor integrationen af deltafunktionerne med $\vv{q}$ også ændrer på energien, så f.eks. $\delta^3(\vv{q}-\vv{p}') \Rightarrow q \rightarrow p'$.
 Derved er \cref{eq:Opg4_Q5_TransitionCurrent1} vist.
 \\
 
 Det andet matrixelement, \cref{eq:Opg4_Q5_TransitionCurrent2}, giver
 \begin{align}
 \begin{split}
-    &\mel**{0}{d_{\vv{p}',\lambda'} d_{\vv{q},s}\dagger d_{\vv{q}',s'} d_{\vv{p},\lambda}\dagger}{0} \\
+    &\mel**{0}{d_{\vv{p}',\lambda'} d_{\vv{q},s} d_{\vv{q}',s'}\dagger d_{\vv{p},\lambda}\dagger}{0} \\
         &\quad = \mel**{0}{d_{\vv{p}',\lambda'} \left[(2\pi)^3 \delta^3(\vv{q}-\vv{q}') \delta_{s,s'} - d_{\vv{q}',s'}\dagger d_{\vv{q},s} \right] d_{\vv{p},\lambda}\dagger}{0} \\
         &\quad = (2\pi)^3 \delta^3(\vv{q}-\vv{q}') \delta_{s,s'} \mel**{0}{d_{\vv{p}',\lambda'} d_{\vv{p},\lambda}\dagger}{0}
             - \mel**{0}{d_{\vv{p}',\lambda'} d_{\vv{q}',s'}\dagger d_{\vv{q},s} d_{\vv{p},\lambda}\dagger}{0} \\
-        &\quad = (2\pi)^3 \delta^3(\vv{q}-\vv{q}') \delta_{s,s'} \mel**{0}{\left[ (2\pi)^3 \delta^3(\vv{p}-\vv{q}') \delta_{\lambda,\lambda'} - d_{\vv{p},\lambda}\dagger d_{\vv{p}',\lambda'} \right]}{0} \\
+        &\quad = (2\pi)^3 \delta^3(\vv{q}-\vv{q}') \delta_{s,s'} \mel**{0}{\left[ (2\pi)^3 \delta^3(\vv{p}-\vv{p}') \delta_{\lambda,\lambda'} - d_{\vv{p},\lambda}\dagger d_{\vv{p}',\lambda'} \right]}{0} \\
             &\qquad\: - \mel**{0}{\left[ (2\pi)^3 \delta^3(\vv{p}'-\vv{q}') \delta_{\lambda',s'} - d_{\vv{q}',s'}\dagger d_{\vv{p}',\lambda'} \right] \left[ (2\pi)^3 \delta^3(\vv{p}-\vv{q}) \delta_{\lambda,s} - d_{\vv{p},\lambda}\dagger d_{\vv{q},s} \right]}{0} \\
-        &\quad = (2\pi)^6 \delta^3(\vv{q}-\vv{q}') \delta^3(\vv{p}-\vv{q}') \delta_{s,s'} \delta_{\lambda,\lambda'} \innerproduct{0}{0}
+        &\quad = (2\pi)^6 \delta^3(\vv{q}-\vv{q}') \delta^3(\vv{p}-\vv{p}') \delta_{s,s'} \delta_{\lambda,\lambda'} \innerproduct{0}{0}
             - (2\pi)^6 \delta^3(\vv{p}'-\vv{q}') \delta^3(\vv{p}-\vv{q}) \delta_{\lambda',s'} \delta_{\lambda,s} \innerproduct{0}{0} \\
-        &\quad = (2\pi)^6 \left[ \delta^3(\vv{q}-\vv{q}') \delta^3(\vv{p}-\vv{q}') \delta_{s,s'} \delta_{\lambda,\lambda'}
+        &\quad = (2\pi)^6 \left[ \delta^3(\vv{q}-\vv{q}') \delta^3(\vv{p}-\vv{p}') \delta_{s,s'} \delta_{\lambda,\lambda'}
             - \delta^3(\vv{p}'-\vv{q}') \delta^3(\vv{p}-\vv{q}) \delta_{\lambda',s'} \delta_{\lambda,s} \right] \: ,
 \end{split}
 \end{align}
 hvorfor
 \begin{align}
 \begin{split}
-    \mel**{\mathrm{e}^+,\, \vv{p}',\, \lambda'}{j_\mu^{(2)}}{\mathrm{e}^+,\, \vv{p},\, \lambda}
+    &\mel**{\mathrm{e}^+,\, \vv{p}',\, \lambda'}{j_\mu^{(2)}}{\mathrm{e}^+,\, \vv{p},\, \lambda} \\
+        &\quad = \bigg\langle \mathrm{e}^+,\, \vv{p}',\, \lambda' \bigg\rvert - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{-i[q-q']x} \\
+            &\qquad\qquad\qquad\qquad\qquad\qquad \times d_{\vv{q},s} d_{\vv{q}',s'}\dagger \overline{v}(\vv{q},s) \gamma_\mu v(\vv{q}',s') \bigg\rvert \mathrm{e}^+,\, \vv{p},\, \lambda \bigg\rangle \\
+        &\quad = - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \sqf{\omega_{\vv{p}'}\omega_{\vv{p}}}{\omega_{\vv{q}}\omega_{\vv{q}'}} \pexp{-i[q-q']x} \\
+            &\qquad\qquad\qquad\qquad\qquad\qquad \times \mel**{0}{d_{\vv{p}',\lambda'} d_{\vv{q},s} d_{\vv{q}',s'}\dagger d_{\vv{p},\lambda}\dagger}{0} \overline{v}(\vv{q},s) \gamma_\mu v(\vv{q}',s') \\
+        &\quad = - e \sum_{s,s'} \int \dd^3\vv{q}\, \dd^3\vv{q}' \sqf{\omega_{\vv{p}'}\omega_{\vv{p}}}{\omega_{\vv{q}}\omega_{\vv{q}'}} \pexp{-i[q-q']x} \overline{v}(\vv{q},s) \gamma_\mu v(\vv{q}',s') \\
+            &\qquad\qquad \times \left[ \delta^3(\vv{q}-\vv{q}') \delta^3(\vv{p}-\vv{p}') \delta_{s,s'} \delta_{\lambda,\lambda'}
+            - \delta^3(\vv{p}'-\vv{q}') \delta^3(\vv{p}-\vv{q}) \delta_{\lambda',s'} \delta_{\lambda,s} \right] \\
+        &\quad = e \overline{v}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda') \pexp{i[p'-p]x} \\
+            &\qquad\qquad\qquad\qquad\quad - e \delta^3(\vv{p}-\vv{p}') \delta_{\lambda,\lambda'} \sum_s \int \dd^3\vv{q}\, \frac{\omega_{\vv{p}}}{\omega_{\vv{q}}}\, \overline{v}(\vv{q},s) \gamma_\mu v(\vv{q},s) \: .
+\end{split}
+\end{align}
+Vi kan nu benytte $\sum_s \overline{v}_s(p) v_s(p) = 0$ \footnote{
+    Dette kan trivielt vises som i \cite[opg. 2.9]{problemSet3} ud fra definitionen af $v_s(p)$ og kendskab til, at $(\vgv{\sigma}\cdot\vv{p})\dagger = \vgv{\sigma}\cdot\vv{p}$ samt at $\sum_s \chi_s \chi_s\dagger = \id$ grundet normaliseingen.
+} og $[\gamma_\mu, \overline{v}_s(p)] = 0$ for at få
+\begin{align}
+\begin{split}
+    &\mel**{\mathrm{e}^+,\, \vv{p}',\, \lambda'}{j_\mu^{(2)}}{\mathrm{e}^+,\, \vv{p},\, \lambda} \\
+        &\quad = e \overline{v}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda') \pexp{i[p'-p]x} \\
+            &\qquad\qquad\qquad\qquad\quad - e \delta^3(\vv{p}-\vv{p}') \delta_{\lambda,\lambda'} \sum_s \int \dd^3\vv{q}\, \frac{\omega_{\vv{p}}}{\omega_{\vv{q}}}\, \overline{v}(\vv{q},s) \gamma_\mu v(\vv{q},s) \\
+        &\quad = e \overline{v}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda') \pexp{i[p'-p]x} \\
+            &\qquad\qquad\qquad\qquad\quad - e \delta^3(\vv{p}-\vv{p}') \delta_{\lambda,\lambda'} \int \dd^3\vv{q}\, \left( \frac{\omega_{\vv{p}}}{\omega_{\vv{q}}}\, \gamma_\mu  \sum_s \overline{v}(\vv{q},s) v(\vv{q},s) \right) \\
+        &\quad = e \overline{v}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda') \pexp{i[p'-p]x} \: .
 \end{split}
 \end{align}
 Derved er \cref{eq:Opg4_Q5_TransitionCurrent2} vist.
@@ -570,7 +591,14 @@ I det tredje matrixelement, \cref{eq:Opg4_Q5_TransitionCurrent3}, optræder
 så vi får
 \begin{align}
 \begin{split}
-    \mel**{0}{j_\mu^{(3)}}{\mathrm{e}^-,\, \vv{p},\, \lambda;\, \mathrm{e}^+,\, \vv{p}',\, \lambda'}
+    &\mel**{0}{j_\mu^{(3)}}{\mathrm{e}^-,\, \vv{p},\, \lambda;\, \mathrm{e}^+,\, \vv{p}',\, \lambda'} \\
+        &\quad = \bigg\langle 0 \bigg\rvert - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{-i[q+q']x} \\
+            &\qquad\qquad\qquad\qquad\qquad \times d_{\vv{q},s} b_{\vv{q}',s'} \overline{v}(\vv{p},\lambda) \gamma_\mu u(\vv{p}',\lambda') \bigg\lvert \mathrm{e}^-,\, \vv{p},\, \lambda;\, \mathrm{e}^+,\, \vv{p}',\, \lambda' \bigg\rangle \\
+        &\quad = - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \sqf{\omega_{\vv{p}}\omega_{\vv{p}'}}{\omega_{\vv{q}}\omega_{\vv{q}'}} \pexp{-i[q+q']x} \\
+            &\qquad\qquad\qquad\qquad\qquad \times \mel**{0}{d_{\vv{q},s} b_{\vv{q}',s'} b_{\vv{p},\lambda}\dagger d_{\vv{p}',\lambda'}\dagger}{0} \overline{v}(\vv{q},s) \gamma_\mu u(\vv{q}',s') \\
+        &\quad = - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \sqf{\omega_{\vv{p}}\omega_{\vv{p}'}}{\omega_{\vv{q}}\omega_{\vv{q}'}} \pexp{-i[q+q']x} \overline{v}(\vv{q},s) \gamma_\mu u(\vv{q}',s') \\
+            &\qquad\qquad\qquad\qquad\qquad \times (2\pi)^6 \delta^3(\vv{p}-\vv{q}') \delta^3(\vv{q}-\vv{p}') \delta_{\lambda,s'} \delta_{s,\lambda'} \\
+        &\quad = - e \overline{v}(\vv{p}',\lambda') \gamma_\mu u(\vv{p},\lambda) \pexp{-i[p+p']x} \: .
 \end{split}
 \end{align}
 Derved er \cref{eq:Opg4_Q5_TransitionCurrent3} vist.
@@ -579,33 +607,90 @@ Derved er \cref{eq:Opg4_Q5_TransitionCurrent3} vist.
 For det fjerde og sidste matrixelement, \cref{eq:Opg4_Q5_TransitionCurrent1}, har vi, at
 \begin{align}
 \begin{split}
-    &\mel**{0}{b_{\vv{p}',\lambda'} d_{\vv{p},\lambda} b_{\vv{q},s}\dagger d_{\vv{q}',s'}\dagger}{0} \\
-        &\quad = \mel**{0}{b_{\vv{p}',\lambda'} \left[ - b_{\vv{q},s}\dagger d_{\vv{p},\lambda} \right] d_{\vv{q}',s'}\dagger}{0} \\
-        &\quad = - \mel**{0}{b_{\vv{p}',\lambda'} b_{\vv{q},s}\dagger d_{\vv{p},\lambda} d_{\vv{q}',s'}\dagger}{0} \\
-        &\quad = - \mel**{0}{\left[ (2\pi)^3 \delta^3(\vv{q}-\vv{p}') \delta_{s,\lambda'} - b_{\vv{q},s}\dagger b_{\vv{p}',\lambda'} \right] \left[ (2\pi)^3 \delta^3(\vv{p}-\vv{q}') \delta_{\lambda,s'} - d_{\vv{q}',s'}\dagger d_{\vv{p},\lambda} \right]}{0} \\
-        &\quad = - (2\pi)^6 \delta^3(\vv{q}-\vv{p}') \delta^3(\vv{p}-\vv{q}') \delta_{s,\lambda'} \delta_{\lambda,s'} \: ,
+    &\mel**{0}{d_{\vv{p},\lambda} b_{\vv{p}',\lambda'} b_{\vv{q},s}\dagger d_{\vv{q}',s'}\dagger}{0} \\
+        &\quad = \mel**{0}{\left[ - b_{\vv{p}',\lambda'} d_{\vv{p},\lambda} \right] b_{\vv{q},s}\dagger d_{\vv{q}',s'}\dagger}{0} \\
+        &\quad = - \mel**{0}{b_{\vv{p}',\lambda'} \left[ - b_{\vv{q},s}\dagger d_{\vv{p},\lambda} \right] d_{\vv{q}',s'}\dagger}{0} \\
+        &\quad = \mel**{0}{b_{\vv{p}',\lambda'} b_{\vv{q},s}\dagger d_{\vv{p},\lambda} d_{\vv{q}',s'}\dagger}{0} \\
+        &\quad = \mel**{0}{\left[ (2\pi)^3 \delta^3(\vv{q}-\vv{p}') \delta_{s,\lambda'} - b_{\vv{q},s}\dagger b_{\vv{p}',\lambda'} \right] \left[ (2\pi)^3 \delta^3(\vv{p}-\vv{q}') \delta_{\lambda,s'} - d_{\vv{q}',s'}\dagger d_{\vv{p},\lambda} \right]}{0} \\
+        &\quad = (2\pi)^6 \delta^3(\vv{q}-\vv{p}') \delta^3(\vv{p}-\vv{q}') \delta_{s,\lambda'} \delta_{\lambda,s'} \: ,
 \end{split}
 \end{align}
 hvorfor
 \begin{align}
 \begin{split}
-    \mel**{\mathrm{e}^-,\, \vv{p}',\, \lambda';\, \mathrm{e}^+,\, \vv{p},\, \lambda}{j_\mu^{(4)}}{0}
+    &\mel**{\mathrm{e}^-,\, \vv{p}',\, \lambda';\, \mathrm{e}^+,\, \vv{p},\, \lambda}{j_\mu^{(4)}}{0} \\
+        &\quad = \bigg\langle \mathrm{e}^-,\, \vv{p}',\, \lambda';\, \mathrm{e}^+,\, \vv{p},\, \lambda \bigg\rvert - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{i[q+q']x} \\
+            &\qquad\qquad\qquad\qquad\qquad\qquad\qquad \times b_{\vv{q},\lambda}\dagger d_{\vv{q}',\lambda'}\dagger \overline{u}(\vv{q},s) \gamma_\mu v(\vv{q}',s') \bigg\lvert 0 \bigg\rangle \\
+        &\quad = - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \sqf{\omega_{\vv{p}'}\omega_{\vv{p}}}{\omega_{\vv{q}}\omega_{\vv{q}'}} \pexp{i[q+q']x} \\
+            &\qquad\qquad\qquad\qquad\qquad \times \mel**{0}{d_{\vv{p},\lambda} b_{\vv{p}',\lambda'} b_{\vv{q},s}\dagger d_{\vv{q}',s'}\dagger}{0} \overline{u}(\vv{q},s) \gamma_\mu v(\vv{q}',s') \\
+        &\quad = - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \sqf{\omega_{\vv{p}'}\omega_{\vv{p}}}{\omega_{\vv{q}}\omega_{\vv{q}'}} \pexp{i[q+q']x} \overline{u}(\vv{q},s) \gamma_\mu v(\vv{q}',s') \\
+            &\qquad\qquad\qquad\qquad\qquad \times (2\pi)^6 \delta^3(\vv{q}-\vv{p}') \delta^3(\vv{p}-\vv{q}') \delta_{s,\lambda'} \delta_{\lambda,s'} \\
+        &\quad = - e \overline{u}(\vv{p}',\lambda') \gamma_\mu v(\vv{p},\lambda) \pexp{i[p+p']x} \: .
 \end{split}
 \end{align}
 Derved er \cref{eq:Opg4_Q5_TransitionCurrent4} vist.
+\\
 
+Overgangsstrømmene i \cref{eq:Opg4_Q5_TransitionCurrents} er matrixelementerne mellem start- og sluttilstandene for impulsudvekslingen mellem elektroner og positroner i forskellige kombinationer, dog ekskluderende fotonen, som også er en del af vekselvirkningen, i de to tilstande, som i stedet beskrives af strømoperatoren. Vi kan derfor tegne disse som Feynmandiagrammer, hvilke kan ses nedenfor. Matrixelementerne er alle på formen $\mel{f}{j_\mu}{i}$ hvor $i$ og $f$ betegner hhv. start- og sluttilstanden, hvorved det første matrixelement er en indkommende elektron med impuls $\vv{p}$ og helicitet $\lambda$ som ændres til en udgående elektron med impuls $\vv{p}'$ og helicitet $\lambda'$. For andet matrixelement er positron med impuls $\vv{p}$ og helicitet $\lambda$ som spredes til en positron med impuls $\vv{p}'$ og helicitet $\lambda'$. Det tredje matrixelement er annihilationen af et elektron-positron-par til vakuum (eller rettere end foton), og det fjerde matrixelement er blot denne annihilation set med tiden gående baglæns, altså dannelsen af et elektron-positron-par fra en foton.
 
-
-% j_\mu^{(1)} &= - e \sum_{\lambda,\lambda'} \int \frac{\dd^3\vv{p}\, \dd^3\vv{p}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \pexp{i[p-p']x} b_{\vv{p},\lambda}\dagger b_{\vv{p}',\lambda'} \overline{u}(\vv{p},\lambda) \gamma_\mu u(\vv{p}',\lambda')
-%
-% j_\mu^{(2)} &= - e \sum_{\lambda,\lambda'} \int \frac{\dd^3\vv{p}\, \dd^3\vv{p}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \pexp{-i[p-p']x} d_{\vv{p},\lambda} d_{\vv{p}',\lambda'}\dagger \overline{v}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda')
-%
-% j_\mu^{(3)} &= - e \sum_{\lambda,\lambda'} \int \frac{\dd^3\vv{p}\, \dd^3\vv{p}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \pexp{-i[p+p']x} d_{\vv{p},\lambda} b_{\vv{p}',\lambda'} \overline{v}(\vv{p},\lambda) \gamma_\mu u(\vv{p}',\lambda')
-%
-% j_\mu^{(4)} &= - e \sum_{\lambda,\lambda'} \int \frac{\dd^3\vv{p}\, \dd^3\vv{p}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \pexp{i[p+p']x} b_{\vv{p},\lambda}\dagger d_{\vv{p}',\lambda'}\dagger \overline{u}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda')
-
-
-% Giv en fysisk fortolkning af de fire udtryk (det kan være en idé at tegne hver af udtrykkene som en del af et Feynmandiagram).
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex (vertex);
+        \vertex [below left = 3em and 1.5em of vertex] (inParticle) {\(e^-\)};
+        \vertex [above left = 3em and 1.5em of vertex] (outParticle) {\(e^-\)};
+        \vertex [right = 3em of vertex] (photon) {\(\gamma\)};
+        \vertex [above left = 1em and 1.5em of inParticle] (timeBot);
+        \vertex [above = 5.5em of timeBot] (timeTop);
+        \vertex [below = 5.5em of vertex] {\(j_\mu^{(1)}\)};
+        \diagram*{
+            (timeBot) -- [draw = none, momentum = $t$] (timeTop),
+            (inParticle) -- [fermion] (vertex) -- [fermion] (outParticle),
+            (vertex) -- [photon] (photon),
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex (vertex);
+        \vertex [below right = 3em and 1.5em of vertex] (inParticle) {\(e^+\)};
+        \vertex [above right = 3em and 1.5em of vertex] (outParticle) {\(e^+\)};
+        \vertex [left = 3em of vertex] (photon) {\(\gamma\)};
+        \vertex [below = 5.5em of vertex] {\(j_\mu^{(2)}\)};
+        \diagram*{
+            (inParticle) -- [anti fermion] (vertex) -- [anti fermion] (outParticle),
+            (vertex) -- [photon] (photon),
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex (vertex);
+        \vertex [below left = of vertex] (inParticle1) {\(e^-\)};
+        \vertex [below right = of vertex] (inParticle2) {\(e^+\)};
+        \vertex [above = 3em of vertex] (photon) {\(\gamma\)};
+        \vertex [below = 5.5em of vertex] {\(j_\mu^{(3)}\)};
+        \diagram*{
+            (inParticle1) -- [fermion] (vertex) -- [photon] (photon),
+            (inParticle2) -- [anti fermion] (vertex),
+        };
+    \end{feynman}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=.85, transform shape]
+    \begin{feynman}
+        \vertex (vertex);
+        \vertex [above left = of vertex] (outParticle1) {\(e^-\)};
+        \vertex [above right = of vertex] (outParticle2) {\(e^+\)};
+        \vertex [below = 3em of vertex] (photon) {\(\gamma\)};
+        \vertex [below = 5.5em of vertex] {\(j_\mu^{(4)}\)};
+        \diagram*{
+            (photon) -- [photon] (vertex) -- [fermion] (outParticle1),
+            (vertex) -- [anti fermion] (outParticle2),
+        };
+    \end{feynman}
+\end{tikzpicture}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -687,6 +772,27 @@ Dermed ses det tydeligt, at alle fire overgangsstrømme er bevarede i den forsta
 
 \paragraph[7) Beregning på fysiske processer i QED giver led på formen $J_\mu^{fi}(0)\epsilon^\mu(\sigma)$]{\textbf{7)}}
 
+Med en Lagrangedensitet for virkningen på formen $\L_I = - J_\mu A^\mu$ vil vi have en Hamiltondensitet for vekselvirkningen, som er $\H_I = J_\mu A^\mu$, da $\L_I$ ikke indeholder nogle differentialopeartorled, som ellers ville ''besværliggøre'' Legendretransformationen. Betragter vi nu kvantiseringen af feltet for en foton, \cite[lign. 8]{Q&A10}
+\begin{align}
+    A^\mu(x) &= \sum_\sigma \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \invsqrt{2 \omega_{\vv{p}}} \left[ \epsilon^\mu(\sigma) a_{\vv{p},\sigma} \pexp{-ipx} + \epsilon^\mu(\sigma)^* a_{\vv{p},\sigma}\dagger \pexp{ipx} \right] \: ,
+\end{align}
+samt benytter Dysonserien og tidsafhængigperturbationsteori, som vi har lært i kurset, da er det klart at vi vil få matrixelementer på formen (\cite[lign. 53--54]{problemSet2})
+\begin{align}
+    \mel**{f}{J_\mu(x) A^\mu(x)}{i} \propto \mel**{f}{J_\mu(0)}{i} \epsilon^\mu(\sigma)
+        \propto J_\mu^{fi}(0) \epsilon^\mu(\sigma)
+    \: ,
+\end{align}
+da feltudvidelsen for $A^\mu$ kun indeholder impulsrumsintegration og dermed kan tages ud af matrixelementet, samt at $J_\mu(x) \propto J_\mu(0)$, da vi kan translatere operatorer med komplekse eksponentialfunktioner, og at kun overgangsstrømmene fra \textbf{5)} (\cref{eq:Opg4_Q5_TransitionCurrents}) ikke-trivielle, altså forskellige fra $0$. $J_\mu^{fi}(x)$ er overgangsstrømmene regnet i \textbf{5)}.
+\\
+
+Når vi taler sandsynlighed, så tages normkvadratet af matrixelementet, altså
+\begin{align}
+    \abs{J_\mu^{fi}(0) \epsilon^\mu(\sigma)}^2 &= J_\mu^{fi}(0)^* \epsilon^\mu(\sigma)^* J_\nu^{fi}(0) \epsilon^\nu(\sigma)
+        = \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) J_\mu^{fi}(0)^* J_\nu^{fi}(0) \: .
+\end{align}
+\\
+
+Går vi til højere orden i perturbationen, da vil vil blot få flere matrixelementer på denne form, da vi vil få nogen ''mellemliggende'' (eng: intermediate) tilstande.
 
 
 
@@ -694,7 +800,7 @@ Dermed ses det tydeligt, at alle fire overgangsstrømme er bevarede i den forsta
 
 \paragraph[8) Sum af polarisationstilstande for en reel foton]{\textbf{8)}}
 
-Fra \textbf{opgave 1.2} (\textbf{delopgave 2} i \textbf{Spin-1 partikler med masse}) på \cref{sec:Opg1_Q2} er det givet, at $\epsilon_\mu q^\mu = 0$ samt at $\epsilon_\mu(\sigma) \epsilon^\mu(\sigma') = -\delta_{\sigma\sigma'}$. Fra første krav kan vi se, at siden $q^\mu = (q_0,\, 0,\, 0,\, q_0)$, da skal $\epsilon^0 = \epsilon^3 = 0$ \footnote{
+Fra \textbf{opgave 1.2} (\textbf{delopgave 2} i \textbf{Spin-1 partikler med masse}) i \cref{sec:Opg1_Q2} er det givet, at $\epsilon_\mu q^\mu = 0$ samt at $\epsilon_\mu(\sigma) \epsilon^\mu(\sigma') = -\delta_{\sigma\sigma'}$. Fra første krav kan vi se, at siden $q^\mu = (q_0,\, 0,\, 0,\, q_0)$, da skal $\epsilon^0 = \epsilon^3 = 0$ \footnote{
     Yderlige giver det mening at $\epsilon^3 = 0$, idet at fotoner, da de er masseløse, ikke kan være polariserede i propageringsretningen, som her trivielt er valgt til at være $\zhat$-retningen.
 }. Sidstnævnte krav skyldes, at polarisationstilstandene skal være ortogonale, da vi kræver, at en partikel kun kan være i én tilstand (enten den ene eller den anden). Vi har i \textbf{opgave 1: Spin-1-partikler med masse} set to mulige sæt af tilstande, som opfylder begge krav: De lineært polariserede tilstande $e_x^\mu$ og $e_y^\mu$ fra \cref{eq:Opg1_Q3_PolarisationStatesInRestFrame} samt de cirkulært polariserede tilstande $e^\mu(\sigma = \pm 1)$ fra \cref{eq:Opg1_Q4_HelicityStates},
 \begin{align}
@@ -725,12 +831,47 @@ Dermed er \cref{eq:Opg4_Q8_IdentityWithSumOfPolarisation}, $\sum_\sigma \epsilon
 
 \paragraph[9) Polarisationstilstande og den metriske tensor for en reel foton]{\textbf{9)}}
 
+Først betragtes venstresiden af \cref{eq:Opg4_Q9_Result}, og benyttes identiteten vist i \cref{eq:Opg4_Q8_IdentityWithSumOfPolarisation} fås
+\begin{align} \label{eq:Opg4_A9_LeftHandSide}
+\begin{split}
+    \left[ \sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) \right] J_\mu^{fi}(0)^* \J_\nu^{fi}(0)
+        &= \big[ \delta_1^\mu \delta_1^\nu + \delta_2^\mu \delta_2^\nu \big] J_\mu^{fi}(0)^* \J_\nu^{fi}(0) \\
+        &= \abs{J_1^{fi}(0)}^2 + \abs{\J_2^{fi}(0)}^2 \: .
+\end{split}
+\end{align}
 
+Betragtes nu højresiden af \cref{eq:Opg4_Q9_Result} fås
+\begin{align} \label{eq:Opg4_A9_RightHandSide}
+    - g^{\mu\nu} J_\mu^{fi}(0)^* \J_\nu^{fi}(0) &= - \abs{J_0^{fi}(0)}^2 + \abs{J_1^{fi}(0)}^2 + \abs{J_2^{fi}(0)}^2 + \abs{J_3^{fi}(0)}^2 \: ,
+\end{align}
+da $g^{\mu\nu} = \mathrm{diag}(1,\, -\id)$. Det huskes at $J_\mu^{fi}(x)$ er en bevaret strøm (fra \textbf{6)}) samt at $J_\mu^{fi}(x) = \pexp{iqx} J_\mu^{fi}(0)$ fra \cref{eq:Opg4_Q5_TransitionCurrents}, hvor $q = p_f - p_i$ er fotonens impulsoverførsel ($p_i$ og $p_f$ er hhv. start- og sluttlistandens impuls), hvorfor
+\begin{align}
+\begin{split}
+    0 &= \partial^\mu J_\mu^{fi}(x) \\
+        &= \partial^\mu \left[ \pexp{iqx} J_\mu^{fi}(0) \right] \\
+        &= i q^\mu \pexp{iqx} J_\mu^{fi}(0) \\
+        &= i q^\mu J_\mu^{fi}(x) \\
+        &= i q_0 \left[ J_0^{fi}(x) - J_3^{fi}(x) \right] \\
+    \Rightarrow
+    J_0^{fi}(x) &= J_3^{fi}(x) \\
+    \Rightarrow
+    \abs{J_0^{fi}(0)}^2 &= \abs{J_3^{fi}(0)}^2 \: ,
+\end{split}
+\end{align}
+da vi fra \textbf{8)} har at $q^\mu = (q_0,\, 0,\, 0,\, q_0)$. Indsættes dette i \cref{eq:Opg4_A9_RightHandSide} og sammenligned med \cref{eq:Opg4_A9_LeftHandSide} fås
+\begin{align}
+\begin{split}
+    - g^{\mu\nu} J_\mu^{fi}(0)^* \J_\nu^{fi}(0) &= - \abs{J_0^{fi}(0)}^2 + \abs{J_1^{fi}(0)}^2 + \abs{J_2^{fi}(0)}^2 + \abs{J_3^{fi}(0)}^2 \\
+        &= \abs{J_1^{fi}(0)}^2 + \abs{\J_2^{fi}(0)}^2 \\
+        &= \left[ \sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma) \right] J_\mu^{fi}(0)^* \J_\nu^{fi}(0) \: ,
+\end{split}
+\end{align}
+hvilket er \cref{eq:Opg4_Q9_Result} som skulle vises.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph[10) Polarisationstilstande og den metriske tensor for reelle og virtuelle fotoner]{\textbf{10)}}
+\paragraph[10) Polarisationstilstande og den metriske tensor for reelle og \\ virtuelle fotoner]{\textbf{10)}}
 
 Vi kan se udtrykket i \cref{eq:Opg4_Q10_ExpressionToBeTrue} som værende resultatet fra egenværdiligningen fra \textbf{9)}, \cref{eq:Opg4_Q9_Result}, så længe at $J_\mu^{fi}(0) \ne 0$.
 \\
@@ -762,7 +903,7 @@ Feynmandiagrammet for spredningen af elektroner på myoner, $\mathrm{e}^- + \mu^
             (timeBot) -- [draw = none, momentum = $t$] (timeTop),
             (downLeft) -- [fermion, momentum' = $p_1$] (vertexLeft) -- [fermion, momentum' = $p_3$] (upLeft),
             % momentum and momentum' changed positions (above below) of label on path
-            (downRight) -- [fermion, momentum = $p_2$] (vertexRight) -- [fermion, momentum = $p_40$] (upRight),
+            (downRight) -- [fermion, momentum = $p_2$] (vertexRight) -- [fermion, momentum = $p_4$] (upRight),
             (vertexLeft) -- [photon, edge label = $\gamma$, momentum' = $q$] (vertexRight),
             % momentum and momentum' changed positions (above below) of label on path
         };
@@ -774,6 +915,65 @@ Feynmandiagrammet for spredningen af elektroner på myoner, $\mathrm{e}^- + \mu^
 
 \paragraph[12) S-matricen til anden orden for elektron-myon-spredningen]{\textbf{12)}}
 
+Lagrangedentiteten for vekselvirkningen er $\L_I = - (j_\mu^{\mathrm{e}^-} + j_\mu^{\mu^-}) A^\mu = - J_\mu A^\mu$, hvor $j_\mu^{\mathrm{e}^-}$ og $j_\mu^{\mu^-}$ er strømmen for hhv. elektronen og myonen og $J_\mu$ er den totale firstrøm, og da $\L_I$ ikke indeholder nogle differentialer, så er Hamiltondensiteten af vekselvirkningen $\H = - \L_I = J_\mu A^\mu$. Fra \cite[lign. ??]{problemSet2} har vi, at S-matrixelementet til anden orden kan skrives som
+\begin{align}
+    S_{fi}^{(2)} &= \frac{(-i)^2}{2} \int \dd^4 x_1\, \dd^4 x_2\, \mel**{f}{T[\H_I(x_1) \H_I(x_2)]}{i} \: .
+\end{align}
+Siden udregningen er for spredningen af en elektron med impuls $\vv{p_1}$ og helicitet $\lambda_1$ over i en elektron med $\vv{p}_3$ og $\lambda_3$, når den spredes på en myon med impuls $\vv{p_2}$ og helicitet $\lambda_2$ over i en elektron med $\vv{p}_4$ og $\lambda_4$, da bliver start- og sluttilstanden
+\begin{align}
+    \ket{i} &= \ket{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1;\, \mu^-,\, \vv{p_2},\, \lambda_2}
+        \qquad \text{og} \qquad
+    \ket{f} = \ket{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3;\, \mu^-,\, \vv{p_4},\, \lambda_4} \: .
+\end{align}
+Vi kan nu udregne S-matrixelementet
+\begin{align} \label{eq:Opg4_A12_CaulculationOfSMatrixPart1}
+\begin{split}
+    S_{fi}^{(2)} &= \frac{(-i)^2}{2} \int \dd^4 x_1\, \dd^4 x_2\, \mel**{f}{T[\H_I(x_1) \H_I(x_2)]}{i} \\
+        &= \frac{(-i)^2}{2} \int \dd^4 x_1\, \dd^4 x_2\, \mel**{f}{T[J_\mu(x_1) A^\mu(x_1) J_\nu(x_2) A^\nu(x_2)]}{i} \\
+        &= \frac{(-i)^2}{2} \int \dd^4 x_1\, \dd^4 x_2\, \mel**{f}{J_\mu(x_1) J_\nu(x_2)}{i} \mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \\
+        &= \frac{(-i)^2}{2} \int \dd^4 x_1\, \dd^4 x_2\, \mel**{f}{\left( j_\mu^{\mathrm{e}^-}(x_1) + j_\mu^{\mu^-}(x_1) \right) \left( j_\nu^{\mathrm{e}^-}(x_2) + j_\nu^{\mu^-}(x_2) \right)}{i} \\
+            &\qquad\qquad\qquad\qquad\qquad\qquad \times \mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \\
+        &= \frac{(-i)^2}{2} \int \dd^4 x_1\, \dd^4 x_2\, \bigg( \mel**{f}{j_\mu^{\mathrm{e}^-}(x_1) j_\nu^{\mathrm{e}^-}(x_2)}{i} + \mel**{f}{j_\mu^{\mathrm{e}^-}(x_1) j_\nu^{\mu^-}(x_2)}{i} \\
+            &\qquad\qquad\qquad\qquad\: + \mel**{f}{j_\mu^{\mu^-}(x_1) j_\nu^{\mathrm{e}^-}(x_2)}{i} + \mel**{f}{j_\mu^{\mu^-}(x_1) j_\nu^{\mu^-}(x_2)}{i} \bigg)
+            \\
+            &\qquad\qquad\qquad\qquad\quad \times \mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \\
+        &= \frac{(-i)^2}{2} \int \dd^4 x_1\, \dd^4 x_2 \\
+            &\quad \times \bigg( \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\mu^{\mathrm{e}^-}(x_1) j_\nu^{\mathrm{e}^-}(x_2)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \innerproduct{\mu^-,\, \vv{p_4},\, \lambda_4}{\mu^-,\, \vv{p_2},\, \lambda_2} \\
+            &\qquad\:\: + \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\mu^{\mathrm{e}^-}(x_1)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\nu^{\mu^-}(x_2)}{\mu^-,\, \vv{p_2},\, \lambda_2} \\
+            &\qquad\:\: + \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\mu^{\mu^-}(x_1)}{\mu^-,\, \vv{p_2},\, \lambda_2} \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\nu^{\mathrm{e}^-}(x_2)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \\
+            &\qquad\:\: + \innerproduct{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\mu^{\mu^-}(x_1) j_\nu^{\mu^-}(x_2)}{\mu^-,\, \vv{p_2},\, \lambda_2} \bigg)
+            \\
+            &\quad \times \mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \: ,
+\end{split}
+\end{align}
+hvor vi har kunnet opdele matrixelementerne i den sidste lighed, da operatorerne kun virker på deres eget rum, altså $j_\mu^{\mathrm{e}^-}$ virker kun på $\ket{\mathrm{e}^-}$.
+
+Af de fire strømled i \cref{eq:Opg4_A12_CaulculationOfSMatrixPart1} svarer det første og sidste blot til hhv. at elektronen og myonen vekselvirker med sig selv gennem en foton, men siden dette ikke er spredningen, som vi regner på, da kan disse led negligeres. Kigger vi nu på det tredje led og lader $x_1 \leftrightarrow x_2$ og $\mu \leftrightarrow \nu$ får vi, at
+\begin{align}
+\begin{split}
+    &\mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\nu^{\mu^-}(x_2)}{\mu^-,\, \vv{p_2},\, \lambda_2} \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\mu^{\mathrm{e}^-}(x_1)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \\
+        &\qquad\qquad\qquad\qquad\qquad\qquad\qquad \times \mel**{0}{T[A^\nu(x_2) A^\mu(x_1)]}{0} \\
+    &\quad = \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\mu^{\mathrm{e}^-}(x_1)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\nu^{\mu^-}(x_2)}{\mu^-,\, \vv{p_2},\, \lambda_2} \\
+        &\qquad\qquad\qquad\qquad\qquad\qquad\qquad \times \mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \: ,
+\end{split}
+\end{align}
+da $T[A^\mu(x_1) A^\nu(x_2)] = T[A^\nu(x_2) A^\mu(x_1)]$. Dermed er andet og tredje led i \cref{eq:Opg4_A12_CaulculationOfSMatrixPart1} ens, hvorfor S-matrixelementet til anden orden bliver
+\begin{align}
+\begin{split}
+    S_{fi}^{(2)} &= (-i)^2 \int \dd^4 x_1\, \dd^4 x_2 \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\mu^{\mu^-}(x_1)}{\mu^-,\, \vv{p_2},\, \lambda_2} \\
+            &\qquad\qquad\quad \times \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\nu^{\mathrm{e}^-}(x_2)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \\
+            &= (-i)^2 \int \dd^4 x_1\, \dd^4 x_2\, J_\mu^{\mathrm{e}^-}(x_1) J_\nu^{\mu^-}(x_2) \mel**{0}{T\left[A^\mu(x_1)A^\nu(x_2)\right]}{0}
+\end{split}
+\end{align}
+hvor vi har defineret
+\begin{subequations}
+\begin{align}
+    J_\mu^{\mathrm{e}^-}(x_1) &= \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\mu^{\mu^-}(x_1)}{\mu^-,\, \vv{p_2},\, \lambda_2} \qquad \text{og} \\
+    J_\nu^{\mu^-}(x_2) &= \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\nu^{\mathrm{e}^-}(x_2)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \: .
+\end{align}
+\end{subequations}
+Dermed er \cref{eq:Opg4_Q12_SMatrixSecondOrder} vist.
+
 % Vis at S-matricen til anden orden for elektron-myon-spredningsprocessen kan skrives som
 % \begin{align}
 %     S_{fi}^{(2)} &= (-i)^2 \int \dd^4 x_1 \dd^4 x_2 J_\mu^{\mathrm{e}^-}(x_1) J_\nu^{\mu^-}(x_2) \mel**{0}{T\left[A^\mu(x_1)A^\nu(x_2)\right]}{0} \: .
@@ -784,6 +984,59 @@ Feynmandiagrammet for spredningen af elektroner på myoner, $\mathrm{e}^- + \mu^
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[13) Fotonpropagator ved analogi med Klein-Gordon-proagatoren]{\textbf{13)}}
+
+For $G^{\mu\nu}(q)$ værende impulsrumspropagatoren for fotonen må $\mel{0}{T[A^\mu(x) A^\nu(0)]}{0}$ være stedrumsfotonpropagatoren grundet den inverse Fouriertransformation. At $\mel{0}{T[A^\mu(x) A^\nu(0)]}{0}$ giver mening som værende fotonpropagatoren i stedrum vises herunder.
+\\
+
+Kvantiseringen af feltet for en foton er \cite[lign. 8]{Q&A10}
+\begin{align}
+    A^\mu(x) &= \sum_\sigma \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \invsqrt{2 \omega_{\vv{p}}} \left[ \epsilon^\mu(\sigma) a_{\vv{p},\sigma} \pexp{-ipx} + \epsilon^\mu(\sigma)^* a_{\vv{p},\sigma}\dagger \pexp{ipx} \right] \: ,
+\end{align}
+så hvis stedrumspropagatoren udregnes, fås\\
+\begin{align} \label{eq:Opg4_A13_CalculatingThePropagatorPart1}
+\begin{split}
+    &\mel**{0}{T \left[ A^\mu(x) A^\nu(0) \right]}{0} \\
+        &\quad = \Bigg\langle 0 \Bigg\rvert \left\{ \sum_\sigma \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \invsqrt{2 \omega_{\vv{p}}} \left[ \epsilon^\mu(\sigma) a_{\vv{p},\sigma} \pexp{-ipx} + \epsilon^\mu(\sigma)^* a_{\vv{p},\sigma}\dagger \pexp{ipx} \right] \right\} \\
+            &\qquad\qquad \times \left\{ \sum_{\sigma'} \int \frac{\dd^3 \vv{p}'}{(2\pi)^3} \invsqrt{2 \omega_{\vv{p}'}} \left[ \epsilon^\nu(\sigma') a_{\vv{p}',\sigma'} + \epsilon^\nu(\sigma')^* a_{\vv{p}',\sigma'}\dagger \right] \right\} \Bigg\lvert 0 \Bigg\rangle \\
+        &\quad = \theta(t) \sum_{\sigma,\sigma'} \int \frac{\dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \Big\langle 0 \Big\rvert \left[ \epsilon^\mu(\sigma) a_{\vv{p},\sigma} \pexp{-ipx} + \epsilon^\mu(\sigma)^* a_{\vv{p},\sigma}\dagger \pexp{ipx} \right] \\
+            &\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \times \left[ \epsilon^\nu(\sigma') a_{\vv{p}',\sigma'} + \epsilon^\nu(\sigma')^* a_{\vv{p}',\sigma'}\dagger \right] \Big\lvert 0 \Big\rangle \\
+            &\qquad\: + \theta(-t) \sum_{\sigma,\sigma'} \int \frac{\dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \Big\langle 0 \Big\rvert \left[ \epsilon^\nu(\sigma') a_{\vv{p}',\sigma'} + \epsilon^\nu(\sigma')^* a_{\vv{p}',\sigma'}\dagger \right] \\
+            &\qquad\qquad\qquad\qquad\qquad\qquad\quad \times \left[ \epsilon^\mu(\sigma) a_{\vv{p},\sigma} \pexp{-ipx} + \epsilon^\mu(\sigma)^* a_{\vv{p},\sigma}\dagger \pexp{ipx} \right] \Big\lvert 0 \Big\rangle \\
+        &\quad = \theta(t) \sum_{\sigma,\sigma'} \int \frac{\dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \mel**{0}{\epsilon^\mu(\sigma) a_{\vv{p},\sigma} \pexp{-ipx} \epsilon^\nu(\sigma')^* a_{\vv{p}',\sigma'}\dagger}{0} \\
+            &\qquad\: + \theta(-t) \sum_{\sigma,\sigma'} \int \frac{\dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \mel**{0}{\epsilon^\nu(\sigma') a_{\vv{p}',\sigma'} \epsilon^\mu(\sigma)^* a_{\vv{p},\sigma}\dagger \pexp{ipx}}{0} \\
+        &\quad = \theta(t) \sum_{\sigma,\sigma'} \int \frac{\dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \epsilon^\mu(\sigma) \epsilon^\nu(\sigma')^* \pexp{-ipx} (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \delta_{\sigma,\sigma'} \\
+            &\qquad\: + \theta(-t) \sum_{\sigma,\sigma'} \int \frac{\dd^3 \vv{p}\, \dd^3 \vv{p}'}{(2\pi)^6} \inv{2 \sqrt{\omega_{\vv{p}} \omega_{\vv{p}'}}} \epsilon^\nu(\sigma') \epsilon^\mu(\sigma)^* \pexp{ipx} (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \delta_{\sigma,\sigma'} \\
+        &\quad = \theta(t) \sum_{\sigma} \epsilon^\mu(\sigma) \epsilon^\nu(\sigma)^* \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{-ipx} \\
+            &\qquad\: + \theta(-t) \sum_{\sigma} \epsilon^\nu(\sigma) \epsilon^\mu(\sigma)^* \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{ipx} \\
+        &\quad = \theta(t) (-g^{\mu\nu}) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{-ipx} + \theta(-t) (-g^{\nu\mu}) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{ipx} \\
+        &\quad = -g^{\mu\nu} \left[ \theta(t) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{-ipx} + \theta(-t) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{ipx} \right]
+\end{split}
+\end{align}
+hvor identiteten fra \textbf{10)}, \cref{eq:Opg4_Q10_ExpressionToBeTrue}, er blevet benyttet, hvor det også noteres, at $\sum_\sigma \epsilon^\mu(\sigma) \epsilon^\nu(\sigma)^* = [\sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma)]^* = [-g^{\mu\nu}]^* = -g^{\mu\nu}$, da $g^{\mu\nu} = \mathrm{diag}(1,\, -\id)$. Yderligere er det blevet benyttet, at kun ledene, hvor en partikel først skabes og derefter annihileres overlever, idet at $a_{\vv{p},\sigma} \ket{0} = 0 \xleftrightarrow{\text{DC}} \bra{0} a_{\vv{p},\sigma}\dagger = 0$, samt gjort brug at de bosoniske kommutatorrelationer, $[a_{\vv{p},\sigma},\, a_{\vv{p}',\sigma'}\dagger] = (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \delta_{\sigma,\sigma'}$.
+
+Udtrykket i parentesen i \cref{eq:Opg4_A13_CalculatingThePropagatorPart1} er præcis Klein-Gordon-propagatoren $\mel{0}{T[\phi(x) \phi(0)]}{0}$ for et skalarfelt $\phi$ (\cite[lign. 40]{problemSet3}), så
+\begin{align} \label{eq:Opg4_A13_CalculatingThePropagatorPart2}
+    \mel**{0}{T \left[ A^\mu(x) A^\nu(0) \right]}{0} &= - g^{\mu\nu} \mel**{0}{T \left[ \phi(x) \phi(0) \right]}{0} \: ,
+\end{align}
+hvorfor det giver mening at $\mel{0}{T[A^\mu(x) A^\nu(0)]}{0}$ er fotonpropagatoren i stedrum.
+\\
+
+Benytter vi os af udtrykket for Klein-Gordon-stedrumspropagatoren fra \cite[lign. 40]{problemSet3}
+\begin{align}
+    \mel**{0}{T \left[ \phi(x) \phi(0) \right]}{0} &= \int \frac{\dd^4 q}{(2\pi)^4} \frac{i}{q^2 - m^2} \pexp{-iqx}
+        = \int \frac{\dd^4 q}{(2\pi)^4} \frac{i}{q^2} \pexp{-iqx} \: ,
+\end{align}
+hvor $m = 0$, da der er tale om en reel foton, så ser vi at \cref{eq:Opg4_Q13_PhotonPropagator} bliver
+\begin{align}
+\begin{split}
+    G^{\mu\nu}(q) &= \int \dd^4 x \pexp{iqx} \mel**{0}{T\left[A^\mu(x)A^\nu(0)\right]}{0} \\
+        &= - g^{\mu\nu} \int \dd^4 x \pexp{iqx} \mel**{0}{T \left[ \phi(x) \phi(0) \right]}{0} \\
+        &= \frac{-ig^{\mu\nu}}{q^2} \: ,
+\end{split}
+\end{align}
+da vi tager den inverse Fouriertransformation (\cite[lign. 72]{problemSet2}) af en fouriertransformation (\cite[lign. 71]{problemSet2}) af en funktion, hvilket blot giver funktionen selv (\cite[lign. 2.6]{fourierAnalysis}, $\mathcal{F}^{-1}[\mathcal{F}[f]] = f$). Dermed er \cref{eq:Opg4_Q13_PhotonPropagator} vist.
+
+% Vi vil finde impulsrumsfotonpropagatoren, hvorfor det ''ekstra'' integral
 
 % Ved at benytte Klein-Gordon-propagatoren som analogi, argumentér for at vi kan benytte den følgende form for fotonpropagatoren
 % \begin{align}
@@ -797,11 +1050,55 @@ Feynmandiagrammet for spredningen af elektroner på myoner, $\mathrm{e}^- + \mu^
 
 \paragraph[14) Matrixelementet $\M_{fi}$ i $S_{fi}^{(2)}$]{\textbf{14)}}
 
-% Definer som sædvanligt $S_{fi}^{(2)} = - i \M_{fi} (2\pi)^4 \delta^4(p_f - p_i)$. Vis at
-% \begin{align}
-%     - i \M_{fi} &= \left( -i J_\mu^{\mathrm{e}^-}(0) \right) \frac{-ig^{\mu\nu}}{q^2} \left( -i J_\nu^{\mu^-}(0) \right) \: .
-% \end{align}
-% Udtryk impulsoverførslen $q$ som funktion af start- og sluttilstandsimpulsen.
+Vi starter med at translatere $J_\mu^{\mathrm{e}^-}(x_1)$, $J_\nu^{\mu^-}(x_2)$ og matrixelementet med tidsombytningsoperatoren fra \cref{eq:Opg4_Q12_SMatrixSecondOrder}, hvilket gøres ved at lade $P$ være den totale firimpulsoperator, $x = x_1 - x_2$ og $Px = P^\mu x_\mu$ være sammentrækningen (eng: the contraction) af to firvektorer. Da får vi følgende
+\begin{align}
+    \begin{split}
+        J_\mu^{\mathrm{e}^-}(x_1) &= \mel**{\mathrm{e}^-,\, \vv{p}_3,\, \lambda_3}{j_\mu^{\mathrm{e}^-}(x_1)}{\mathrm{e}^-,\, \vv{p}_1,\, \lambda_1} \\
+            &= \mel**{\mathrm{e}^-,\, \vv{p}_3,\, \lambda_3}{\pexp{iPx_1} j_\mu^{\mathrm{e}^-}(0) \pexp{-iPx_1}}{\mathrm{e}^-,\, \vv{p}_1,\, \lambda_1} \\
+            &= \mel**{\mathrm{e}^-,\, \vv{p}_3,\, \lambda_3}{\pexp{ip_3x_1} j_\mu^{\mathrm{e}^-}(0) \pexp{-ip_1x_1}}{\mathrm{e}^-,\, \vv{p}_1,\, \lambda_1} \\
+            &= \pexp{ip_3x_1} \pexp{-ip_1x_1} \mel**{\mathrm{e}^-,\, \vv{p}_3,\, \lambda_3}{j_\mu^{\mathrm{e}^-}(0)}{\mathrm{e}^-,\, \vv{p}_1,\, \lambda_1} \\
+            &= \pexp{i[p_3 - p_1]x_1} J_\mu^{\mathrm{e}^-}(0) \\
+            &= \pexp{i[p_3 - p_1]x} \pexp{i[p_3 - p_1]x_2} J_\mu^{\mathrm{e}^-}(0) \: ,
+    \end{split} \\
+    \begin{split}
+        J_\nu^{\mu^-}(x_2) &= \mel**{\mu^-,\, \vv{p}_4,\, \lambda_4}{j_\nu^{\mu^-}(x_2)}{\mu^-,\, \vv{p}_2,\, \lambda_2} \\
+            &= \mel**{\mu^-,\, \vv{p}_4,\, \lambda_4}{\pexp{iPx_2} j_\nu^{\mu^-}(0) \pexp{-iPx_2}}{\mu^-,\, \vv{p}_2,\, \lambda_2} \\
+            &= \mel**{\mu^-,\, \vv{p}_4,\, \lambda_4}{\pexp{ip_4x_2} j_\nu^{\mu^-}(0) \pexp{-ip_2x_2}}{\mu^-,\, \vv{p}_2,\, \lambda_2} \\
+            &= \pexp{ip_4x_2} \pexp{-ip_2x_2} \mel**{\mu^-,\, \vv{p}_4,\, \lambda_4}{j_\nu^{\mu^-}(0)}{\mu^-,\, \vv{p}_2,\, \lambda_2} \\
+            &= \pexp{i[p_4 - p_2]x_2} J_\nu^{\mu^-}(0)
+    \end{split}
+\end{align}
+\begin{align}
+    \begin{split}
+        &\mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \\
+            &\quad = \mel**{0}{T[A^\mu(x_1) \pexp{iPx_2} A^\nu(0) \pexp{-iPx_2}]}{0} \\
+            &\quad = \mel**{0}{T[\id A^\mu(x_1) \pexp{iPx_2} A^\nu(0) \pexp{-iPx_2}]}{0} \\
+            &\quad = \mel**{0}{T[\pexp{iPx_2} \pexp{-iPx_2} A^\mu(x_1) \pexp{iPx_2} A^\nu(0) \pexp{-iPx_2}]}{0} \\
+            &\quad = \mel**{0}{T[\pexp{iPx_2} A^\mu(x_1 - x_2) A^\nu(0) \pexp{-iPx_2}]}{0} \\
+            &\quad = \mel**{0}{\pexp{-i\vv{p}\cdot\vv{x}_2} T[\pexp{iEt_2} A^\mu(x) A^\nu(0) \pexp{-iEt_2}] \pexp{i\vv{p}\cdot\vv{x}_2}}{0} \\
+            &\quad = \mel**{0}{\pexp{0} T[\pexp{iEt_2} \pexp{-iEt_2} A^\mu(x) A^\nu(0)] \pexp{0}}{0} \\
+            &\quad = \mel**{0}{T[A^\mu(x) A^\nu(0)]}{0}
+    \end{split}
+\end{align}
+hvor eksponentialfunktionerne udenfor tidsombytningsoperatoren ''forsvinder'', da $\pexp{0} = 1$, og eksponentialfunktionerne indenfor tidsombytningsoperatoren kan rykkes hen til hinanden, da tidsombytningsoperatoren sørger for, at operatorerne står tidsordnet og eksponentialerne har samme tid $t_2$, så de vil stå sammen og dermed danner de en identitet.
+
+Indsætter vi disse beregninger i udtrykket fra \textbf{12)}, \cref{eq:Opg4_Q12_SMatrixSecondOrder}, får vi
+\begin{align} \label{eq:Opg4_A14_CalculationOfTheSMatrix}
+\begin{split}
+    S_{fi}^{(2)} &= (-i)^2 \int \dd^4 x_1\, \dd^4 x_2\, J_\mu^{\mathrm{e}^-}(x_1) J_\nu^{\mu^-}(x_2) \mel**{0}{T\left[A^\mu(x_1)A^\nu(x_2)\right]}{0} \\
+        &= (-i)^2 \int \dd^4 x_2\, \dd^4 x\, \pexp{i[p_3 - p_1]x} \pexp{i[p_3 - p_1]x_2} J_\mu^{\mathrm{e}^-}(0) \\
+            &\qquad\qquad\qquad\quad \times \pexp{i[p_4 - p_2]x_2} J_\nu^{\mu^-}(0) \mel**{0}{T[A^\mu(x) A^\nu(0)]}{0} \\
+        &= (-i)^2 J_\mu^{\mathrm{e}^-}(0) J_\nu^{\mu^-}(0) \int \dd^4 x_2\, \pexp{i[p_3 + p_4 - p_1 - p_2]x_2} \\
+            &\qquad\qquad\qquad\quad \times \int \dd^4 x\, \pexp{i[p_3 - p_1]x} \mel**{0}{T[A^\mu(x) A^\nu(0)]}{0} \\
+        &= (-i)^2 J_\mu^{\mathrm{e}^-}(0) J_\nu^{\mu^-}(0) (2\pi)^4 \delta^4(p_3 + p_4 - p_1 - p_2) \frac{-ig^{\mu\nu}}{(p_3 - p_1)^2} \\
+        &= \left( -i J_\mu^{\mathrm{e}^-}(0) \right) \frac{-ig^{\mu\nu}}{q^2} \left( -i J_\nu^{\mu^-}(0) \right) (2\pi)^4 \delta^4(p_f - p_i) \: ,
+\end{split}
+\end{align}
+hvor vi har benyttet propagatoren fundet i \textbf{13)} (\cref{eq:Opg4_Q13_PhotonPropagator}), samt at vi betegner startimpulsen $p_i = p_1 + p_2$, slutimpulsen betegnes $p_f = p_3 + p_4$ og fotonens impuls betegnes $q = p_1 - p_3$. Sammenligner vi \cref{eq:Opg4_A14_CalculationOfTheSMatrix} med den generelle definition af S-matrixelementet til anden orden, $S_{fi}^{(2)} = - i \M_{fi} (2\pi)^4 \delta^4(p_f - p_i)$, så ses det, at
+\begin{align}
+    - i \M_{fi} &= \left( -i J_\mu^{\mathrm{e}^-}(0) \right) \frac{-ig^{\mu\nu}}{q^2} \left( -i J_\nu^{\mu^-}(0) \right) \: ,
+\end{align}
+hvilket skulle vises.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -899,7 +1196,7 @@ hvilket er \cref{eq:Opg4_Q15_AmplitudeOfMByAngleInCMFrame}, som skulle vises.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph[16) Tværsnit for elektron-myon-spredningen i CM-systemet og Rutherfordspredningstværsnit]{\textbf{16)}}
+\paragraph[16) Tværsnit for elektron-myon-spredningen i CM-systemet og \\ Rutherfordspredningstværsnit]{\textbf{16)}}
 
 Fra [Aitchison og Hey note] vides det, at det generelle udtryk for tværsnittet i massemidtpunktssystemet af en spredning mellem to partikler er
 \begin{align}
@@ -920,14 +1217,27 @@ For elektron-myon-spredningen bliver tværsnittet
         &= \frac{\alpha^2}{2 E_{CM}^2} \frac{1 + \cos^4\pfrac{\theta}{2}}{\sin^4\pfrac{\theta}{2}} \: ,
 \end{split}
 \end{align}
-hvor $E = E_{CM}$ er energien i massemidtpunktssytemet, $\alpha = e^2/(4\pi)$ er finstrukturkonstanten (i naturlige enheder), og resultatet fra \textbf{15)} (\cref{eq:Opg4_Q15_AmplitudeOfMByAngleInCMFrame} er blevet benyttet.\\
+hvor $E = E_{CM}$ er energien i massemidtpunktssytemet, $\alpha = e^2/(4\pi)$ er finstrukturkonstanten (i naturlige enheder), og resultatet fra \textbf{15)} (\cref{eq:Opg4_Q15_AmplitudeOfMByAngleInCMFrame}) er blevet benyttet.
+\\
 
-Nu betragtes Rutherford-tværsnittet ([INDSÆT KILDE])
+Vi kigger nu på funktionsopførslen af \cref{eq:Opg4_Q15_AmplitudeOfMByAngleInCMFrame}, når $\theta \rightarrow 0$, hvilket gør at
 \begin{align}
-    \left(\dif{\sigma}{\Omega}\right)_{\mathrm{Rutherford}} &= \ldots
+    \dif{\sigma}{\Omega}\biggr\rvert_{CM} (\theta \rightarrow 0) &= \frac{\alpha^2}{2 E_{CM}^2} \frac{1 + \cos^4\pfrac{\theta}{2}}{\sin^4\pfrac{\theta}{2}}
+        \simeq \frac{\alpha^2}{2 E_{CM}^2} \frac{1 + 1^4}{\pfrac{\theta}{2}^2}
+        = \frac{\alpha^2}{E_{CM}^2 \pfrac{\theta}{2}^2}
+        \propto \theta^{-4} \: .
 \end{align}
-
-% Slå ''Tværsnit for Rutherfordspredning'' op et sted (f.eks. i lærebog eller online). Sammenlign dette resultat med udtrykket for Rutherfordspredningen. Vis at udtrykkene har samme funktionsopførsel (eng: functional behavior) i grænsen $\theta \rightarrow 0$.
+Nu betragtes Rutherfordtværsnittet (\cite[lign. 5.16]{povh_particles_2015})
+\begin{align}
+    \dif{\sigma}{\Omega} \biggr\rvert_{CM,\mathrm{R}} &= \frac{\alpha^2}{16 E_{CM}^2 \sin^4\pfrac{\theta}{2}} \: ,
+\end{align}
+og tager vi her også grænsen $\theta \rightarrow 0$, får vi
+\begin{align}
+    \dif{\sigma}{\Omega} \biggr\rvert_{CM,\mathrm{R}} (\theta \rightarrow 0) &= \frac{\alpha^2}{16 E_{CM}^2 \sin^4\pfrac{\theta}{2}}
+        \simeq \frac{\alpha^2}{16 E_{CM}^2 \pfrac{\theta}{2}^4}
+        \propto \theta^{-4} \: .
+\end{align}
+Altså er funktionsopførslen for begge tværsnit, at de udvikles som funktion af $(\dd \sigma / \dd \Omega)_{CM} \propto \theta^{-4}$ i grænsen hvor $\theta \rightarrow 0$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%

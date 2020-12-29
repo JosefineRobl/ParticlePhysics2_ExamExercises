@@ -6,7 +6,7 @@
 
 \input{forside.tex}
 
-\tocloftpagestyle{fancy} % Sætter pagestyle til "fancy" for TOC (interferes not with tocloft-package, which the normal \pagestyle{facny} does)
+\tocloftpagestyle{fancy} % Sætter pagestyle til "fancy" for TOC (interferes not with tocloft-package, which the normal \pagestyle{fancy} does)
 \tableofcontents
 
 \newpage
@@ -20,6 +20,7 @@
 
 
 \bibliographystyle{ieeetr_danish}
+\addcontentsline{toc}{section}{Litteratur}
 \bibliography{bibliografi.bib}
 
 \end{document}
