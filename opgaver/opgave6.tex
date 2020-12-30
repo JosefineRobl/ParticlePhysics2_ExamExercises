@@ -164,7 +164,7 @@ Siden der er 5 led i vekselvirkningsledet for Lagrangedensiteten i \cref{eq:Opg6
 \hfill
 \begin{tikzpicture}[scale=.85, transform shape]
     \begin{feynman}
-        \vertex [label={right:$-i \frac{1}{4} \lambda$}] (vertex);
+        \vertex [label={right:$-i \frac{1}{2} \lambda$}] (vertex);
         \vertex [above left = of vertex] (sigmaUpLeft) {\(\sigma\)};
         \vertex [above right = of vertex] (piUpRight) {\(\pi\)};
         \vertex [below left = of vertex] (piDownLeft) {\(\pi\)};
@@ -301,7 +301,7 @@ da $m_\pi = 0$. Sidst skal symmetrifaktoren findes, hvilket gøres ved at betrag
         &\qquad\quad = \mel**{\pi,\, p}{\pi(x) \pi(x) \pi(0) \pi(0)}{\pi,\, p} \mel**{0}{\sigma(x) \sigma(0)}{0} \: .
 \end{split}
 \end{align}
-$\sigma$-matrixelementet kan kun udføres på én måde, så dette led bidrager ikke med nogle symmetrifaktorer. $\pi$-matrixelementet derimod bidrager med symmetrifaktoren $8$. Dette kan ses, da hvert $\pi$-felt indeholder en kreations- og en annihilationsoperator for $\pi$-partikler, og symmetrifaktoren er antallet af måder, hvorpå en $pi$ partikel kan annihileres og en virtuel $\pi$-partikel skabes, hvorefter denne annihileres og en $\pi$-partikel skabes. Den første $\pi$-partikel kan skabes ved enhver af de fire operatorer, hvilket bidrager en symmetrifaktorer af $4$, og den udgående partikel kan da kun skabes ved to af de fire operatorer, da den ikke må skabes samme sted som den indgående partikel blev annihileret, hvilket bidrager en symmetrifaktor på $2$. Ergo bliver den overordnede symmetrifaktor $S_{\text{sym}} = 1 \cdot 4 \cdot 2 = 8$.
+$\sigma$-matrixelementet kan kun udføres på én måde, så dette led bidrager ikke med nogle symmetrifaktorer. $\pi$-matrixelementet derimod bidrager med symmetrifaktoren $8$. Dette kan ses, da hvert $\pi$-felt indeholder en kreations- og en annihilationsoperator for $\pi$-partikler, og symmetrifaktoren er antallet af måder, hvorpå en $\pi$ partikel kan annihileres og en virtuel $\pi$-partikel skabes, hvorefter denne annihileres og en $\pi$-partikel skabes. Den første $\pi$-partikel kan skabes ved enhver af de fire operatorer, hvilket bidrager en symmetrifaktorer af $4$, og den udgående partikel kan da kun skabes ved to af de fire operatorer, da den ikke må skabes samme sted som den indgående partikel blev annihileret, hvilket bidrager en symmetrifaktor på $2$. Ergo bliver den overordnede symmetrifaktor $S_{\text{sym}} = 1 \cdot 4 \cdot 2 = 8$.
 
 Samles alt det ovenstående, og huskes faktoren $1/2$ fra Dysonserien til anden orden, fås amplituden
 \begin{align} \label{eq:Opg6_A5_AmplitudeOfLoopCorrection1}
