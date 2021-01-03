@@ -215,7 +215,7 @@ hvor $E_\mathrm{CM}$ er den totale energi i massemidtpunktssystemet og $\alpha$ 
 
 \paragraph*{\textbf{17)}}
 
-Brug alle informationerne, som du har fået fra foregående delopgaver, til at nedskrive Feynmanreglerne for QED for treniveau-Feynmandiagrammer (\emph{uden} loops), altså skal du finde ud af hvilke faktorer, som er forbundet med start- og sluttilstande for partikler og antipartikler, hvilke faktorer, som er forbundet med knudepunkter (eng: vertices), og hvilke faktorer, som er forbundet med propagatorer.
+Brug alle informationerne, som du har fået fra foregående delopgaver, til at nedskrive Feynmanreglerne for QED for træiveau-Feynmandiagrammer (aka. \emph{uden} loops), altså skal du finde ud af hvilke faktorer, som er forbundet med start- og sluttilstande for partikler og antipartikler, hvilke faktorer, som er forbundet med knudepunkter (eng: vertices), og hvilke faktorer, som er forbundet med propagatorer.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -432,19 +432,19 @@ De fire strømme $j_\mu^{(n)}$ findes ved at indsætte feltudvidelsen fra \cref{
 \end{align}
 
 Dermed bliver de fire strømme
-\begin{subequations} \label{eq:Opg4_Q4_FourPartsOfTheCurrectExplicit}
+\begin{subequations} \label{eq:Opg4_A4_FourPartsOfTheCurrectExplicit}
 \begin{align}
     j_\mu^{(1)} &= - e \sum_{\lambda,\lambda'} \int \frac{\dd^3\vv{p}\, \dd^3\vv{p}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \pexp{i[p-p']x} b_{\vv{p},\lambda}\dagger b_{\vv{p}',\lambda'} \overline{u}(\vv{p},\lambda) \gamma_\mu u(\vv{p}',\lambda')
-    \label{eq:Opg4_Q4_FourPartsOfTheCurrectExplicitJ1} \\
+    \label{eq:Opg4_A4_FourPartsOfTheCurrectExplicitJ1} \\
     %
     j_\mu^{(2)} &= - e \sum_{\lambda,\lambda'} \int \frac{\dd^3\vv{p}\, \dd^3\vv{p}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \pexp{-i[p-p']x} d_{\vv{p},\lambda} d_{\vv{p}',\lambda'}\dagger \overline{v}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda')
-    \label{eq:Opg4_Q4_FourPartsOfTheCurrectExplicitJ2} \\
+    \label{eq:Opg4_A4_FourPartsOfTheCurrectExplicitJ2} \\
     %
     j_\mu^{(3)} &= - e \sum_{\lambda,\lambda'} \int \frac{\dd^3\vv{p}\, \dd^3\vv{p}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \pexp{-i[p+p']x} d_{\vv{p},\lambda} b_{\vv{p}',\lambda'} \overline{v}(\vv{p},\lambda) \gamma_\mu u(\vv{p}',\lambda')
-    \label{eq:Opg4_Q4_FourPartsOfTheCurrectExplicitJ3} \\
+    \label{eq:Opg4_A4_FourPartsOfTheCurrectExplicitJ3} \\
     %
     j_\mu^{(4)} &= - e \sum_{\lambda,\lambda'} \int \frac{\dd^3\vv{p}\, \dd^3\vv{p}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{p}}\omega_{\vv{p}'}}} \pexp{i[p+p']x} b_{\vv{p},\lambda}\dagger d_{\vv{p}',\lambda'}\dagger \overline{u}(\vv{p},\lambda) \gamma_\mu v(\vv{p}',\lambda') \: ,
-    \label{eq:Opg4_Q4_FourPartsOfTheCurrectExplicitJ4}
+    \label{eq:Opg4_A4_FourPartsOfTheCurrectExplicitJ4}
 \end{align}
 \end{subequations}
 og $-e\psibar\gamma_\mu\psi$ er summen af disse fire strømme, $-e\psibar\gamma_\mu\psi = \sum_n j_\mu^{(n)}, \; \forall n \in [1,2,3,4]$.
@@ -547,7 +547,7 @@ Det andet matrixelement, \cref{eq:Opg4_Q5_TransitionCurrent2}, giver
 \end{split}
 \end{align}
 hvorfor
-\begin{align}
+\begin{align} \label{eq:Opg4_A5_SecondMatrixElementCalculationPart1}
 \begin{split}
     &\mel**{\mathrm{e}^+,\, \vv{p}',\, \lambda'}{j_\mu^{(2)}}{\mathrm{e}^+,\, \vv{p},\, \lambda} \\
         &\quad = \bigg\langle \mathrm{e}^+,\, \vv{p}',\, \lambda' \bigg\rvert - e \sum_{s,s'} \int \frac{\dd^3\vv{q}\, \dd^3\vv{q}'}{(2\pi)^6} \frac{1}{2\sqrt{\omega_{\vv{q}}\omega_{\vv{q}'}}} \pexp{-i[q-q']x} \\
@@ -561,9 +561,7 @@ hvorfor
             &\qquad\qquad\qquad\qquad\quad - e \delta^3(\vv{p}-\vv{p}') \delta_{\lambda,\lambda'} \sum_s \int \dd^3\vv{q}\, \frac{\omega_{\vv{p}}}{\omega_{\vv{q}}}\, \overline{v}(\vv{q},s) \gamma_\mu v(\vv{q},s) \: .
 \end{split}
 \end{align}
-Vi kan nu benytte $\sum_s \overline{v}_s(p) v_s(p) = 0$ \footnote{
-    Dette kan trivielt vises som i \cite[opg. 2.9]{problemSet3} ud fra definitionen af $v_s(p)$ og kendskab til, at $(\vgv{\sigma}\cdot\vv{p})\dagger = \vgv{\sigma}\cdot\vv{p}$ samt at $\sum_s \chi_s \chi_s\dagger = \id$ grundet normaliseingen.
-} og $[\gamma_\mu, \overline{v}_s(p)] = 0$ for at få
+For andet led i \cref{eq:Opg4_A5_SecondMatrixElementCalculationPart1} ses det i Dirac deltafunktionen, at impulsen for elektronen før og efter vekselvirkningen skal være ens, og ligeså for myonen, men siden dette ikke kan lade sig gøre ved udveksling af en foton, er der altså ikke tale om en spredning men blot en loopkorrektion, hvorfor dette led ikke medtages men blot negligeres. Derved får vi\\
 \begin{align}
 \begin{split}
     &\mel**{\mathrm{e}^+,\, \vv{p}',\, \lambda'}{j_\mu^{(2)}}{\mathrm{e}^+,\, \vv{p},\, \lambda} \\
@@ -915,7 +913,7 @@ Feynmandiagrammet for spredningen af elektroner på myoner, $\mathrm{e}^- + \mu^
 
 \paragraph[12) S-matricen til anden orden for elektron-myon-spredningen]{\textbf{12)}}
 
-Lagrangedentiteten for vekselvirkningen er $\L_I = - (j_\mu^{\mathrm{e}^-} + j_\mu^{\mu^-}) A^\mu = - J_\mu A^\mu$, hvor $j_\mu^{\mathrm{e}^-}$ og $j_\mu^{\mu^-}$ er strømmen for hhv. elektronen og myonen og $J_\mu$ er den totale firstrøm, og da $\L_I$ ikke indeholder nogle differentialer, så er Hamiltondensiteten af vekselvirkningen $\H = - \L_I = J_\mu A^\mu$. Fra \cite[lign. ??]{problemSet2} har vi, at S-matrixelementet til anden orden kan skrives som
+Lagrangedentiteten for vekselvirkningen er $\L_I = - (j_\mu^{\mathrm{e}^-} + j_\mu^{\mu^-}) A^\mu = - J_\mu A^\mu$, hvor $j_\mu^{\mathrm{e}^-}$ og $j_\mu^{\mu^-}$ er strømmen for hhv. elektronen og myonen og $J_\mu$ er den totale firstrøm, og da $\L_I$ ikke indeholder nogle differentialer, så er Hamiltondensiteten af vekselvirkningen $\H = - \L_I = J_\mu A^\mu$. Fra \cite[lign. 56 og 59]{problemSet2} har vi, at S-matrixelementet til anden orden kan skrives som
 \begin{align}
     S_{fi}^{(2)} &= \frac{(-i)^2}{2} \int \dd^4 x_1\, \dd^4 x_2\, \mel**{f}{T[\H_I(x_1) \H_I(x_2)]}{i} \: .
 \end{align}
@@ -960,18 +958,26 @@ Af de fire strømled i \cref{eq:Opg4_A12_CaulculationOfSMatrixPart1} svarer det 
 da $T[A^\mu(x_1) A^\nu(x_2)] = T[A^\nu(x_2) A^\mu(x_1)]$. Dermed er andet og tredje led i \cref{eq:Opg4_A12_CaulculationOfSMatrixPart1} ens, hvorfor S-matrixelementet til anden orden bliver
 \begin{align}
 \begin{split}
-    S_{fi}^{(2)} &= (-i)^2 \int \dd^4 x_1\, \dd^4 x_2 \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\mu^{\mu^-}(x_1)}{\mu^-,\, \vv{p_2},\, \lambda_2} \\
-            &\qquad\qquad\quad \times \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\nu^{\mathrm{e}^-}(x_2)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \\
+    S_{fi}^{(2)} &= (-i)^2 \int \dd^4 x_1\, \dd^4 x_2 \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\mu^{\mathrm{e}^-}(x_1)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \\
+            &\qquad\qquad\quad \times \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\nu^{\mu^-}(x_2)}{\mu^-,\, \vv{p_2},\, \lambda_2} \mel**{0}{T[A^\mu(x_1) A^\nu(x_2)]}{0} \\
             &= (-i)^2 \int \dd^4 x_1\, \dd^4 x_2\, J_\mu^{\mathrm{e}^-}(x_1) J_\nu^{\mu^-}(x_2) \mel**{0}{T\left[A^\mu(x_1)A^\nu(x_2)\right]}{0}
 \end{split}
 \end{align}
 hvor vi har defineret
 \begin{subequations}
 \begin{align}
-    J_\mu^{\mathrm{e}^-}(x_1) &= \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\mu^{\mu^-}(x_1)}{\mu^-,\, \vv{p_2},\, \lambda_2} \qquad \text{og} \\
-    J_\nu^{\mu^-}(x_2) &= \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\nu^{\mathrm{e}^-}(x_2)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \: .
+    J_\mu^{\mathrm{e}^-}(x_1) &= \mel**{\mathrm{e}^-,\, \vv{p_3},\, \lambda_3}{j_\mu^{\mathrm{e}^-}(x_1)}{\mathrm{e}^-,\, \vv{p_1},\, \lambda_1} \qquad \text{og} \\
+    J_\nu^{\mu^-}(x_2) &= \mel**{\mu^-,\, \vv{p_4},\, \lambda_4}{j_\nu^{\mu^-}(x_2)}{\mu^-,\, \vv{p_2},\, \lambda_2} \: ,
 \end{align}
 \end{subequations}
+hvilke er præcis på formen for \cref{eq:Opg4_Q5_TransitionCurrent1} og dermed kun giver noget for $j_\mu^{(1)}$-strømmen fra \cref{eq:Opg4_A4_FourPartsOfTheCurrectExplicitJ1}, hvorfor disse eksplicit bliver
+\begin{subequations} \label{eq:Opg4_A12_ExplicitElectronAndMuonCurrent}
+\begin{align}
+    J_\mu^{\mathrm{e}^-}(x_1) &= -e\bar{u}(\vv{p}_3,\lambda_3) \gamma_\mu u(\vv{p}_1,\lambda_1) \pexp{i[p_3 - p_1]x_1} \qquad \text{og} \\
+    J_\nu^{\mu^-}(x_2) &= -e\bar{u}(\vv{p}_4,\lambda_4) \gamma_\mu u(\vv{p}_2,\lambda_2) \pexp{i[p_4 - p_2]x_2} \: .
+\end{align}
+\end{subequations}
+
 Dermed er \cref{eq:Opg4_Q12_SMatrixSecondOrder} vist.
 
 % Vis at S-matricen til anden orden for elektron-myon-spredningsprocessen kan skrives som
@@ -1198,11 +1204,11 @@ hvilket er \cref{eq:Opg4_Q15_AmplitudeOfMByAngleInCMFrame}, som skulle vises.
 
 \paragraph[16) Tværsnit for elektron-myon-spredningen i CM-systemet og \\ Rutherfordspredningstværsnit]{\textbf{16)}}
 
-Fra [Aitchison og Hey note] vides det, at det generelle udtryk for tværsnittet i massemidtpunktssystemet af en spredning mellem to partikler er
+Fra \cite[lign. 6.129]{AitchisonHey} vides det, at det generelle udtryk for tværsnittet i massemidtpunktssystemet af en spredning mellem to partikler er
 \begin{align}
     \dif{\sigma}{\Omega}\biggr\rvert_{CM} &= \inv{(8\pi E_i)^2} \abs{\M_{fi}}^2 \: ,
 \end{align}
-hvor $E_i$ er den indkomne energi.
+hvor $E_i$ er den indkomne energi. Denne formel kan benyttes, da vi er i højenergigrænsen, altså $p \gg m$, hvorfor masserne er negligerbare.
 
 For elektron-myon-spredningen bliver tværsnittet
 \begin{align}
@@ -1244,9 +1250,49 @@ Altså er funktionsopførslen for begge tværsnit, at de udvikles som funktion a
 
 \paragraph[17) Feynmanregler for QED]{\textbf{17)}}
 
-\ldots
+Først kigger vi på indgående og udgående fermioner og antifermioner. Til dette betragter vi matrixelementerne fra \cref{eq:Opg4_Q5_TransitionCurrents} \textbf{5)}, og sammenligner vi specifikt matrixelementerne med $j_µ^{(1)}$ og $j_µ^{(3)}$ (\cref{eq:Opg4_Q5_TransitionCurrent1,eq:Opg4_Q5_TransitionCurrent3}) ses det, at bidraget fra en indgående elektron med impuls $\vv{p}$ og helicitet $\lambda$ er $u(\vv{p},\lambda)$, hvormed bidraget fra udgående elektron med impuls $\vv{p}$ og helicitet $\lambda$ er $\overline{u}(\vv{p},\lambda)$. Ligeså kan det ved en sammenligning af matrixelementerne med $j_µ^{(2)}$ og $j_µ^{(3)}$ (\cref{eq:Opg4_Q5_TransitionCurrent2,eq:Opg4_Q5_TransitionCurrent3}) ses, at en indgående positron med impuls $\vv{p}$ og helicitet $\lambda$ er $\overline{v}(\vv{p},\lambda)$ og bidraget fra udgående positron med impuls $\vv{p}$ og helicitet $\lambda$ er $v(\vv{p},\lambda)$.
+\\
 
-% Brug alle informationerne, som du har fået fra foregående delopgaver, til at nedskrive Feynmanreglerne for QED for treniveau-Feynmandiagrammer (\emph{uden} loops), altså skal du finde ud af hvilke faktorer, som er forbundet med start- og sluttilstande for partikler og antipartikler, hvilke faktorer, som er forbundet med knudepunkter (eng: vertices), og hvilke faktorer, som er forbundet med propagatorer.
+Kigger vi nu på fotonens bidrag, så ses det ud fra kvantiseringen af feltet for en foton, \cite[lign. 8]{Q&A10}
+\begin{align}
+    A^\mu(x) &= \sum_\sigma \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \invsqrt{2 \omega_{\vv{p}}} \left[ \epsilon^\mu(\sigma) a_{\vv{p},\sigma} \pexp{-ipx} + \epsilon^\mu(\sigma)^* a_{\vv{p},\sigma}\dagger \pexp{ipx} \right] \: ,
+\end{align}
+ses, at en indkommende foton giver anledning til et bidrag af $\epsilon^\mu(\sigma)$, mens en udgående foton giver anledning til et bidrag af $\epsilon^\mu(\sigma)^*$ \cite[s. 123]{peskinSchroeder}.
+\\
+
+Som det næste har vi propagatorerne, hvor vi i Problemset 3, opg. 4.7 \cite[lign. 34]{problemSet3} har udregnet femrionpropagatoren til
+\begin{align}
+    G_{F_{\alpha\beta}}(p_\mu) &= \frac{i (\slashed{p} + m)_{\alpha\beta}}{p^2 - m^2} \: ,
+\end{align}
+hvor $p$ er firimpulsen af fermionen, og i \textbf{13)} (\cref{eq:Opg4_Q13_PhotonPropagator}) fandt vi fotonpropagatoren til
+\begin{align}
+    G_\gamma^{\mu\nu}(q_\mu) &= \frac{-ig^{\mu\nu}}{q^2} \: ,
+\end{align}
+hvor $q$ er firimpulsen, som overføres gennem denne propagator og $g^{\mu\nu}$ er den metriske tensor i Minkowskimetrikken.
+\\
+
+Sidst kigger vi på knudepunkterne. Ud fra \cref{eq:Opg4_Q14_AmplitudeMfi} i \textbf{14)} samt \cref{eq:Opg4_A12_ExplicitElectronAndMuonCurrent} kan det ses, at de resterende bidrag, når vi har taget højde for indgående og udgående partikler samt propagatorer, må være fra knudepunkterne, hvorfor disse må være $i e \gamma_\mu$ for hvert knudepunkt. Dog har vi kun kigget på fermioner i vores beregninger, men havde vi kigget på antifermioner ville det ses, at de ville bidrage med en knudepunktsfaktor på $-ie\gamma_\mu$ \cite[s. 106]{seiden}.
+\\
+
+For at opsummere, så er Feynmanreglerne for kvanteelektrodynamik
+\begin{itemize}
+    \item En indgående fermioner bidrager med $u(\vv{p},\lambda)$.
+    \item En udgående fermion bidrager med $\overline{u}(\vv{p},\lambda)$.
+    \item En indgående antifermion bidrager med $\overline{v}(\vv{p},\lambda)$.
+    \item En udgående antifermion bidrager med $v(\vv{p},\lambda)$.
+    \item En indgående foton bidrager med $\epsilon^\mu(\sigma)$.
+    \item En udgående foton bidrager med $\epsilon^\mu(\sigma)^*$.
+    \item En fermion propagator bidrager med $i(\slashed{p}+m)_{\alpha\beta}/(p^2 - m^2)$. \footnote{
+        Dette kan også skrives som
+        \begin{align}
+            G_\mathrm{fermion} &= \frac{i}{\slashed{p}-m} \: ,
+        \end{align}
+        da $\slashed{p}^2 = p^2$, hvis man tager sig i agt for notationen med her at dele med en matrix.
+    }
+    \item En foton propagator bidrager med $-ig^{\mu\nu}/q^2$.
+    \item Et knudepunkt for en fermion bidrager med $ie\gamma_\mu$, mens det for en antifermion bidrager med $-ie\gamma_\mu$.
+\end{itemize}
+Herudover skal der selvfølgelig være impulsbevarelse i hvert knudepunkt.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

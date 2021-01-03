@@ -268,6 +268,8 @@ Loopkorrigeringerne for Lagrangedensiteten i \cref{eq:Opg6_Lagrangian} er vist h
     \end{feynman}
 \end{tikzpicture}
 
+Dette er de fem mulige korrektioner, som kun indeholder ét loop, og som er dannet af de mulige knudepunkter fra \textbf{3}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph[5) Amplitude af $\pi\pi\sigma$-ledets loopkorrigering]{\textbf{5)}}
@@ -289,10 +291,10 @@ Lad os først tegne Feynmandiagrammet igen og denne gang notere impulserne på d
 \end{tikzpicture}
 \end{center}
 
-Nu benyttes Feynmanreglerne for skalarfelter, \cite[lign./opg. ??]{}. Først vides det, at indkomne og udgående partikler (initial/final) bidrager med $1$, og at hvert knudepunkt bidrager med koblingskonstanten $g = - i \lambda v$. Ydermere bidrage de virtuelle partikler hver med en propagator på formen $-i/(p'^2 - m^2)$, hvor $p'$ er impulsen, så for de to virtuelle partikler får vi propagatorerne
+Nu benyttes Feynmanreglerne for skalarfelter, \cite[opg. 11.4]{problemSet2}. Først vides det, at indkomne og udgående partikler (initial/final) bidrager med $1$, og at hvert knudepunkt bidrager med koblingskonstanten $g = - i \lambda v$. Ydermere bidrage de virtuelle partikler hver med en propagator på formen $i/(p'^2 - m^2)$ (\cite[opg. 7.3]{problemSet2}), hvor $p'$ er impulsen, så for de to virtuelle partikler får vi propagatorerne
 \begin{align}
-    \Delta_\sigma &= \frac{-i}{k^2 - m^2} \qquad \text{og} \qquad
-    \Delta_\pi = \frac{-i}{(p - k)^2} \: ,
+    \Delta_\sigma &= \frac{i}{k^2 - m^2} \qquad \text{og} \qquad
+    \Delta_\pi = \frac{i}{(p - k)^2} \: ,
 \end{align}
 da $m_\pi = 0$. Sidst skal symmetrifaktoren findes, hvilket gøres ved at betragte matrixelementet, som opstår i spredningsamplituden til anden orden,
 \begin{align}
@@ -306,30 +308,30 @@ $\sigma$-matrixelementet kan kun udføres på én måde, så dette led bidrager 
 Samles alt det ovenstående, og huskes faktoren $1/2$ fra Dysonserien til anden orden, fås amplituden
 \begin{align} \label{eq:Opg6_A5_AmplitudeOfLoopCorrection1}
 \begin{split}
-    M_1 &= \inv{2} S_{\text{sym}}\, g^2 \int \frac{\dd^4 k}{(2\pi)^4} \Delta_\sigma \Delta_\pi \\
-        &= \inv{2} 8 (-i)^2 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \frac{-i}{k^2 - m^2}\, \frac{-i}{(p - k)} \\
-        &= 4 (-i)^4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2}\, \inv{(p - k)^2} \\
+    \mathcal{A}_1 &= \inv{2} S_{\text{sym}}\, g^2 \int \frac{\dd^4 k}{(2\pi)^4} \Delta_\sigma \Delta_\pi \\
+        &= \inv{2} 8 (-i)^2 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \frac{i}{k^2 - m^2}\, \frac{i}{(p - k)} \\
+        &= 4 i^4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2}\, \inv{(p - k)^2} \\
         &= 4 (-1)^2 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{(-k)^2 - m^2}\, \inv{\big(p - [-k]\big)^2} \\
         &= 4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2}\, \inv{(p + k)^2} \: ,
 \end{split}
 \end{align}
-hvor vi ved anden sidste lighed har ladet $k \rightarrow - k$, hvilket vi har lov til, da vi integrerer over hele impulsrummet. Dette er amplituden, \cref{eq:Opg6_Q5_AmplitudeOfLoopCorrection}, som skulle vises.
+hvor vi ved andensidste lighed har ladet $k \rightarrow - k$, hvilket vi har lov til, da vi integrerer over hele impulsrummet. Dette er amplituden, \cref{eq:Opg6_Q5_AmplitudeOfLoopCorrection}, som skulle vises.
 \\
 
 Denne amplitude er divergerende for store $k$, hvilket kan ses ved
 \begin{align}
     4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2}\, \inv{(p + k)^2}
         \overset{\text{stor $k$}}{\simeq} 4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2}\, \inv{k^2}
-        = 4 (2\pi)^4 \lambda^2 v^2 \int \frac{\dd^4 k}{k^4} \: .
+        = 4 (2\pi)^4 \lambda^2 v^2 \int \frac{\dd^4 k}{k^4} \: ,
 \end{align}
-Altså divergerer amplituden logaritmisk for store $k$.
+siden graden af den inverse af integranden (her $4$, da integranden er $k^{-4}$) og antallet af dimensioner, der integreres over for denne integrand (her $4$, da $\dd^4 k$) er ens. Altså divergerer amplituden logaritmisk for store $k$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[6) Amplitude for resterende loopkorrigeringer]{\textbf{6)}}
 
-Besvarelsen af denne opgave følger den præcis samme metode som \textbf{5)}, hvorfor der i denne opgave ikke vil blive skrevet alting ud i ord, da forklaring af, hvordan man finder frem til ledene, er beskrevet i \textbf{5)}.
+Besvarelsen af denne opgave følger den præcis samme metode som \textbf{5)}, hvorfor der måske gås lidt hurtigt over nogle af forklaringerne, da forklaringen af hvordan man finder frem til ledene, er beskrevet i \textbf{5)}.
 \\
 
 For den anden loopkorrektion i \textbf{4)} har vi, at Feynmandiagrammet med impulser er som følger nedenfor.
@@ -351,10 +353,10 @@ For den anden loopkorrektion i \textbf{4)} har vi, at Feynmandiagrammet med impu
 \end{center}
 \vspace{-1em}
 %
-Symmetrifaktoren på $12$ kommer af, at knudepunktet har ''fire'' indgående $\pi$-partikler, hvorfor der er fire mulige valg af $\pi$ for den indkomne $\pi$-partikel og dermed kun tre valg for den udgående, og de sidste to er den samme og er i loopet, hvorfor denne ikke giver et bidrag. Dermed bliver amplituden
+Symmetrifaktoren på $12$ kommer af, at knudepunktet har fire $\pi$-partikler, hvorfor der er fire mulige valg af $\pi$ for den indkomne $\pi$-partikel og dermed kun tre valg for den udgående, og de sidste to kan kun forbindes på én måde, nemlig loopet, hvorfor disse ikke giver et bidrag. Dermed bliver amplituden
 \begin{align} \label{eq:Opg6_A5_AmplitudeOfLoopCorrection2}
 \begin{split}
-    M_2 &= S_{\text{sym}}\, g \int \frac{\dd^4 k}{(2\pi)^4}\, \Delta_\pi \\
+    \mathcal{A}_2 &= S_{\text{sym}}\, g \int \frac{\dd^4 k}{(2\pi)^4}\, \Delta_\pi \\
         &= 12 \left(-\frac{i\lambda}{4} \right) \int \frac{\dd^4 k}{(2\pi)^4} \frac{i}{k^2} \\
         &= 3 \lambda \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2} \: .
 \end{split}
@@ -380,10 +382,10 @@ For den tredje loopkorrektion i \textbf{4)} har vi, at Feynmandiagrammet med imp
 \end{center}
 \vspace{-1em}
 %
-Her er symmetrifaktoren $2$, da der er to mulige valg for den indkomne $\pi$, mens der kun er én mulighed for den udgående, og $\sigma$-partiklen ikke bidrager, da der ikke er andre steder, at denne kan være. Dermed bliver amplituden
+Her er symmetrifaktoren $2$, da der er to mulige valg for den indkomne $\pi$, mens der kun er én mulighed for den udgående (den resterende $\pi$-partikel), og $\sigma$ i loopet ikke bidrager, da der kun er den ene kombination. Dermed bliver amplituden
 \begin{align} \label{eq:Opg6_A5_AmplitudeOfLoopCorrection3}
 \begin{split}
-    M_3 &= S_\text{sym}\, g \int \frac{\dd^4 k}{(2\pi)^4}\, \Delta_\sigma \\
+    \mathcal{A}_3 &= S_\text{sym}\, g \int \frac{\dd^4 k}{(2\pi)^4}\, \Delta_\sigma \\
         &= 2 \frac{-i\lambda}{2} \int \frac{\dd^4 k}{(2\pi)^4}\, \frac{i}{k^2 - m^2} \\
         &= \lambda \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2} \: .
 \end{split}
@@ -411,10 +413,10 @@ For den fjerde loopkorrektion i \textbf{4)} har vi, at Feynmandiagrammet med imp
 \end{center}
 \vspace{-1em}
 %
-I dette diagram er symmetrifaktoren $4$, der er to knudepunkter og to $\pi$-felter, som kan være indgående og udgående partikler i det højre knudepunkt. Her skal vi huske at inkludere en faktor af $1/2$ fra Dysonserien, da der er tale om en andenordenskorrektion (to knudepunkter), og vi skal medtage propagatoren for begge virtuelle partikler. Af dette bliver amplituden
+I dette diagram er symmetrifaktoren $4$, der er to end knudepunkter med hver to $\pi$-felter, som kan være indgående og udgående partikler, hvorfor den indgående $\pi$-partikel kan vælges frit mellem de $4$ mulige, men derefter er den udgående bestemt, da den skal være i samme knudepunkt, og de to resterende $\pi$-felter giver loopet, og $\sigma$ kan også kun være ét sted. Her skal vi huske at inkludere en faktor af $\half$ fra Dysonserien, da der er tale om en andenordenskorrektion (to knudepunkter), og vi skal medtage propagatoren for begge virtuelle partikler. Af dette bliver amplituden
 \begin{align} \label{eq:Opg6_A5_AmplitudeOfLoopCorrection4}
 \begin{split}
-    M_4 &= \inv{2} S_\text{sym}\, g \int \frac{\dd^4 k}{(2\pi)^4}\, \Delta_\sigma \Delta_\pi \\
+    \mathcal{A}_4 &= \inv{2} S_\text{sym}\, g \int \frac{\dd^4 k}{(2\pi)^4}\, \Delta_\sigma \Delta_\pi \\
         &= \inv{2} 4 (-i)^2 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \frac{i}{-m^2}\, \frac{i}{k^2} \\
         &= - 2 \frac{\lambda^2 v^2}{m^2} \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2} \: .
 \end{split}
@@ -442,10 +444,15 @@ For den sidste loopkorrektion i \textbf{4)} har vi, at Feynmandiagrammet med imp
 \end{center}
 \vspace{-1em}
 %
-Symmetrifaktoren i dette diagram er $12$, da der er to knudepunkter, samt to $\pi$-felter og tre $\sigma$-felter at vælge mellem. Igen skal vi huske faktoren $1/2$ fra Dysonserien og begge propagatorer. Derved fås amplituden
+Symmetrifaktoren i dette diagram er $12$: Den første faktor $6$ kommer af blot at matche operatorerne i Feymandiagrammet som for de tidligere diagrammet. Her har vi, at der er $2$ mulige valg af $\pi$ som den indkomne partikel og dermed kun ét valg for den udgående. For $\sigma$ er der $3$ muligheder for den, som er mellem de to knudepunkter, mens de resterende kun kan sammensættes på én måde, nemlig et loop. Fra dette får vi da en symmetrifaktor på $2 \cdot 3 = 6$. Den sidste faktor $2$ kommer af, at matrixelementet $\mel{\pi,\, p}{\H_I(x) \H_I(0)}{\pi,\, p}$ indeholder to led, som kan give dette Feynmandiagram
+\begin{align} \label{eq:Opg6_A6_MatrixElementToExplainSymmetryFactor}
+    \mel**{\pi,\, p}{\sigma(x) \sigma(x) \sigma(x) \sigma(0) \pi(0) \pi(0)}{\pi,\, p} + \mel**{\pi,\, p}{\sigma(x) \pi(x) \pi(x) \sigma(0) \sigma(0) \sigma(0)}{\pi,\, p} \: ,
+\end{align}
+hvorfor amplituden af ét diagram multipliceres med $2$ for at give den totale amplitude -- dette er den faktor $2$, som indgår i symmetrifaktoren. De to matrixelementer i \cref{eq:Opg6_A6_MatrixElementToExplainSymmetryFactor} kan vises værende ens ved at translatere $x$ med komplekse eksponentialfunktioner ($\sigma(x) = \bexp{iPx} \sigma(0) \bexp{-iPx}$) som i \cite[lign. 43]{problemSet2}.\\
+Igen skal vi huske faktoren $\half$ fra Dysonserien og begge propagatorer. Derved fås amplituden
 \begin{align} \label{eq:Opg6_A5_AmplitudeOfLoopCorrection5}
 \begin{split}
-    M_5 &= \inv{2} S_\text{sym}\, g \int \frac{\dd^4 k}{(2\pi)^4}\, \Delta_\sigma \Delta_{\sigma}' \\
+    \mathcal{A}_5 &= \inv{2} S_\text{sym}\, g \int \frac{\dd^4 k}{(2\pi)^4}\, \Delta_\sigma \Delta_{\sigma}' \\
         &= \inv{2} 12 (-i)^2 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \frac{i}{-m^2}\, \frac{i}{k^2 - m^2} \\
         &= - 6 \frac{\lambda^2 v^2}{m^2} \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2} \: .
 \end{split}
@@ -458,7 +465,7 @@ Symmetrifaktoren i dette diagram er $12$, da der er to knudepunkter, samt to $\p
 
 Først kigger vi på \cref{eq:Opg6_Q5_AmplitudeOfLoopCorrection}, hvor $p = p^\mu = 0$
 \begin{align}
-    M_1 &= 4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2}\, \inv{(p + k)^2}
+    \mathcal{A}_1 &= 4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2}\, \inv{(p + k)^2}
         = 4 \lambda^2 v^2 \int \frac{\dd^4 k}{(2\pi)^4}\, \inv{k^2 - m^2}\, \inv{k^2}
 \end{align}
 og opdeler vi delene, som kommer fra propagatorerne, til partielle brøker, altså
@@ -470,7 +477,7 @@ og opdeler vi delene, som kommer fra propagatorerne, til partielle brøker, alts
 Summeres nu over alle loopkorrektionernes amplituder, \cref{eq:Opg6_A5_AmplitudeOfLoopCorrection1,eq:Opg6_A5_AmplitudeOfLoopCorrection2,eq:Opg6_A5_AmplitudeOfLoopCorrection3,eq:Opg6_A5_AmplitudeOfLoopCorrection4,eq:Opg6_A5_AmplitudeOfLoopCorrection5}, hvor $p = p^\mu = 0$, og benyttes det at $v^2 = m^2 / (2\lambda)$, fås
 \begin{align}
 \begin{split}
-    \sum_i M_i &= \int \frac{\dd^4 k}{(2\pi)^4} \bigg( 4 \lambda^2 v^2 \inv{m^2 (k^2 - m^2)} - 4 \lambda^2 v^2 \inv{m^2 k^2} + 3 \lambda \inv{k^2} \\
+    \sum_i \mathcal{A}_i &= \int \frac{\dd^4 k}{(2\pi)^4} \bigg( 4 \lambda^2 v^2 \inv{m^2 (k^2 - m^2)} - 4 \lambda^2 v^2 \inv{m^2 k^2} + 3 \lambda \inv{k^2} \\
             &\qquad\qquad\qquad + \lambda \inv{k^2 - m^2} - \frac{2 \lambda^2 v^2}{m^2} \inv{k^2} - \frac{6 \lambda^2 v^2}{m^2} \inv{k^2 - m^2} \bigg) \\
         &= \int \frac{\dd^4 k}{(2\pi)^4} \bigg( 4 \frac{\lambda^2 m^2}{2\lambda} \inv{m^2 (k^2 - m^2)} - 4 \frac{\lambda^2 m^2}{2\lambda} \inv{m^2 k^2} + 3 \lambda \inv{k^2} \\
             &\qquad\qquad\qquad + \lambda \inv{k^2 - m^2} - \frac{2 \lambda^2 m^2}{2 m^2 \lambda} \inv{k^2} - \frac{6 \lambda^2 m^2}{2 m^2 \lambda} \inv{k^2 - m^2} \bigg) \\
@@ -485,7 +492,16 @@ Summeres nu over alle loopkorrektionernes amplituder, \cref{eq:Opg6_A5_Amplitude
 
 \paragraph[8) Højereordens loopkorrektioner og $\pi$-propagatoren]{\textbf{8)}}
 
-\ldots
+Til denne opgave står jeg mellem de to muligheder, som jeg forestiller mig kunne være rigtige, hvorfor jeg benævner dem begge med deres begrundelser.
+\\
+
+Først vil vi kigge på, hvorfor korrektionerne ikke burde ændre på propagatoren. Her kan vi bemærke, at Lagrangedensiteten i \cref{eq:Opg6_Lagrangian} er på en form lignende den, som vi betragtede i opgave 4 i problemsæt 5 \cite[opg. 4]{problemSet5} samt i \cite[kap. 10.8]{griffiths_IntroductionToElementaryParticles}. Følges denne metode findes, at $\pi$ er en Goldstoneboson, som kan transformeres væk.
+
+Siden $\pi$ kan transformeres væk, og dermed ikke er en partikel ''på samme måde'' som $\sigma$ er, da kan man formode, at den vil beholde samme symmetri som for enkeltloopskoorrektioner, altså at den som vist i denne opgave ikke vil blive modificeret af loopkorrektioner for $p^\mu = 0$.
+
+% Since π is a Goldstone boson and these loop corrections appear to be related to corrections to the mass of the Goldstone boson, we would expect higher orders to cancel as well. This is not obvious though, as higher order loops will have dimensions leading to divergences in the integrals that will have to be dealt with by renormalization.
+
+At korrektionerne skulle gå ud er dog ikke lige så åbenlyst, da højereordensloops, som det set herunder, vil give anledning til divergerende integraler (infrarød divergens, da $m_\pi = 0$), hvorfor det er nødvendigt at benytte renormalisering.
 
 \begin{center}
 \begin{tikzpicture}
@@ -502,8 +518,9 @@ Summeres nu over alle loopkorrektionernes amplituder, \cref{eq:Opg6_A5_Amplitude
     \end{feynman}
 \end{tikzpicture}
 \end{center}
+$ $\\
 
-% I de ovenstående opgaver er loopkorrektionerne blevet betragtet til laveste orden. Forestil dig at vi kunne inkludere højereordenskorrektioner i propagatoren (flere loops osv.). Hvordan forestiller du dig, at $\pi$-propagatoren kan modificeres for højere ordener?
+Den anden tanke er, at korrektionerne ændrer på propagatoren. Dette kan argumenteres for ved at kigge på, at antallet af højereordenskorrektioner vokser hurtigere og hurtigere, hvorfor der kommer flere og flere, og at de -- som sagt før -- alle kræver renormalisering grundet divergenser i deres integraler. Yderligere ved vi, at alle korrektionerne til sammen skal give propagatoren (i positionsrum) for en spin-$0$-boson, der ikke er fri, hvilken ikke er $0$, så hvorfor skulle den være det for $\pi$. Vi kan også se, at vores svar fra \textbf{7)} kun opstår, når $p \ne 0$, så men en arbitrær $p$ virker det mere underligt, hvis vi ender ud med ingen korrektion til propagatoren end hvis den modificeres.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

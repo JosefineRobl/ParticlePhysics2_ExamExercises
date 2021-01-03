@@ -10,7 +10,7 @@ I denne opgave skal vi kigge nærmere på heliciteten som en operator: Først ki
 \begin{align} \label{eq:Opg3_GammaMatrices}
     \gamma^0 &= \TwoRowMat{\id & 0}{0 & -\id} \: , \quad
     \gamma^i = \TwoRowMat{0 & \sigma_i}{-\sigma_i & 0} \: , \quad \text{og} \quad
-    \gamma^5 = i \gamma_0 \gamma_1 \gamma_2 \gamma_3 = \TwoRowMat{0 & \id}{\id & 0} \: ,
+    \gamma^5 = i \gamma^0 \gamma^1 \gamma^2 \gamma^3 = \TwoRowMat{0 & \id}{\id & 0} \: ,
 \end{align}
 hvor $\sigma_i$ er den $i$'te Paulimatrix. Løsningerne til Diracligningen er på formen
 \begin{align} \label{eq:Opg3_BeginningText_SolutionsToDiracEquation}
@@ -182,7 +182,9 @@ hvormed vi får at
 \begin{align}
     s^\mu &= \left( \frac{\abs{\vv{p}}}{m},\, \frac{E}{m} \frac{\vv{p}}{\abs{\vv{p}}} \right)
 \end{align}
-hvilket er spinvektoren i \cref{eq:Opg3_Q2_SpinVector}, som skulle vises.
+hvilket er spinvektoren i \cref{eq:Opg3_Q2_SpinVector}, som skulle vises.\footnote{
+    Det havde også været muligt at benytte Lorentztransformationen i en generel retning $\nhat$ med størrelse $v$ (når $\vv{v} = v \nhat$, som det følger af \url{https://en.wikipedia.org/wiki/Lorentz\_transformation\#Vector\_transformations}. Denne transformation blev dog først fundet efter at ovenstående var udregnet.
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -354,7 +356,7 @@ Dermed er \cref{eq:Opg3_Q6_GeneralResult} vist.
 \\
 
 Lader vi nu $\nhat = \vv{p}/\abs{\vv{p}}$, da er $\vgv{\Sigma} \cdot \nhat = \vgv{\Sigma} \cdot \vv{p} / \abs{\vv{p}} = h$ altså helicitetsoperatoren før kvantisering. Indsætter vi nu dette i \cref{eq:Opg3_A6_ShowExpressionPart2} og husker hvordan $h$ virker på $u$ og $v$ fra \cref{eq:Opg3_Q5_EigenstatesOfHelicity} (opgave \textbf{5)}), så får vi
-\begin{align}
+\begin{align} \label{eq:Opg3_A6_ShowHelicityOperatorInSecondQuantizationPart1}
 \begin{split}
     \hat{h} &= \int \dd^3\vv{x}\, \psi\dagger(x) h \, \psi(x) \\
         &= \sum_{s,s'} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \Big[ u_s\dagger(p) h \, u_{s'}(p) b_{\vv{p}, s}\dagger b_{\vv{p}, s'} \\
@@ -374,7 +376,7 @@ Lader vi nu $\nhat = \vv{p}/\abs{\vv{p}}$, da er $\vgv{\Sigma} \cdot \nhat = \vg
         &= \sum_{s} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} s \Big[ b_{\vv{p}, s}\dagger b_{\vv{p}, s} + d_{\vv{p}, s}\dagger d_{\vv{p}, s} - \anticommutator{d_{\vv{p}, s}}{d_{\vv{p}, s}\dagger} \Big] \: ,
 \end{split}
 \end{align}
-hvor vi har benyttet standardnormaliseringen af Diracspinorerne,
+hvor vi har benyttet standardnormaliseringen af Diracspinorerne \cite[lign. 44--47]{problemSet3},
 \begin{subequations}
 \begin{align}
     u_s\dagger(p) u_{s'}(p) &= 2 \omega_{\vv{p}} \delta_{s,s'} \: , \\
@@ -388,7 +390,19 @@ samt den fermioniske antikommutatorrelation for kreations- og annihilationsopera
     \anticommutator{d_{\vv{p}, s}}{d_{\vv{p}, s}\dagger} &= d_{\vv{p}, s} d_{\vv{p}, s}\dagger + d_{\vv{p}, s}\dagger d_{\vv{p}, s} \: .
 \end{align}
 
-\ldots. Dermed bliver helicitetsoperatoren i anden kvantisering
+Hvis vi nu kigger på sidste led af \cref{eq:Opg3_A6_ShowHelicityOperatorInSecondQuantizationPart1} og benytter at $\anticommutator{d_{\vv{p}, s}}{d_{\vv{p}, s}\dagger} = (2\pi)^3 \delta^3(\vv{p} - \vv{p}) \delta_{s,s}$ \cite[lign. 37]{problemSet3}, får vi
+\begin{align}
+\begin{split}
+    \sum_{s} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} s \anticommutator{d_{\vv{p}, s}}{d_{\vv{p}, s}\dagger}
+        &= \sum_{s} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} s (2\pi)^3 \delta^3(\vv{p} - \vv{p}) \delta_{s,s} \\
+        &= \sum_{s} s \int \frac{\dd^3 \vv{p}}{(2\pi)^3} (2\pi)^3 \delta^3(\vv{0}) \\
+        &= \left[ 1 - 1 \right] \int \frac{\dd^3 \vv{p}}{(2\pi)^3} (2\pi)^3 \delta^3(\vv{0}) \\
+        &= 0 \: ,
+\end{split}
+\end{align}
+da integralet blot giver en konstant -- godt nok en uendelig, men stadig konstant -- hvorfor hele dette led går ud grundet projektionen $s = \pm 1$, som summeres over.
+
+Dermed bliver helicitetsoperatoren i anden kvantisering
 \begin{align}
     \hat{h} &= \sum_{s} \int \frac{\dd^3 \vv{p}}{(2\pi)^3} s \Big[ b_{\vv{p}, s}\dagger b_{\vv{p}, s} + d_{\vv{p}, s}\dagger d_{\vv{p}, s} \Big] \: ,
 \end{align}

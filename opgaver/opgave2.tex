@@ -819,7 +819,7 @@ Vi betragter et element $R \in O(N)$, som er meget tæt på identitetsmatricen, 
 hvor det er blevet benyttet, at transponering er lineær, altså $(B+C)^\intercal = B^\intercal + C^\intercal$ for to kvadratiske matricer $B$ og $C$, samt at $\abs{A_{ij}} \ll 1 \Rightarrow \abs{A_{ij}A_{ji}} \ll 1$ så $A^\intercal A$ dermed er så lille, at den negligeres.
 
 Det er altså vist, at $A$ er en antisymmetrisk matrix. For en asymmetrisk matrix gør det sig gældende, at den skal være sporløs (eng: traceless), altså at $A_{ii} = 0$ (siden $A_{ij} = -A_{ji} \Rightarrow A_{ii} = -A_{ii}$, hvilket kun $0$ opfylder) og den øvre trekant af elementer (superdiagonalen og over) kan blive unikt bestemt ud fra den nedre trekants elementer (subdiagonalen og under) eller omvendt. Dermed er dimensionen af $A$, hvilket er frihedsgraderne for matricen, være
-\begin{align}
+\begin{align} \label{eq:Opg2_A14_DimensionOfA}
     \mathrm{dim}\big(O(N)\big) &= \mathrm{dim}(A) = \frac{N^2}{2} - \frac{N}{2} = \frac{N(N-1)}{2} \: ,
 \end{align}
 hvor $N^2/2$ er halvdelen af matricen hvorfra vi så fratrækker den resterende del af diagonalens elementer $N/2$.
@@ -829,18 +829,107 @@ hvor $N^2/2$ er halvdelen af matricen hvorfra vi så fratrækker den resterende 
 
 \paragraph[15) Noetherstrøm associeret med $O(N)^2$ symmetri]{\textbf{15)}}
 
-\ldots
+Da dimensionen af $A$ er fundet til at være $N(N-1)/2$, \cref{eq:Opg2_A14_DimensionOfA} i \textbf{14)}, betragter vi nu $N(N-1)/2$ matricer $A^k$ som udspænder rummet af alle antisymmetriske matricer med dimension $N$. Vi definerer nu $A = \sum_k \epsilon^k A^k = \epsilon^k A^k$ (og lader altså summeringen være implicit), hvorved vi nu kan skrive infinitisimaltransformationen $R$ som
+\begin{align}
+    R &= \id + A = \id + \epsilon^k A^k \: .
+\end{align}
+Beregner vi nu variationen af $\phi_{ij}$ får vi
+\begin{align}
+\begin{split}
+    \delta \phi_{ij} &= R_{il} R_{jn} \phi_{ln} - \phi_{ij} \\
+        &= \left( \id_{il} + \epsilon^k A_{il}^k \right) \left( \id_{jn} + \epsilon^m A_{jn}^m \right) \phi_{ln} - \phi_{ij} \\
+        &\simeq \left( \delta_{il} \delta_{jn} + \epsilon^k A_{il}^k \delta_{jn} + \epsilon^m A_{jn}^m \delta_{il} \right) \phi_{ln} - \phi_{ij} \\
+        &= \left( \epsilon^k A_{il}^k \delta_{jn} + \epsilon^m A_{jn}^m \delta_{il} \right) \phi_{ln} \: ,
+\end{split}
+\end{align}
+hvor vi har benyttet, at $\abs{A_{ij}} \ll 1$ samt at identitetsmatricens indgange er givet som $\id_{ij} = \delta_{ij}$. Ved brug af linearitet kan det vises, at
+\begin{align}
+    \partial_\mu ( \delta \phi_{ij} ) &= \delta ( \partial_\mu \phi_{ij} ) \: .
+\end{align}
+Varierer vi nu Lagrangedensiteten fås
+\begin{align}
+    \delta \L &= \pdif{\L}{\phi_{ij}} \delta \phi_{ij} + \pdif{\L}{\left( \partial_\mu \phi_{ij} \right)} \delta ( \partial_\mu \phi_{ij} ) \: ,
+\end{align}
+og indsætter vi dette i Euler-Lagrangeligningen og bruger Lagrangedensitetesns symmetri, så finder vi
+\begin{align}
+    0 &= \delta \L
+        = \pdif{\L}{\phi_{ij}} \delta \phi_{ij} + \pdif{\L}{\left( \partial_\mu \phi_{ij} \right)} \delta ( \partial_\mu \phi_{ij} )
+        = \partial_\mu \left( \pdif{\L}{\phi_{ij}} \delta \phi_{ij} \right) \: ,
+\end{align}
+hvorved det kan se, at
+\begin{align}
+    \pdif{\L}{\phi_{ij}} \delta \phi_{ij} &= \pdif{\L}{\phi_{ij}} \left( \epsilon^k A_{il}^k \delta_{jn} + \epsilon^m A_{jn}^m \delta_{il} \right) \phi_{ln}
+\end{align}
+er bevaret uanset valget af $\epsilon^i$'erne. Af dette kan vi kan vi finde den bevarede strøm som
+\begin{align} \label{eq:Opg2_A15_ConservedNoetherCurrent_ComponentForm}
+    j_k^\mu &= \pdif{\L}{\phi_{ij}} \left( \epsilon^k A_{il}^k \delta_{jn} + \epsilon^m A_{jn}^m \delta_{il} \right) \phi_{ln}
+        = \inv{2} \left( \epsilon^k A_{il}^k \delta_{jn} + \epsilon^m A_{jn}^m \delta_{il} \right) \phi_{ln} \partial^\mu \phi_{ij} \: ,
+\end{align}
+hvor $\partial_\mu j_k^\mu = 0$ for all $k$, hvor sidste lighed har gjort brug af symmetrien af matrixfeltet, $\phi_{ij} = \phi_{ji}$.
 
-% Find den bevarede Noetherstrøm (eng: Noether current) som associeres med $O(N)^2$-symmetrien.
+Omskriver vi nu det hele til matricer i stedet for komponenter, får vi fra \cref{eq:Opg2_A15_ConservedNoetherCurrent_ComponentForm} at
+\begin{align} \label{eq:Opg2_A15_ConservedNoetherCurrent_MatrixForm}
+    j_k^\mu &= \mathrm{tr}\left( \pdif{\L}{\left( \partial_\mu \Phi \right)} \left[ A^k \Phi - \Phi A^k \right] \right)
+        = \inv{2} \mathrm{tr}\left( \partial^\mu \Phi \left[ A^k \Phi - \Phi A^k \right] \right)
+\end{align}
+når vi igen benytter symmetrien af matrixfeltet, samt at $A$ er asymmetrisk, og lader $\Phi$ betegne matricen med komponenterne $\phi_{ij}$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph[16) Ændringer hvis $\phi_{ij}$ komplekst i stedet for reelt]{\textbf{16)}}
 
-\ldots
-
 % Hvad ville ændre sig, hvis feltet $\phi_{ij}$ var komplekst i stedet for reelt? Beskriv blot de overordnede forskellige; du skal \emph{ikke} beregne hele opgaven igen med et komplekst felt.
+
+Gør vi feltet komplekst, da vil vi få det dobbelte antal frihedsgrader, da et komplekst felt har én frihedsgrad for dens reelle del og én fra dens imaginære del. For det komplekse felt skal Lagrangedensiteten også ændres, således at
+\begin{align}
+    \L &= \inv{2} \partial_\mu \phi_{ij}^* \partial^\mu \phi_{ji} - \inv{2} m^2 \phi_{ij}^* \phi_{ji} \: ,
+\end{align}
+og vi modificerer symmetrien af matrixfeltet til at $\phi_{ij} = \phi_{ji}^*$. Udover bevægelsesligningerne for $\phi_{ij}$ får vi også bevægelsesligninger for $\phi_{ij}^*$ grundet de nye frihedsgrader, så
+\begin{align}
+    0 &= (\partial_\mu \partial^\mu + m^2) \phi_{ij}^* \quad \forall i,j = 1,\ldots,N \: .
+\end{align}
+Da feltet er komplekst, da bliver det konjugerede felt modificeret så
+\begin{align}
+    \pi_{ij} &= \partial^0 \phi_{ij}^*
+        \qquad \text{og} \qquad
+    \pi_{ij}^* = \partial^0 \phi_{ij} \: ,
+\end{align}
+hvorved vi også får en ændring i Hamiltonfunktionen, da der deri også skal kompenseres med komplekskonjugeringer
+\begin{align}
+    H &= \int \dd^3\vv{x} \left[ \inv{2} \pi_{ij}^* \pi_{ji} + \inv{2} \Grad{\phi_{ij}} \cdot \Grad{\phi_{ji}^*} + \inv{2} m^2 \phi_{ij}^* \phi_{ji} \right] \: .
+\end{align}
+Yderligere vil der ske ændringer i feltudvidelsen for $\phi_{ij}$, nemlig at der vil være forskellige kreations- og annihilationsoperatorer, $a\dagger$ og $c\dagger$ for hhv. partikler og antipartikler, da et komplekst felt betyder, at partiklen ikke længere er sin egen antipartikel
+\begin{align}
+    \phi_{ij} &= \int \frac{\dd^3\vv{p}}{(2\pi)^3} \invsqrt{2\omega_{\vv{p}}} \left(a_{\vv{p}ij} \bexp{-ipx} + c_{\vv{p}ij}\dagger \bexp{ipx} \right) \: ,
+\end{align}
+og vi skal dermed også introducere dens Hermitiskkonjugerede, da vi nu har kvantiseret vores felt,
+\begin{align}
+    \phi_{ij}\dagger &= \int \frac{\dd^3\vv{p}}{(2\pi)^3} \invsqrt{2\omega_{\vv{p}}} \left(a_{\vv{p}ij}\dagger \bexp{ipx} + c_{\vv{p}ij} \bexp{-ipx} \right) \: .
+\end{align}
+Beregningerne i \textbf{8)} og \textbf{9)} kan gentages for $c_{\vv{p},ij}$, og vi vil komme frem til samme kommutatorrelationer blot med udskiftningen $a_{\vv{p},ij} \rightarrow c_{\vv{p},ij}$, så vores kommutatorrelationer bliver
+\begin{subequations}
+\begin{align}
+    \commutator{a_{\vv{p}'kl}}{\, a_{\vv{p}ij}\dagger} &= (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \delta_{ik} \delta_{jl} \\
+    \commutator{c_{\vv{p}'kl}}{\, c_{\vv{p}ij}\dagger} &= (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \delta_{ik} \delta_{jl} \\
+    0 &= \commutator{a_{\vv{p}ij}}{\, a_{\vv{p}'kl}}
+        = \commutator{c_{\vv{p}ij}}{\, c_{\vv{p}'kl}}
+        = \commutator{a_{\vv{p}ij}}{\, c_{\vv{p}'kl}}
+        = \commutator{a_{\vv{p}ij}}{\, c_{\vv{p}'kl}\dagger} \: ,
+\end{align}
+\end{subequations}
+og Hermitiskkonjugeringer af disse. Grundet denne tilføjelse af $c_{\vv{p}ij}$ vil vi i den kvantiserede Hamiltonfunktionen også få en tælleoperator for disse antipartikler, så
+\begin{align}
+    H &= \sum_{i,j=1}^N \int \frac{\dd^3\vv{p}}{(2\pi)^3} \left[ \omega_{\vv{p}} a_{\vv{p}ij}\dagger a_{\vv{p}ij} + c_{\vv{p}ij}\dagger c_{\vv{p}ij} \right] \: .
+\end{align}
+Når det kommer til spørgsmålet symmetrier med den ortogonale gruppe $O(N)$ i \textbf{12)}, så vil vi i stedet for disse reelle matricer udvide symmetrien til gruppen af $N \times N$ unitære matricer, da disse også kan være komplekse, men stadig samme egenskab, nemlig
+\begin{align}
+    U(N) &= \{ R \:\vert\: R\dagger R = \id \} \: ,
+\end{align}
+hvor komplekskonjugeringen er taget i betragtning i den Hermitiske konjugering, da denne er svarende til komplekskonjugering og transponering, og de samme regler for invarians under denne symmetri, som i \textbf{13)}, vil gøre sig gældende, dog når der igen er taget i betragtning, at vi skal have medtaget $\phi_{ij}$ værende kompleks. Noetherstrømmen fundet i \textbf{15)} vil også ændres, idet den blev beregnet til at være afhængig af felterne, hvilket efter kompleksificeringen af felterne vil sige, at den nu kommer til at afhænge af både felterne og deres komplekskonjugeringer, og det giver også mening, at disse strømme vil ændre sig som et resultat af, da det komplekse felt kan have ladning.
+\\
+
+De fleste af beregninger i dette tankeeksperiment er ikke specielt meget sværere end dem, som vi har lavet i denne opgave, og i løbet af kurset (problemsæt 2 \cite{problemSet2}) har vi udført beregningerne for det komplekse Klein-Gordonfelt (uden matricer som felter), og vi har i denne opgave set, at det reelle matrixfelts beregninger er analoge til dem for det reelle Klein-Gordonfelt, hvorfor det komplekse matrixfelts beregninger også formodes at være analog med dem for det komplekse Klein-Gordonfelt i \cite{problemSet2}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

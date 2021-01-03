@@ -66,10 +66,10 @@ For at finde gaugebosonernes masser ved valget af vakuum som i \cref{eq:Opg5_Q1_
     &\abs{\left( - g \vv{T} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_1}{\sqrtTo}}}^2 + \abs{\left( - g \vv{T} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_2}{\sqrtTo}}}^2 \\
         &\quad = \abs{\left( - g \frac{\vgv{\sigma}}{2} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_1}{\sqrtTo}}}^2 + \abs{\left( - g \frac{\vgv{\sigma}}{2} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_2}{\sqrtTo}}}^2 \\
         &\quad = \inv{8} \left\{ \abs{\left( - g \vgv{\sigma} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{v_1}}^2 + \abs{\left( - g \vgv{\sigma} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{v_2}}^2 \right\} \\
-        &\quad = \inv{8} \Bigg\{ \abs{\TwoRowMat{g' B_\mu + g W_\mu^3 & g(W_\mu^1 - i W_\mu^2)}{g(W_\mu^1 + i W_\mu^2) & g' B_\mu - g W_\mu^3} \TwoRowMat{0}{v_1}}^2 \\
-            &\qquad\qquad\qquad + \abs{\TwoRowMat{g' B_\mu + g W_\mu^3 & g(W_\mu^1 - i W_\mu^2)}{g(W_\mu^1 + i W_\mu^2) & g' B_\mu - g W_\mu^3} \TwoRowMat{0}{v_2}}^2 \Bigg\} \\
-        &\quad = \inv{8} \left\{ \abs{\TwoRowMat{g(W_\mu^1 - i W_\mu^2)}{g' B_\mu - g W_\mu^3} v_1}^2 + \abs{\TwoRowMat{g(W_\mu^1 - i W_\mu^2)}{g' B_\mu - g W_\mu^3} v_2}^2 \right\} \\
-        &\quad = \frac{v_1^2 + v_2^2}{8} \abs{\TwoRowMat{g(W_\mu^1 - i W_\mu^2)}{g' B_\mu - g W_\mu^3}}^2 \: ,
+        &\quad = \inv{8} \Bigg\{ \abs{\TwoRowMat{g' B_\mu + g W_\mu^{(3)} & g \left( W_\mu^{(1)} - i W_\mu^{(2)} \right)}{g \left(W_\mu^{(1)} + i W_\mu^{(2)} \right) & g' B_\mu - g W_\mu^{(3)}} \TwoRowMat{0}{v_1}}^2 \\
+            &\qquad\qquad\qquad + \abs{\TwoRowMat{g' B_\mu + g W_\mu^{(3)} & g \left( W_\mu^{(1)} - i W_\mu^{(2)} \right)}{g \left( W_\mu^{(1)} + i W_\mu^{(2)} \right) & g' B_\mu - g W_\mu^{(3)}} \TwoRowMat{0}{v_2}}^2 \Bigg\} \\
+        &\quad = \inv{8} \left\{ \abs{\TwoRowMat{g \left( W_\mu^{(1)} - i W_\mu^{(2)} \right)}{g' B_\mu - g W_\mu^{(3)}} v_1}^2 + \abs{\TwoRowMat{g \left( W_\mu^{(1)} - i W_\mu^{(2)} \right)}{g' B_\mu - g W_\mu^{(3)}} v_2}^2 \right\} \\
+        &\quad = \frac{v_1^2 + v_2^2}{8} \abs{\TwoRowMat{g \left( W_\mu^{(1)} - i W_\mu^{(2)} \right)}{g' B_\mu - g W_\mu^{(3)}}}^2 \: ,
 \end{split}
 \end{align}
 hvilket præcis er udtrykket fundet i \cite[lign. 27]{problemSetHiggsInStandardModel} med $v^2 \rightarrow v'^2 = v_1^2 + v_2^2$.
@@ -82,14 +82,18 @@ Udskriver vi \cref{eq:Opg5_A1_CalculationOfMassesPart1} og sammenligner med Lagr
 \begin{align}
 \begin{split}
     &\abs{\left( - g \vv{T} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_1}{\sqrtTo}}}^2 + \abs{\left( - g \vv{T} \cdot \vv{W}_\mu - \frac{g'}{2} B_\mu \right) \TwoRowMat{0}{\frac{v_2}{\sqrtTo}}}^2 \\
-        &\quad = \frac{v_1^2 + v_2^2}{8} \abs{\TwoRowMat{g(W_\mu^1 - i W_\mu^2)}{g' B_\mu - g W_\mu^3}}^2 \\
-        &\quad = \frac{v_1^2 + v_2^2}{8} \left\{ g^2 \left[ W_\mu^1 \right]^2 + g^2 \left[ W_\mu^2 \right]^2 + \left[ g' B_\mu - g W_\mu^3 \right]^2 \right\} \\
-        &\quad = \inv{2} \left( \frac{g\sqrt{v_1^2 + v_2^2}}{2} \right)^2 \left( \left[ W_\mu^1 \right]^2 + \left[ W_\mu^2 \right]^2 \right) \\
-            &\qquad\qquad\qquad + \inv{2} \left( \frac{\sqrt{g^2 + g'^2} \sqrt{v_1^2 + v_2^2}}{2} \right)^2 \left( \frac{g' B_\mu - g W_\mu^3}{\sqrt{g^2 + g'^2}} \right)^2 \\
+        &\quad = \frac{v_1^2 + v_2^2}{8} \abs{\TwoRowMat{g \left( W_\mu^{(1)} - i W_\mu^{(2)} \right)}{g' B_\mu - g W_\mu^{(3)}}}^2 \\
+        &\quad = \frac{v_1^2 + v_2^2}{8} \left\{ g^2 \left[ W_\mu^{(1)} \right]^2 + g^2 \left[ W_\mu^{(2)} \right]^2 + \left[ g' B_\mu - g W_\mu^{(3)} \right]^2 \right\} \\
+        &\quad = \left( \frac{g\sqrt{v_1^2 + v_2^2}}{2} \right)^2 \left( \frac{\left[ W_\mu^{(1)} \right]^2 + \left[ W_\mu^{(2)} \right]^2}{2} \right) \\
+            &\qquad\qquad\qquad + \inv{2} \left( \frac{\sqrt{g^2 + g'^2} \sqrt{v_1^2 + v_2^2}}{2} \right)^2 \left( \frac{g' B_\mu - g W_\mu^{(3)}}{\sqrt{g^2 + g'^2}} \right)^2 \\
         &\quad = m_{W^\pm}^2 W_\mu^+ \left(W^-\right)^\mu + \inv{2} m_Z^2 Z_\mu Z^\mu \: ,
 \end{split}
 \end{align}
-hvor vi har benyttet, at $W_\mu^\pm = (W_\mu^1 \mp i W_\mu^2)/\sqrtTo$ (\cite[opg. 4]{problemSetHiggsInStandardModel}) og $Z_\mu = ???$. Dermed er gaugebosonernes masser
+hvor vi har benyttet, at $W_\mu^\pm = (W_\mu^1 \mp i W_\mu^2)/\sqrtTo$ (\cite[opg. 4]{problemSetHiggsInStandardModel}) og $Z_\mu = [ gW_\mu^{(3)} - g' B_\mu ] / \sqrt{g^2 + g'^2}$ (\cite[lign. 4 og 12]{problemSetHiggsInStandardModel}), og det skal noteres, at $\half$ foran $m_{W^\pm}$ bliver slugt, idet vi har to identiske led (\cite[lign. 30]{problemSetHiggsInStandardModel})
+\begin{align}
+    \vv{W}_{\mu\nu} \cdot \vv{W}^{\mu\nu} &\rightarrow 2 W_{\mu\nu}^+ \left(W^-\right)^{\mu\nu} + Z_{\mu\nu} Z^{\mu\nu} \: .
+\end{align}
+Dermed er gaugebosonernes masser
 \begin{align}
     m_{W^\pm} &= \frac{g\sqrt{v_1^2 + v_2^2}}{2}
         \qquad \text{og} \qquad
@@ -108,7 +112,7 @@ Higgspotentialet indeholder kun felterne i sammensætningen $\Phi_i\dagger \Phi_
     V(x_1, x_2) &= -\mu_1^2 x_1 - \mu_2^2 x_2 + \lambda_1^2 x_1^2 + \lambda_2^2 x_2^2 + \lambda_3 x_1 x_2 \: .
 \end{align}
 
-Først finder vi minimum ved at differentierer potentialet med hensyn til hvert felt og sætter dette lig nul
+Først finder vi minimum ved at differentierer potentialet med hensyn til hvert felt og sætter dette lig nul,
 \begin{align} \label{eq:Opg5_A2_VDifferentiatedOnce}
 \begin{split}
     0 &= \pdif{V}{x_1} = - \mu_1^2 + 2 \lambda_1^2 x_1 + \lambda_3 x_2
@@ -126,7 +130,7 @@ fra hvilket $x_1$ og $x_2$ kan findes som
 \end{align}
 under antagelse af at $4 \lambda_1^2 \lambda_2^2 - \lambda_3^2 \ne 0$ og $\lambda_2 \ne 0$.
 
-\ldots
+Siden potentialet skal være et minimum for både $x_1$ og $x_2$ separat, så skal krumingen være positiv for begge,
 \begin{align} \label{eq:Opg5_A2_VDifferentiatedTwice}
 \begin{split}
     0 &< \pdif[2]{V}{x_1} = 2 \lambda_1^2
@@ -134,8 +138,29 @@ under antagelse af at $4 \lambda_1^2 \lambda_2^2 - \lambda_3^2 \ne 0$ og $\lambd
     0 &< \pdif[2]{V}{x_2} = 2 \lambda_2^2 \: ,
 \end{split}
 \end{align}
-
-\ldots !!! DISKUTER DENNE OPGAVE MED ANDRE !!! \ldots
+hvormed 
+og da det lokale minimum skal være et minimum for begge felter samtidig, da kræves det yderligere, at determinanten af Hessematricen er positiv
+\begin{align}
+    0 &< \pdif[2]{V}{x_1} \pdif[2]{V}{x_2} - \left( \frac{\partial^2 V}{\partial x_1 \partial x_2} \frac{\partial^2 V}{\partial x_2 \partial x_1} \right)
+        = 4 \lambda_1^2 \lambda_2^2 - \lambda_3^2 \: .
+\end{align}
+Yderligere, for at både $x_1$ og $x_2$ er positive, da kræver vi, at
+\begin{align}
+    2\lambda_2^2 \mu_1^2 &> \lambda_3 \mu_2^2
+        \qquad \text{og} \qquad
+    2\lambda_1^2 \mu_2^2 > \lambda_3 \mu_1^2 \: .
+\end{align}
+Så kriterierne for at $x_1$ og $x_2$ har positive minimum er
+\begin{align}
+\begin{split}
+    4 \lambda_1^2 \lambda_2^2 &> \lambda_3^2 \: , \\
+    2\lambda_2^2 \mu_1^2 &> \lambda_3 \mu_2^2 \: , \\
+    2\lambda_1^2 \mu_2^2 &> \lambda_3 \mu_1^2 \: , \\
+    \lambda_1^2 &> 0 \: , \quad \text{og} \\
+    \lambda_1^2 &> 0 \: .
+\end{split}
+\end{align}
+Siden Lagrangedensiteten kun indeholder felterne gennem $\Phi_i\dagger \Phi_i$ kan minimumet vælges til kun at være den reelle del af den nederste komponent, så $x_i = \Phi_i\dagger \Phi_i = v_i^2/2$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -144,19 +169,19 @@ under antagelse af at $4 \lambda_1^2 \lambda_2^2 - \lambda_3^2 \ne 0$ og $\lambd
 
 Den mest generelle form at de to Higgsdoubletter, når de er korrekt normaliserede (se \cite[lign. 25]{problemSetHiggsInStandardModel}), er
 \begin{align}
-    \Phi_1 &= \TwoRowMat{\phi_1^R + i \phi_1^I}{\phi_2^R + i \phi_2^I}
+    \Phi_1 &= \invsqrtTo \TwoRowMat{\phi_1^R + i \phi_1^I}{\phi_2^R + i \phi_2^I}
         \qquad \text{og} \qquad
-    \Phi_2 = \TwoRowMat{\phi_3^R + i \phi_3^I}{\phi_4^R + i \phi_4^I} \: ,
+    \Phi_2 = \invsqrtTo \TwoRowMat{\phi_3^R + i \phi_3^I}{\phi_4^R + i \phi_4^I} \: ,
 \end{align}
 altså er der 8 frihedsgrader tilsammen i de to Higgsdubletter, hvilket giver god mening, da en dublet består af to komplekse skalarfelter, som hver har to frihedsgrader, da de er komplekse, så vi har i alt $2 \cdot 2 \cdot 2 = 8$ frihedsgrader.
 
-Den generelle gaugesymmetri for Higgsfeltet er $\exp(i[\vv{T}\cdot\vgv{\alpha}(x) + \beta])$, hvilken har fire frihedsgrader da $\vgv{\alpha}(x)$ har tre frihedsgrader og $\beta$ én. Vi kan, som i \cite[lign. 26]{problemSetHiggsInStandardModel}, skrive Higgsdubletterne ved denne gaugesymmetri
+Den generelle gaugesymmetri for Higgsfeltet er $\exp(i[\vv{T}\cdot\vgv{\alpha}(x) + \beta/2])$, hvilken har fire frihedsgrader da $\vgv{\alpha}(x)$ har tre frihedsgrader og $\beta$ én. Vi kan, som i \cite[lign. 26]{problemSetHiggsInStandardModel}, skrive Higgsdubletterne ved denne gaugesymmetri
 \begin{align} \label{eq:Opg5_A3_HiggsDoubletsWithTheirGaugeSymmetry}
     \Phi_1 &= \pexp{i\vv{T}\cdot\vgv{\alpha}_1(x)} \TwoRowMat{0}{\frac{v_1 + H_1(x)}{\sqrtTo}}
         \qquad \text{og} \qquad
     \Phi_2 = \pexp{i\vv{T}\cdot\vgv{\alpha}_2(x)} \TwoRowMat{0}{\frac{v_2 + H_2(x)}{\sqrtTo}} \: ,
 \end{align}
-idet vi stadig ønsker at efterlade én af frihedsgraderne i gaugesymmetrien ubrudt for det elektromagnetiske felt. Dog skal de to Higgsdubletter være i samme gauge, hvorfor vi kun kan gaugetransformere tre frihedsgrader væk, så
+idet vi stadig ønsker at efterlade én af frihedsgraderne i gaugesymmetrien ubrudt for det elektromagnetiske felt, hvorfor vi ikke kan fiksere $\beta_i$. Dog skal de to Higgsdubletter være i samme gauge, hvorfor vi kun kan gaugetransformere tre frihedsgrader væk, så
 \begin{align} \label{eq:Opg5_A3_HiggsDoubletsAfterGaugeTransformation}
     \Phi_1 &= \TwoRowMat{0}{\frac{v_1 + H_1(x)}{\sqrtTo}}
         \qquad \text{og} \qquad
@@ -165,7 +190,24 @@ idet vi stadig ønsker at efterlade én af frihedsgraderne i gaugesymmetrien ubr
 Der er altså fem Higgsfelter, og dermed fem frihedsgrader, tilbage.
 \\
 
-Som det næste skal Higgsfelterne karakteriseres ud fra deres kvantetal. Vi ved at begge Higgsdubletter har hyperladning $Y=1$
+Som det næste skal Higgsfelterne karakteriseres ud fra deres kvantetal. Vi ved at begge Higgsdubletter har hyperladning $Y=1$, samt at dubletterne har svagt isospin\footnote{
+    ''Symmetrien associeret med svagt isospin er $SU(2)$ og kræver gaugebosoner med $T=1$ ($W^\pm$, $W^0$) til at gå mellem fermioner med halvtallig svag ispospin ladning.'' \cite{wiki:weakIsospin}
+}
+$T = \pm \half$, hvor plus er for topkomponenten af dubletten og minus for bundkomponenten. Ladningen kan nu beregnes ved
+\begin{align}
+    Q &= T_3 + \frac{Y}{2} \: ,
+\end{align}
+hvorved vi får
+\begin{subequations}
+\begin{alignat}{3}
+    H_1(x) &: \qquad && Q_{H_1} &&= 0 \\
+    H_+(x) &= H_2(x) + i H_3(x) \: : \qquad && Q_{H_+} &&= 1 \\
+    H_-(x) &= H_2(x) - i H_3(x) \: : \qquad && Q_{H_-} &&= -1 \\
+    H(x) &= H_4(x) + i H_5(x) \: : \qquad && Q_H &&= 0 \\
+    h(x) &= H_4(x) - i H_5(x) \: : \qquad && Q_h &&= 0 \: .
+\end{alignat}
+\end{subequations}
+Dermed kan det ses, at de nedre komponenter af \cref{eq:Opg5_A3_HiggsDoubletsAfterGaugeTransformation} har ladning $0$, hvilket stemmer overens med, at vakuumet fra \cref{eq:Opg5_Q1_Vaccum} har ladning $0$ som ønsket, da vakuum derved ikke kan interferere med elektrodynamik, så elektrodynamik er en ubrudt gaugesymmetri.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
