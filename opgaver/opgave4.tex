@@ -304,7 +304,7 @@ for $x = (\Vec{x},\, t)$ værende en firvektor, er en $\U(1)$-gaugeteori, da tra
 \begin{align}
     \abs{\U} &= \U\U^* = \pexp{-ie\theta[x]} \pexp{ie\theta[x]} = \id \: .
 \end{align}
-Idet transformationen er en $U$
+Idet transformationen er en $\U(1)$-transformation giver det mening, at teorien dannet ud fra denne transformation kaldes ved transformationens symmetri, altså her en $\U(1)$-teori.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -629,7 +629,7 @@ hvorfor
 Derved er \cref{eq:Opg4_Q5_TransitionCurrent4} vist.
 \\
 
-Overgangsstrømmene i \cref{eq:Opg4_Q5_TransitionCurrents} er matrixelementerne mellem start- og sluttilstandene for impulsudvekslingen mellem elektroner og positroner i forskellige kombinationer, dog ekskluderende fotonen, som også er en del af vekselvirkningen, i de to tilstande, som i stedet beskrives af strømoperatoren. Vi kan derfor tegne disse som Feynmandiagrammer, hvilke kan ses nedenfor. Matrixelementerne er alle på formen $\mel{f}{j_\mu}{i}$ hvor $i$ og $f$ betegner hhv. start- og sluttilstanden, hvorved det første matrixelement er en indkommende elektron med impuls $\vv{p}$ og helicitet $\lambda$ som ændres til en udgående elektron med impuls $\vv{p}'$ og helicitet $\lambda'$. For andet matrixelement er positron med impuls $\vv{p}$ og helicitet $\lambda$ som spredes til en positron med impuls $\vv{p}'$ og helicitet $\lambda'$. Det tredje matrixelement er annihilationen af et elektron-positron-par til vakuum (eller rettere end foton), og det fjerde matrixelement er blot denne annihilation set med tiden gående baglæns, altså dannelsen af et elektron-positron-par fra en foton.
+Overgangsstrømmene i \cref{eq:Opg4_Q5_TransitionCurrents} er matrixelementerne mellem start- og sluttilstandene for impulsudvekslingen mellem elektroner og positroner i forskellige kombinationer, dog ekskluderende fotonen, som også er en del af vekselvirkningen, i de to tilstande, som i stedet beskrives af strømoperatoren, hvorfor dette kun giver dele af Feynmandiagrammer og ikke de fulde diagrammer. Vi kan derfor tegne disse som Feynmandiagrammer, hvilke kan ses nedenfor. Matrixelementerne er alle på formen $\mel{f}{j_\mu}{i}$ hvor $i$ og $f$ betegner hhv. start- og sluttilstanden, hvorved det første matrixelement er en indkommende elektron med impuls $\vv{p}$ og helicitet $\lambda$ som ændres til en udgående elektron med impuls $\vv{p}'$ og helicitet $\lambda'$. For andet matrixelement er positron med impuls $\vv{p}$ og helicitet $\lambda$ som spredes til en positron med impuls $\vv{p}'$ og helicitet $\lambda'$. Det tredje matrixelement er annihilationen af et elektron-positron-par til vakuum (eller rettere end foton), og det fjerde matrixelement er blot denne annihilation set med tiden gående baglæns, altså dannelsen af et elektron-positron-par fra en foton.
 
 \begin{tikzpicture}[scale=.85, transform shape]
     \begin{feynman}
@@ -1015,7 +1015,7 @@ så hvis stedrumspropagatoren udregnes, fås\\
         &\quad = \theta(t) \sum_{\sigma} \epsilon^\mu(\sigma) \epsilon^\nu(\sigma)^* \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{-ipx} \\
             &\qquad\: + \theta(-t) \sum_{\sigma} \epsilon^\nu(\sigma) \epsilon^\mu(\sigma)^* \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{ipx} \\
         &\quad = \theta(t) (-g^{\mu\nu}) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{-ipx} + \theta(-t) (-g^{\nu\mu}) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{ipx} \\
-        &\quad = -g^{\mu\nu} \left[ \theta(t) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{-ipx} + \theta(-t) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{ipx} \right]
+        &\quad = -g^{\mu\nu} \left[ \theta(t) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{-ipx} + \theta(-t) \int \frac{\dd^3 \vv{p}}{(2\pi)^3} \inv{2 \omega_{\vv{p}}} \pexp{ipx} \right] \: ,
 \end{split}
 \end{align}
 hvor identiteten fra \textbf{10)}, \cref{eq:Opg4_Q10_ExpressionToBeTrue}, er blevet benyttet, hvor det også noteres, at $\sum_\sigma \epsilon^\mu(\sigma) \epsilon^\nu(\sigma)^* = [\sum_\sigma \epsilon^\mu(\sigma)^* \epsilon^\nu(\sigma)]^* = [-g^{\mu\nu}]^* = -g^{\mu\nu}$, da $g^{\mu\nu} = \mathrm{diag}(1,\, -\id)$. Yderligere er det blevet benyttet, at kun ledene, hvor en partikel først skabes og derefter annihileres overlever, idet at $a_{\vv{p},\sigma} \ket{0} = 0 \xleftrightarrow{\text{DC}} \bra{0} a_{\vv{p},\sigma}\dagger = 0$, samt gjort brug at de bosoniske kommutatorrelationer, $[a_{\vv{p},\sigma},\, a_{\vv{p}',\sigma'}\dagger] = (2\pi)^3 \delta^3(\vv{p} - \vv{p}') \delta_{\sigma,\sigma'}$.
@@ -1071,7 +1071,7 @@ Vi starter med at translatere $J_\mu^{\mathrm{e}^-}(x_1)$, $J_\nu^{\mu^-}(x_2)$ 
             &= \mel**{\mu^-,\, \vv{p}_4,\, \lambda_4}{\pexp{iPx_2} j_\nu^{\mu^-}(0) \pexp{-iPx_2}}{\mu^-,\, \vv{p}_2,\, \lambda_2} \\
             &= \mel**{\mu^-,\, \vv{p}_4,\, \lambda_4}{\pexp{ip_4x_2} j_\nu^{\mu^-}(0) \pexp{-ip_2x_2}}{\mu^-,\, \vv{p}_2,\, \lambda_2} \\
             &= \pexp{ip_4x_2} \pexp{-ip_2x_2} \mel**{\mu^-,\, \vv{p}_4,\, \lambda_4}{j_\nu^{\mu^-}(0)}{\mu^-,\, \vv{p}_2,\, \lambda_2} \\
-            &= \pexp{i[p_4 - p_2]x_2} J_\nu^{\mu^-}(0)
+            &= \pexp{i[p_4 - p_2]x_2} J_\nu^{\mu^-}(0) \: , \quad \text{og}
     \end{split}
 \end{align}
 \begin{align}
@@ -1083,7 +1083,7 @@ Vi starter med at translatere $J_\mu^{\mathrm{e}^-}(x_1)$, $J_\nu^{\mu^-}(x_2)$ 
             &\quad = \mel**{0}{T[\pexp{iPx_2} A^\mu(x_1 - x_2) A^\nu(0) \pexp{-iPx_2}]}{0} \\
             &\quad = \mel**{0}{\pexp{-i\vv{p}\cdot\vv{x}_2} T[\pexp{iEt_2} A^\mu(x) A^\nu(0) \pexp{-iEt_2}] \pexp{i\vv{p}\cdot\vv{x}_2}}{0} \\
             &\quad = \mel**{0}{\pexp{0} T[\pexp{iEt_2} \pexp{-iEt_2} A^\mu(x) A^\nu(0)] \pexp{0}}{0} \\
-            &\quad = \mel**{0}{T[A^\mu(x) A^\nu(0)]}{0}
+            &\quad = \mel**{0}{T[A^\mu(x) A^\nu(0)]}{0} \: ,
     \end{split}
 \end{align}
 hvor eksponentialfunktionerne udenfor tidsombytningsoperatoren ''forsvinder'', da $\pexp{0} = 1$, og eksponentialfunktionerne indenfor tidsombytningsoperatoren kan rykkes hen til hinanden, da tidsombytningsoperatoren sørger for, at operatorerne står tidsordnet og eksponentialerne har samme tid $t_2$, så de vil stå sammen og dermed danner de en identitet.

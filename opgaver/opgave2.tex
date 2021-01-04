@@ -829,7 +829,7 @@ hvor $N^2/2$ er halvdelen af matricen hvorfra vi så fratrækker den resterende 
 
 \paragraph[15) Noetherstrøm associeret med $O(N)^2$ symmetri]{\textbf{15)}}
 
-Da dimensionen af $A$ er fundet til at være $N(N-1)/2$, \cref{eq:Opg2_A14_DimensionOfA} i \textbf{14)}, betragter vi nu $N(N-1)/2$ matricer $A^k$ som udspænder rummet af alle antisymmetriske matricer med dimension $N$. Vi definerer nu $A = \sum_k \epsilon^k A^k = \epsilon^k A^k$ (og lader altså summeringen være implicit), hvorved vi nu kan skrive infinitisimaltransformationen $R$ som
+Da dimensionen af $A$ er fundet til at være $N(N-1)/2$, \cref{eq:Opg2_A14_DimensionOfA} i opgave \textbf{14)}, betragter vi nu $N(N-1)/2$ matricer $A^k$ som udspænder rummet af alle antisymmetriske matricer med dimension $N$. Vi definerer nu $A = \sum_k \epsilon^k A^k = \epsilon^k A^k$ (og lader altså summeringen være implicit), hvorved vi nu kan skrive infinitisimaltransformationen $R$ som
 \begin{align}
     R &= \id + A = \id + \epsilon^k A^k \: .
 \end{align}
@@ -846,17 +846,23 @@ hvor vi har benyttet, at $\abs{A_{ij}} \ll 1$ samt at identitetsmatricens indgan
 \begin{align}
     \partial_\mu ( \delta \phi_{ij} ) &= \delta ( \partial_\mu \phi_{ij} ) \: .
 \end{align}
-Varierer vi nu Lagrangedensiteten fås
-\begin{align}
+Varierer vi nu Lagrangedensiteten fås\footnote{
+    Her er det brugt at $\dd f = \dif{f}{x} \dd x + \dif{f}{y} \dd y$.
+}
+\begin{align} \label{eq:Opg2_A15_deltaL}
     \delta \L &= \pdif{\L}{\phi_{ij}} \delta \phi_{ij} + \pdif{\L}{\left( \partial_\mu \phi_{ij} \right)} \delta ( \partial_\mu \phi_{ij} ) \: ,
 \end{align}
-og indsætter vi dette i Euler-Lagrangeligningen og bruger Lagrangedensitetesns symmetri, så finder vi
+og sætter vi nu lig $0$, benytter Euler-Lagrangeligningen i første led i \cref{eq:Opg2_A15_deltaL}, samt bruger Lagrangedensitetesns symmetri, så finder vi
 \begin{align}
-    0 &= \delta \L
-        = \pdif{\L}{\phi_{ij}} \delta \phi_{ij} + \pdif{\L}{\left( \partial_\mu \phi_{ij} \right)} \delta ( \partial_\mu \phi_{ij} )
-        = \partial_\mu \left( \pdif{\L}{\phi_{ij}} \delta \phi_{ij} \right) \: ,
+\begin{split}
+    0 &= \delta \L \\
+        &= \pdif{\L}{\phi_{ij}} \delta \phi_{ij} + \pdif{\L}{\left( \partial_\mu \phi_{ij} \right)} \delta ( \partial_\mu \phi_{ij} ) \\
+        &= \partial_\mu \left(\pdif{\L}{(\partial_\mu \phi_{ij})}\right) \delta \phi_{ij} + \pdif{\L}{\left( \partial_\mu \phi_{ij} \right)} \delta ( \partial_\mu \phi_{ij} ) \\
+        &= \partial_\mu \left(\pdif{\L}{(\partial_\mu \phi_{ij})}\right) \delta \phi_{ij} + \pdif{\L}{\left( \partial_\mu \phi_{ij} \right)} \partial_\mu (\delta \phi_{ij} ) \\
+        &= \partial_\mu \left( \pdif{\L}{\phi_{ij}} \delta \phi_{ij} \right) \: ,
+\end{split}
 \end{align}
-hvorved det kan se, at
+hvor vi har benyttet kædereglen i sidste lighed. Derved kan det ses, at
 \begin{align}
     \pdif{\L}{\phi_{ij}} \delta \phi_{ij} &= \pdif{\L}{\phi_{ij}} \left( \epsilon^k A_{il}^k \delta_{jn} + \epsilon^m A_{jn}^m \delta_{il} \right) \phi_{ln}
 \end{align}
@@ -922,7 +928,7 @@ og Hermitiskkonjugeringer af disse. Grundet denne tilføjelse af $c_{\vv{p}ij}$ 
 \begin{align}
     H &= \sum_{i,j=1}^N \int \frac{\dd^3\vv{p}}{(2\pi)^3} \left[ \omega_{\vv{p}} a_{\vv{p}ij}\dagger a_{\vv{p}ij} + c_{\vv{p}ij}\dagger c_{\vv{p}ij} \right] \: .
 \end{align}
-Når det kommer til spørgsmålet symmetrier med den ortogonale gruppe $O(N)$ i \textbf{12)}, så vil vi i stedet for disse reelle matricer udvide symmetrien til gruppen af $N \times N$ unitære matricer, da disse også kan være komplekse, men stadig samme egenskab, nemlig
+Når det kommer til spørgsmålet symmetrier med den ortogonale gruppe $O(N)$ i opgave \textbf{12)}, så vil vi i stedet for disse reelle matricer udvide symmetrien til gruppen af $N \times N$ unitære matricer, da disse også kan være komplekse, men stadig samme egenskab, nemlig
 \begin{align}
     U(N) &= \{ R \:\vert\: R\dagger R = \id \} \: ,
 \end{align}
