@@ -889,7 +889,7 @@ når vi igen benytter symmetrien af matrixfeltet, samt at $A$ er asymmetrisk, og
 
 Gør vi feltet komplekst, da vil vi få det dobbelte antal frihedsgrader, da et komplekst felt har én frihedsgrad for dens reelle del og én fra dens imaginære del. For det komplekse felt skal Lagrangedensiteten også ændres, således at
 \begin{align}
-    \L &= \inv{2} \partial_\mu \phi_{ij}^* \partial^\mu \phi_{ji} - \inv{2} m^2 \phi_{ij}^* \phi_{ji} \: ,
+    \L &= \partial_\mu \phi_{ij}^* \partial^\mu \phi_{ji} - m^2 \phi_{ij}^* \phi_{ji} \: ,
 \end{align}
 og vi modificerer symmetrien af matrixfeltet til at $\phi_{ij} = \phi_{ji}^*$. Udover bevægelsesligningerne for $\phi_{ij}$ får vi også bevægelsesligninger for $\phi_{ij}^*$ grundet de nye frihedsgrader, så
 \begin{align}
@@ -926,7 +926,7 @@ Beregningerne i \textbf{8)} og \textbf{9)} kan gentages for $c_{\vv{p},ij}$, og 
 \end{subequations}
 og Hermitiskkonjugeringer af disse. Grundet denne tilføjelse af $c_{\vv{p}ij}$ vil vi i den kvantiserede Hamiltonfunktionen også få en tælleoperator for disse antipartikler, så
 \begin{align}
-    H &= \sum_{i,j=1}^N \int \frac{\dd^3\vv{p}}{(2\pi)^3} \left[ \omega_{\vv{p}} a_{\vv{p}ij}\dagger a_{\vv{p}ij} + c_{\vv{p}ij}\dagger c_{\vv{p}ij} \right] \: .
+    H &= \sum_{i,j=1}^N \int \frac{\dd^3\vv{p}}{(2\pi)^3} \omega_{\vv{p}} \left[ a_{\vv{p}ij}\dagger a_{\vv{p}ij} + c_{\vv{p}ij}\dagger c_{\vv{p}ij} \right] \: .
 \end{align}
 Når det kommer til spørgsmålet symmetrier med den ortogonale gruppe $O(N)$ i opgave \textbf{12)}, så vil vi i stedet for disse reelle matricer udvide symmetrien til gruppen af $N \times N$ unitære matricer, da disse også kan være komplekse, men stadig samme egenskab, nemlig
 \begin{align}
