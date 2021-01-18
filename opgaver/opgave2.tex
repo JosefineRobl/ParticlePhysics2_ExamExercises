@@ -375,7 +375,7 @@ Betragter vi feltudvidelsen i \cref{eq:Opg2_Q6_ResultingField},
 \end{align}
 ses det, at der er stor lighed med feltudvidelsen for det reelle Klein-Gordonfelt i \cite[lign. 38]{problemSet2}, hvor vi sætter $a_{\vv{p}} = c_{\vv{p}}$ da feltet er reelt. Denne lighed er forventelig, da matrixfeltet er et set af reelle skalarfelter.
 
-Hvis vi blot skal argumentere ud fra komponenterne i feltudvidelsen, så kan vi starte med at se på, hvad de forskellige komponenter gør. Vi ved at vi for en feltudvidelse ønsker et integral over normal modes med deres tilsvarende løsninger til bevægelsesligningen, hvilke for et skalarfelt er svarende til en Fouriertransformation, da løsningerne til Klein-Gordonligningen er planbølger, alstå eksponentialfunktioner. $a_{\vv{p}ij}$ er annihilationsoperatoren, som multipliceres med den positive energiløsning til Klein-Gordonligningen, mens $a_{\vv{p}ij}\dagger$ er kreationsoperatoren, som multipliceres med den negative energiløsning til Klein-Gordonligningen. $(2\pi)^3$ er en normaliseringsfaktor, og $\int \dd^3 \vv{p} / \sqrt{2 \omega_{\vv{p}}}$ er impulsrumsfaktoren, hvilken er Lorentzinvariant, hvorfor hele feltet bliver Lorentzinvariant (de andre dele er Lorentzinvariante også, hvorfor dette er sant).
+Hvis vi blot skal argumentere ud fra komponenterne i feltudvidelsen, så kan vi starte med at se på, hvad de forskellige komponenter gør. Vi ved at vi for en feltudvidelse ønsker et integral over normal modes med deres tilsvarende løsninger til bevægelsesligningen, hvilke for et skalarfelt er svarende til en Fouriertransformation, da løsningerne til Klein-Gordonligningen er planbølger, alstå eksponentialfunktioner. $a_{\vv{p}ij}$ er annihilationsoperatoren, som multipliceres med den positive energiløsning til Klein-Gordonligningen, mens $a_{\vv{p}ij}\dagger$ er kreationsoperatoren, som multipliceres med den negative energiløsning til Klein-Gordonligningen. $(2\pi)^3$ er en normaliseringsfaktor, og $\int \dd^3 \vv{p} / \sqrt{2 \omega_{\vv{p}}}$ er impulsrumsfaktoren, hvilken er Lorentzinvariant, hvorfor hele feltet bliver Lorentzinvariant (de andre dele er Lorentzinvariante også, hvorfor dette er sandt).
 
 I korte træk så skaber eller annihilerer vi partikler med de tilstande, som er løsninger til Klein-Gordonligningen, multiplicerer med normaliseringskonstanter og summerer over alle impulser, hvor vi selvfølgelig kun får et bidrag fra dem, hvor der er en partiklen med den givne impuls.
 
@@ -868,8 +868,8 @@ hvor vi har benyttet kædereglen i sidste lighed. Derved kan det ses, at
 \end{align}
 er bevaret uanset valget af $\epsilon^i$'erne. Af dette kan vi kan vi finde den bevarede strøm som
 \begin{align} \label{eq:Opg2_A15_ConservedNoetherCurrent_ComponentForm}
-    j_k^\mu &= \pdif{\L}{\phi_{ij}} \left( \epsilon^k A_{il}^k \delta_{jn} + \epsilon^m A_{jn}^m \delta_{il} \right) \phi_{ln}
-        = \inv{2} \left( \epsilon^k A_{il}^k \delta_{jn} + \epsilon^m A_{jn}^m \delta_{il} \right) \phi_{ln} \partial^\mu \phi_{ij} \: ,
+    j_k^\mu &= \pdif{\L}{\phi_{ij}} \left( A_{il}^k \delta_{jn} + A_{jn}^k \delta_{il} \right) \phi_{ln}
+        = \inv{2} \left( A_{il}^k \delta_{jn} + A_{jn}^k \delta_{il} \right) \phi_{ln} \partial^\mu \phi_{ij} \: ,
 \end{align}
 hvor $\partial_\mu j_k^\mu = 0$ for all $k$, hvor sidste lighed har gjort brug af symmetrien af matrixfeltet, $\phi_{ij} = \phi_{ji}$.
 
